@@ -1,0 +1,43 @@
+
+.LoginForm{
+    color:black;
+
+}
+.input{
+    top:50px;
+    margin-left:90px;
+    color:black;
+    border-color:red;
+    top:50px;
+    border-width: thick thick thick;
+
+}
+.UsernameHeading{
+    color: green;
+    margin-left:450px;
+    font-family:white;
+}
+.heading{
+    margin-left:2000px;
+}
+body{
+    background-image:url('https://i.pinimg.com/originals/23/d8/89/23d8891f701c0bafd7d1b2141e7deb1b.jpg');
+    background-repeat:no-repeat;
+}
+
+.aboutUs{
+    margin-top:800px;
+}
+.contact{
+    margin-top:780px;
+}
+.label{
+    font-size:35px;
+    font-weight:1000;
+    color:red;
+}
+.TextBox{
+    border-width:10px;
+    text-align:left;
+    text-orientation: sideways-right;
+}
