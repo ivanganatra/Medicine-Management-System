@@ -10,21 +10,11 @@ code {
     monospace;
 } */
 
-body {
-  /* background-color: #20bf55;
-  background-image: linear-gradient(315deg, #00b712 0%, #5aff15 74%); */
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-}
-
-body:before {
-	content:"";
-	position:fixed;
-	left:0;
-	top:0;
-	right:0;
-	bottom:0;
-	z-index:-1; 
-  background-color: #045de9;
-  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+ /* box-shadow: inset 0 0 6px white; */
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import './SignUp.css';
+import { useDispatch } from 'react-redux';
+import { ASYNC_LOGIN } from '../../reduxSlices/authSlice';
+import './Login.css';
 
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -61,8 +62,10 @@ const useStyles = makeStyles((theme) => ({
 
 const SignUp = () => {
     const classes = useStyles();
+    const [isSignIn, setIsSignIn] = useState(false);
+    const dispatch = useDispatch();
     const [values, setValues] = useState({
-        username: '',
+        email: '',
         category: '',
         password: '',
         contact: '',
@@ -70,30 +73,46 @@ const SignUp = () => {
       });
     
     const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
+      if(prop === 'contact' && (isNaN(event.target.value) && event.target.value !== '+')) {
+        return;
+      }
+      setValues({ ...values, [prop]: event.target.value });
+    };
     
-      const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-      };
+    const handleClickShowPassword = () => {
+      setValues({ ...values, showPassword: !values.showPassword });
+    };
     
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
+    const handleMouseDownPassword = (event) => {
+      event.preventDefault();
+    };
+
+    const formSubmitHandler = (event) => {
+      event.preventDefault();
+      console.log("Inside form submit");
+      dispatch(ASYNC_LOGIN({
+        email: values.email,
+        password: values.password,
+        category: values.category,
+        isSignIn: isSignIn,
+        contact: values.contact,
+      }))
+    }
+
     return (
-        <div className="SignUp">
-            <h1 className="SignUp_Title">Sign Up</h1>
-            <form className={classes.root} autoComplete="off">
+        <div className="Login">
+            <h1 className="Login_Title">{ isSignIn ? "Sign In" : "Sign Up" }</h1>
+            <form className={classes.root}>
                 <FormControl className={clsx(classes.margin, classes.textField)}>
-                    <InputLabel  htmlFor="username">Username</InputLabel>
+                    <InputLabel  htmlFor="email">Email</InputLabel>
                         <Input
-                            placeholder="Type your username"
+                            placeholder="Type your email"
                             fullWidth
-                            id="username"
-                            type="text"
+                            id="email"
+                            type="email"
                             margin="normal"
                             value={values.username}
-                            onChange={handleChange('username')}
+                            onChange={handleChange('email')}
                             startAdornment={
                                 <InputAdornment position="start">
                                   <PermIdentityIcon />
@@ -129,39 +148,54 @@ const SignUp = () => {
                         }
                     />
                 </FormControl>
-                <FormControl className={clsx(classes.margin, classes.textField, classes.formControl)}>
-                    <InputLabel id="category">Select your Category</InputLabel>
-                    <Select
-                        labelId="category"
-                        id="category"
-                        value={values.category}
-                        onChange={handleChange('category')}
-                    >
-                    <MenuItem value="owner">Owner</MenuItem>
-                    <MenuItem value="customer">Customer</MenuItem>
-                    </Select>
-                </FormControl>
-                <FormControl className={clsx(classes.margin, classes.textField)}>
-                    <InputLabel  htmlFor="contact">Contact Number</InputLabel>
-                        <Input
-                            placeholder="Type your Contact Number"
-                            fullWidth
-                            id="contact"
-                            type="text"
-                            margin="normal"
-                            value={values.contact}
-                            onChange={handleChange('contact')}
-                            startAdornment={
-                                <InputAdornment position="start">
-                                  <ContactPhoneOutlinedIcon />
-                                </InputAdornment>
-                              }
-                        />
-                </FormControl>
-                <Button variant="contained" color="primary">
-                    SIGN UP
+                {
+                  !isSignIn ? (
+                    <>
+                      <FormControl className={clsx(classes.margin, classes.textField, classes.formControl)}>
+                        <InputLabel id="category">Select your Category</InputLabel>
+                        <Select
+                            labelId="category"
+                            id="category"
+                            value={values.category}
+                            onChange={handleChange('category')}
+                        >
+                        <MenuItem value="owner">Owner</MenuItem>
+                        <MenuItem value="customer">Customer</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <FormControl className={clsx(classes.margin, classes.textField)}>
+                        <InputLabel  htmlFor="contact">Contact Number</InputLabel>
+                            <Input
+                                placeholder="Type your Contact Number"
+                                fullWidth
+                                id="contact"
+                                type="text"
+                                margin="normal"
+                                value={values.contact}
+                                onChange={handleChange('contact')}
+                                startAdornment={
+                                    <InputAdornment position="start">
+                                      <ContactPhoneOutlinedIcon />
+                                    </InputAdornment>
+                                  }
+                            />
+                    </FormControl>
+                  </>
+                  ) : null
+                }
+                
+                <Button onClick={formSubmitHandler}  variant="contained" color="primary">
+                  {
+                    isSignIn ? "Sign In": "Sign Up" 
+                  }
                 </Button>
             </form>
+            <div className="Login_Options">
+              <p>{ !isSignIn ? "Already Have an account" : "Don't Have an Account?" }</p>
+                 {
+                   !isSignIn ? <Button onClick={() => setIsSignIn(true)} >Sign In</Button> : <Button onClick={() => setIsSignIn(false)}>Sign Up</Button>
+                 }
+            </div>
         </div>
     )
 }
