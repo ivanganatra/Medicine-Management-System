@@ -3,6 +3,7 @@
     /* height: 600px; */
     width: 400px;
     max-width: 90%;
+    border: 1px solid #ccc;
     /* position: absolute; */
     /* top: calc(50% - 300px); */
     /* top: 50px; */
@@ -23,10 +24,10 @@
     z-index: -1 !important;
     top: 0;
     left: 0;
-    background-color: #045de9;
-    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
-    background-color: #20bf55 !important;
-    background-image: linear-gradient(315deg,#2eec6e  0%,#65f874  74%) !important;
+    /* background-color: #045de9; */
+    background-color: #eee;
+    /* background-color: #20bf55 !important; */
+    /* background-image: linear-gradient(315deg,#2eec6e  0%,#65f874  74%) !important; */
 }
 
 .Login_Title {

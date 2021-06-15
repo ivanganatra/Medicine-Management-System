@@ -6,7 +6,7 @@ import {
 import db from '../../firebase';
 import './LandingPage.css';
 import Button from '@material-ui/core/Button';
-import HomeImg from '../../assets/images/HomeImg.png';
+import HomeImg from '../../assets/images/HomepageImg3.jpeg';
 
 const LandingPage = () => {
     const userData = useSelector(selectUserData);

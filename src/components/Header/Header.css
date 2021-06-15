@@ -13,7 +13,7 @@
 
 .Header_Container {
     width: 80%;
-    height: 100px;
+    height: 90px;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -38,7 +38,7 @@
     justify-content: space-between;
     align-items: center;
     height: 57px;
-    margin-left: 300px;
+    margin-left: 200px;
     width: 100%;    
 }
 
@@ -48,10 +48,11 @@
     align-items: center;
     font-size: 16px;
     height: 100%;
+    padding-left: 0;
 }
 
 .Header_Links li {
-    padding: 0 25px;
+    padding: 0 20px;
     position: relative;
     height: 100%;
     display: flex;
@@ -59,11 +60,13 @@
 }
 
 .Header_Links li a {
+    text-decoration: none;
     color: #9698A6 !important;
     font-weight: 600;
+    font-size: 17px;
 }
 
-.Header_Links li a:hover {
+.Header_Links li a:hover, .Header_Links li a:focus, .Header_Links li a:active, .Header_Links .active {
     color: rgb(46, 44, 44) !important;
 }
 
@@ -78,9 +81,9 @@ a {
     /* height: 38px; */
     font-weight: 700;
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 20px;
-    padding: 12px 25px;
+    padding: 10px 25px;
     margin: 0 20px 0 55px;
     outline: none;
     border: none;
@@ -106,6 +109,9 @@ a {
     .Header_Container {
         height: 90px;
         width: 90%;
+    }
+    .Header_LinksContainer {
+        margin-left: 180px; 
     }
 }
 

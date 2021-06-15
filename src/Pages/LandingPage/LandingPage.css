@@ -2,8 +2,7 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #fafafa;  
+    align-items: center; 
     /* background-color: aliceblue; */
     /* height: 500px; */
 }
@@ -48,7 +47,7 @@
 }
 
 .Home_Img {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: flex-end;
 }
