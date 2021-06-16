@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import db from './firebase';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { selectUserData, AUTOLOGIN } from './reduxSlices/authSlice';
 import Login from './Pages/Login/Login'; 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import Header from './components/Header/Header';
+import Profile from './components/profile/Profile';
 import './App.css';
 
 const App = () => {
@@ -15,6 +17,11 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    db.collection("users").where("category", "==", "owner").get().then(snap => {
+      snap.forEach(doc => {
+        console.log(doc.id);
+      })
+    })
     dispatch(AUTOLOGIN());
   }, [])
 
@@ -42,10 +49,10 @@ const App = () => {
             </>
           ) : (
             <>
-                <Redirect to="/" />
               <Header />
-              {/* <Switch> */}
-              {/* </Switch> */}
+              <Switch>
+                <Route exact path="/profile" component = {Profile} />
+              </Switch>
             </>
           )
         }

@@ -1,0 +1,130 @@
+.form {
+    background-color: rgb(162, 248, 140);
+    height: 450px;
+    border-radius: 10%;
+    width: 390px;
+    color: black;
+    padding: 2.5rem;
+    margin-top: 100px;
+    margin-right: 100px;
+    border: solid 0.2rem rgb(35, 189, 35);
+}
+
+fieldset {
+    margin: 10px 0;
+}
+
+.txt {
+    font-size: 1.2rem;
+}
+
+.input {
+    width: 350px;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.input1 {
+    width: 350px;
+    height: 4.5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+button {
+    background-color: rgb(35, 189, 35);
+    color: black;
+    font-size: 2rem;
+    height: 3rem;
+    width: 180px;
+    border-radius: 15px;
+    margin-left: 100px;
+    margin-top: 2rem;
+}
+
+.avatarimg {
+    margin-top: 20px;
+    margin-left: 210px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: solid 0.5rem rgb(35, 189, 35);
+    margin-right: 400px;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #edffe5;
+    width: 100%;
+}
+
+.head {
+    background-color: rgb(162, 248, 140);
+    height: 50px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    color: black;
+    padding: 0.5rem;
+    margin-top: 100px;
+    margin-left: 220px;
+}
+
+.button1 {
+    background-color: rgb(35, 189, 35);
+    color: black;
+    font-size: 2rem;
+    height: 3rem;
+    width: 310px;
+    border-radius: 15px;
+    margin-left: 220px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.addform {
+    background-color: rgb(162, 248, 140);
+    height: 280px;
+    border-radius: 40px;
+    width: 420px;
+    color: black;
+    padding: 2.5rem;
+    margin-left: 130px;
+    margin-bottom: 80px;
+    border: solid 0.2rem rgb(35, 189, 35);
+}
+
+.addinput {
+    width: 410px;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.addinput1 {
+    width: 410px;
+    height: 4rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.shopimg {
+    margin-bottom: 50px;
+    width: 500px;
+    border-radius: 40px;
+    height: 350px;
+    border: solid 0.5rem rgb(35, 189, 35);
+    margin-left: 300px;
+    margin-right: 100px;
+}
