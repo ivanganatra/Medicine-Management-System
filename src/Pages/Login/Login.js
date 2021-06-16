@@ -143,14 +143,14 @@ const SignUp = () => {
         setPasswordError(false);
       }
 
-      if(!isSignIn && values.contact.length != 10) {
+      if(!isSignIn && values.contact.length !== 10) {
         setContactError(true);
         flag = 1;
       } else {
         setContactError(false);
       }
 
-      if(!isSignIn && values.category == '') {
+      if(!isSignIn && values.category === '') {
         setCategoryError(true);
         flag = 1;
       } else {

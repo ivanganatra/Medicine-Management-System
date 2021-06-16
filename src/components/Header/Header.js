@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import {
@@ -55,30 +55,40 @@ const Header = () => {
                     <div className="Header_LinksContainer">
                         <ul className="Header_Links">
                             <li>
-                                <Link className={location == "/" ? "active" : ""} to="/">
+                                <Link className={location === "/" ? "active" : ""} to="/">
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link className={location == "/about" ? "active" : ""} to="/about">
+                                <Link className={location === "/about" ? "active" : ""} to="/about">
                                     About
                                 </Link>
                             </li>
                             <li>
-                                <Link className={location == "/orders" ? "active" : ""} to='/orders'>
+                                <Link className={location === "/orders" ? "active" : ""} to='/orders'>
                                     Orders
                                 </Link>
                             </li>
                             <li>
-                                <Link className={location == "/profile" ? "active" : ""} to="/profile">
+                                <Link className={location === "/profile" ? "active" : ""} to="/profile">
                                     Profile
                                 </Link>
                             </li>
-                            <li>
-                                <Link className={location == "/createOrder" ? "active" : ""} to="/createOrder">
-                                    Create Order
-                                </Link>
-                            </li>
+                            {
+                                userData.category === "customer" ? (
+                                    <li>
+                                        <Link className={location === "/createOrder" ? "active" : ""} to="/createOrder">
+                                            Create Order
+                                        </Link>
+                                    </li>
+                                ) : (
+                                    <li>
+                                        <Link className={location === "/dashboard" ? "active" : ""} to="/dashboard">
+                                            Dashboard
+                                        </Link>
+                                    </li>
+                                )
+                            }
                         </ul>
                         <div className="Header_Buttons">
                             {/* <button className="Header_CreateAcc">Create Account</button> */}

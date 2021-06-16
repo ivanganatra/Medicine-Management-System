@@ -44,6 +44,7 @@ export const { LOGIN, LOGOUT, SET_ERROR, SET_ERROR_NULL, SET_LOADING } = authSli
 
 export const AUTOLOGIN = () => dispatch => {
     console.log("Hello");
+    dispatch(SET_LOADING(true));
     const token = localStorage.getItem('Frosthack__token');
     if(token) {
         const userId = localStorage.getItem('Frosthack__userId');
@@ -54,8 +55,10 @@ export const AUTOLOGIN = () => dispatch => {
                 userId: userId,
                 category: data.data() ? data.data().category : null
             }))
+            dispatch(SET_LOADING(false));
         })
-    }
+    } else
+        dispatch(SET_LOADING(false));
 }
 
 export const ASYNC_LOGIN = userData => dispatch => {
