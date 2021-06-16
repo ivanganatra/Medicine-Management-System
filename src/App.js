@@ -24,11 +24,11 @@ const App = () => {
     })
     dispatch(AUTOLOGIN());
   }, [])
-
+  console.log(userData);
   if(userData.loading) {
     return (
       <div className="d-flex mt-5 justify-content-center">
-        <CircularProgress />
+        <CircularProgress size={80} />
       </div>
     )
   }

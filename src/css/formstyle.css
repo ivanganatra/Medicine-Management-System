@@ -36,7 +36,7 @@ fieldset {
     outline: none;
 }
 
-button {
+.Profile button {
     background-color: rgb(35, 189, 35);
     color: black;
     font-size: 2rem;
@@ -58,14 +58,14 @@ button {
     margin-right: 400px;
 }
 
-.container {
+.Profile .container {
     display: inline-flex;
     flex-direction: row;
     background-color: #edffe5;
     width: 100%;
 }
 
-.head {
+.Profile .head {
     background-color: rgb(162, 248, 140);
     height: 50px;
     border-radius: 20px;

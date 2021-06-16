@@ -9,7 +9,7 @@ const authSlice = createSlice({
         userId: null,
         category: null,
         error: null,
-        loading: false
+        loading: true
     },
     reducers: {
         SET_LOADING: (state, action) => {

@@ -8,7 +8,7 @@ class ownerPage extends Component{4
     render(){
         return (
             <>
-            <div className="container"> 
+            <div className="container Profile"> 
               <div>
                 <h1 className="head">Hello,Seller</h1>
                 <img src={Avatar} alt="Customerimg" className="avatarimg"/>
@@ -18,7 +18,7 @@ class ownerPage extends Component{4
                 <Form className="form"/>
               </div>
             </div>
-            <div className="container">
+            <div className="container Profile">
               <div className="addform">
                 <Form1/>
               </div>

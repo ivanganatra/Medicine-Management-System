@@ -1,7 +1,7 @@
 import Customer from './customerPage';
 import Seller from './ownerPage';
 
-const isLoggedIn="owner";
+const isLoggedIn="customer";
 function Profile() {
 
     if(isLoggedIn==="owner"){

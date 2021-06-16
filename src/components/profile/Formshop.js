@@ -33,7 +33,7 @@ class Form1 extends Component{4
     
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="Profile" onSubmit={this.handleSubmit}>
                 <div>
                     <label className="txt">Name:</label>
                     <input type="text" className="addinput" required value={this.state.name} onChange={this.handleNameChange}/>
