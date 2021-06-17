@@ -2,7 +2,7 @@
     background-color: rgb(162, 248, 140);
     height: 620px;
     border-radius: 10%;
-    width: 480px;
+    width: 500px;
     color: white;
     padding: 2.5rem;
     border: solid 0.2rem rgb(35, 189, 35);
@@ -64,9 +64,10 @@ fieldset {
     display: inline-flex;
     flex-direction: row;
     width: 100%;
-    padding: 4rem;
+    padding: 100px;
     border: black 10px;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    column-gap: 3rem;
 }
 
 .Profile .head {
@@ -133,7 +134,7 @@ fieldset {
 }
 
 .Profile .logocont {
-    height: 600px;
+    height: 620px;
     width: 480px;
     border: solid 0.2rem rgb(35, 189, 35);
     border-radius: 50px;
@@ -143,16 +144,59 @@ fieldset {
 }
 
 @media (max-width: 600px) {
+    .Profile .logocont {
+        padding: 2rem;
+        height: 560px;
+        width: 400px;
+    }
+
     .container1 {
+        height: auto;
+        width: auto;
         flex-direction: column;
         padding: auto;
     }
 
-    .form {
+    .Profile .form {
         margin-top: 50px;
+        height: 560px;
+        width: 400px;
+    }
+
+    .input {
+        height: 2.5rem;
+        width: 320px;
+    }
+
+    .input1 {
+        width: 320px;
+        height: 3rem;
+    }
+
+    .addinput {
+        height: 2.5rem;
+        width: 320px;
+    }
+
+    .addinput1 {
+        width: 320px;
+        height: 3rem;
     }
 
     .addform {
         margin-bottom: 50px;
+        width: 400px;
+        height: 350px;
+    }
+
+    .Profile .shopimg {
+        height: 300px;
+        width: 400px;
+    }
+}
+
+@media (max-width:1200px) {
+    .container1 {
+        justify-content: space-between;
     }
 }
