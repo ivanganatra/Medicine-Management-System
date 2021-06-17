@@ -1,13 +1,13 @@
-.form {
+.Profile .form {
     background-color: rgb(162, 248, 140);
-    height: 450px;
+    height: 620px;
     border-radius: 10%;
-    width: 390px;
-    color: black;
+    width: 480px;
+    color: white;
     padding: 2.5rem;
-    margin-top: 100px;
-    margin-right: 100px;
     border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #18ad4a !important;
+    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
 }
 
 fieldset {
@@ -19,8 +19,9 @@ fieldset {
 }
 
 .input {
-    width: 350px;
-    height: 2rem;
+    width: 400px;
+    padding-left: 12px;
+    height: 2.8rem;
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
@@ -28,103 +29,130 @@ fieldset {
 }
 
 .input1 {
-    width: 350px;
+    width: 400px;
     height: 4.5rem;
+    padding-left: 12px;
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
     outline: none;
 }
 
-.Profile button {
+.Profile .formbutton {
     background-color: rgb(35, 189, 35);
-    color: black;
+    color: white;
     font-size: 2rem;
-    height: 3rem;
+    height: 3.5rem;
     width: 180px;
-    border-radius: 15px;
-    margin-left: 100px;
-    margin-top: 2rem;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 74%, #20bf55 74%) !important;
+    padding: 2px 40px !important;
+    border-radius: 200px !important;
+    border: solid 0.2rem white;
+    margin-top: 20px;
 }
 
 .avatarimg {
-    margin-top: 20px;
-    margin-left: 210px;
-    margin-bottom: 50px;
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    border: solid 0.5rem rgb(35, 189, 35);
-    margin-right: 400px;
+    border: solid 0.5rem rgb(165, 243, 165);
 }
 
-.Profile .container {
+.container1 {
+    margin-top: 100px;
     display: inline-flex;
     flex-direction: row;
-    background-color: #edffe5;
     width: 100%;
+    padding: 4rem;
+    border: black 10px;
+    justify-content: space-around;
 }
 
 .Profile .head {
     background-color: rgb(162, 248, 140);
-    height: 50px;
+    height: 60px;
     border-radius: 20px;
     width: 300px;
     text-align: center;
     color: black;
     padding: 0.5rem;
-    margin-top: 100px;
-    margin-left: 220px;
+    margin-bottom: 50px;
 }
 
-.button1 {
-    background-color: rgb(35, 189, 35);
-    color: black;
+.Profile .button1 {
+    color: white;
     font-size: 2rem;
-    height: 3rem;
+    height: 4rem;
     width: 310px;
-    border-radius: 15px;
-    margin-left: 220px;
+    margin-left: 0px;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+    padding: 2px 40px !important;
+    border-radius: 200px !important;
+    border: solid 0.2rem white;
     margin-top: 20px;
-    margin-bottom: 100px;
 }
 
 .addform {
-    background-color: rgb(162, 248, 140);
-    height: 280px;
+    height: 420px;
     border-radius: 40px;
-    width: 420px;
-    color: black;
+    width: 560px;
+    color: white;
     padding: 2.5rem;
-    margin-left: 130px;
-    margin-bottom: 80px;
     border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
 }
 
 .addinput {
-    width: 410px;
-    height: 2rem;
-    font-size: 1.2rem;
+    width: 450px;
+    height: 2.8rem;
+    font-size: 1.5rem;
     border-radius: 10px;
+    padding-left: 12px;
     border: none;
     outline: none;
 }
 
 .addinput1 {
-    width: 410px;
+    width: 450px;
     height: 4rem;
     font-size: 1.2rem;
+    padding-left: 12px;
     border-radius: 10px;
     border: none;
     outline: none;
 }
 
-.shopimg {
-    margin-bottom: 50px;
+.Profile .shopimg {
     width: 500px;
     border-radius: 40px;
-    height: 350px;
+    height: 420px;
     border: solid 0.5rem rgb(35, 189, 35);
-    margin-left: 300px;
-    margin-right: 100px;
+}
+
+.Profile .logocont {
+    height: 600px;
+    width: 480px;
+    border: solid 0.2rem rgb(35, 189, 35);
+    border-radius: 50px;
+    padding: 4.5rem;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+}
+
+@media (max-width: 600px) {
+    .container1 {
+        flex-direction: column;
+        padding: auto;
+    }
+
+    .form {
+        margin-top: 50px;
+    }
+
+    .addform {
+        margin-bottom: 50px;
+    }
 }

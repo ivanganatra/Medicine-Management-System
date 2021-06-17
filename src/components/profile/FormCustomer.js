@@ -76,7 +76,7 @@ class Form extends Component{4
                     <label className="txt">City</label>
                     <input type="text" className="input" required value={this.state.city} onChange={this.handleCityChange}/>
                 </div>
-                <button type="submit">Submit</button>
+                <button className="formbutton" type="submit">Submit</button>
             </form>
         )
     };

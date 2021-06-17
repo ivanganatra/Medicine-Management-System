@@ -1,20 +1,20 @@
 import Customer from './customerPage';
 import Seller from './ownerPage';
 
-const isLoggedIn="customer";
+const isLoggedIn="owner";
 function Profile() {
 
     if(isLoggedIn==="owner"){
       return (
         <>
-        <Customer/>
+        <Seller/>
         </>
       );
     }
     if(isLoggedIn==="customer"){
       return (
         <>
-        <Seller/>
+        <Customer/>
         </>
       );
     }
