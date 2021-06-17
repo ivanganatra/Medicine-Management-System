@@ -1,7 +1,40 @@
+.main-container {
+  padding-top: 35px;
+}
+
 h1.main-heading {
   /* text-align: center; */
   font-weight: 500;
   font-size: 45px;
   color: #2d314d;
   font-weight: normal;
+}
+
+.table {
+  font-size: 18px;
+  border-radius: 7px !important;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    font-size: 15px;
+  }
+  .main-container {
+    padding-top: 15px;
+  }
+}
+
+thead {
+  vertical-align: middle !important;
+  height: 60px;
+  background-color: #c2f8ab;
+}
+
+tbody {
+  background-color: #d9ffc9;
+}
+
+tr {
+  height: 60px;
 }
