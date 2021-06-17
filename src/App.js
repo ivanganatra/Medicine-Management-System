@@ -6,6 +6,7 @@ import db from './firebase';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { selectUserData, AUTOLOGIN } from './reduxSlices/authSlice';
 import Login from './Pages/Login/Login'; 
+import Orders from './Pages/Orders/Orders'; 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import Header from './components/Header/Header';
 import Profile from './components/profile/Profile';
@@ -52,6 +53,7 @@ const App = () => {
               <Header />
               <Switch>
                 <Route exact path="/profile" component = {Profile} />
+                <Route exact path="/orders" component = {Orders} />
               </Switch>
             </>
           )
