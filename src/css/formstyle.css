@@ -74,7 +74,7 @@ fieldset {
     background-color: rgb(162, 248, 140);
     height: 60px;
     border-radius: 20px;
-    width: 300px;
+    width: 320px;
     text-align: center;
     color: black;
     padding: 0.5rem;
@@ -154,6 +154,7 @@ fieldset {
         height: auto;
         width: auto;
         flex-direction: column;
+        align-items: center;
         padding: auto;
     }
 
