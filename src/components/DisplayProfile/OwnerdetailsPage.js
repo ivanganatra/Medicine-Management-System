@@ -15,7 +15,6 @@ class ownerPage extends Component{
               <div className="logocont">
                 <h1 className="head">Hello,Seller</h1>
                 <img src={Avatar} alt="Customerimg" className="avatarimg"/>
-                <button className="button1">Order Details</button>
               </div>
               <div className="form1">
                 <DisplayOwnerProfile className="form1"/>
