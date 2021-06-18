@@ -10,6 +10,18 @@
     background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
 }
 
+.Profile .form1 {
+    background-color: rgb(162, 248, 140);
+    height: 650px;
+    border-radius: 10%;
+    width: 700px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #18ad4a !important;
+    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
+}
+
 fieldset {
     margin: 10px 0;
 }
@@ -106,6 +118,17 @@ fieldset {
     background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
 }
 
+.addform1 {
+    height: 500px;
+    border-radius: 40px;
+    width: 700px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+}
+
 .addinput {
     width: 450px;
     height: 2.8rem;
@@ -143,6 +166,11 @@ fieldset {
     background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
 }
 
+.txt1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 600px) {
     .Profile .logocont {
         padding: 2rem;
@@ -157,7 +185,8 @@ fieldset {
         padding: auto;
     }
 
-    .Profile .form {
+    .Profile .form,
+    .form1 {
         margin-top: 50px;
         height: 560px;
         width: 400px;
