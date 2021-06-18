@@ -39,7 +39,7 @@
     align-items: center;
     height: 57px;
     margin-left: 200px;
-    width: 100%;    
+    width: 100%;
 }
 
 .Header_Links {
@@ -111,7 +111,7 @@ a {
         width: 90%;
     }
     .Header_LinksContainer {
-        margin-left: 180px; 
+        margin-left: 180px;
     }
 }
 

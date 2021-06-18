@@ -1,0 +1,119 @@
+.about *{
+    padding:0px;
+    margin:0px;
+    display: border-box;
+    font-size: 62.5%;
+    font-family: 'Public Sans', sans-serif;;
+    backface-visibility: visible;
+    overflow-x: hidden;
+    box-sizing: inherit;
+}
+.about nav ul{
+    display: flex;
+    align-items:center;
+    backface-visibility: hidden;
+}
+.about h1{
+    color:  hsl(233, 26%, 24%);
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+}
+.about h2{
+    font-size: 40px;
+    color: #2d314d;
+    font-weight: normal;
+}
+.about h3{
+    color:  hsl(233, 26%, 24%);
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.about h4{
+    font-size: 1.7rem;
+    color: hsl(233, 26%, 24%);
+    margin: 2rem 0 1rem 0;
+    transition: all 0.2s;
+}
+.about h4:hover{
+    color:hsl(136, 65%, 51%);
+}
+.about  a{
+     background-image: linear-gradient(90deg,hsl(136, 65%, 51%), hsl(192, 70%, 51%)) ;
+     font-family: 'Public Sans', sans-serif;;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 400;
+     font-size: 1.4rem;
+     text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 200px;
+
+  }
+.about .section__features{
+    padding:8rem 2.5rem;
+    background-color: hsl(0, 0%, 100%) ;
+}
+.about .section__features .first-box{
+    width:30%;
+
+}
+.about .section__features .first-box p{
+    width:80%;
+
+}
+.about .grid__layout{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 4rem;
+}
+.about .section__features p{
+    font-size: 18px;
+    color: #9698a6;
+    font-weight: normal;
+    margin: 30px 0;
+    word-spacing: 1.2px;
+}
+
+.about .feature__card img{
+    width: 20%;
+    margin-bottom: 2rem;
+}
+.about .feature__card p{
+    letter-spacing: initial;
+    margin-bottom: 2rem;
+}
+
+.about .section__cards{
+    background-color:  hsl(0, 0%, 98%);
+    padding: 8rem 12rem;
+}
+.about .section__cards h2{
+    margin-bottom: 6rem;
+}
+.about .grid__layouts{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 4rem;
+}
+.about figure{
+    overflow: hidden;
+    background-color: white;
+}
+
+.about figure img{
+    width: 100%;
+}
+.about figcaption{
+    padding: 2rem 3rem;
+    color: hsl(233, 8%, 62%);
+}
+.about figcaption p{
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 1.6;
+}
