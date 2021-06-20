@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Orders.css";
-import OrderImg from "../../assets/images/Orders/list3.jpeg";
+import OrderImg from "../../assets/images/Orders/list1.jpeg";
 class Orders extends Component {
   state = {
     orders: [
