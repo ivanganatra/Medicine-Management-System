@@ -1,0 +1,67 @@
+/* Footer */
+.Footer{
+    background-color:#212121;
+    color:white;
+    position: relative;
+    padding-top: 50px;
+    height:480px;
+  }
+  .Footer .list-section{
+    display: grid;
+    grid-template-columns: 22% 22% 22% 25% ;
+    width:62%;
+    height:200px;
+    position: relative;
+    left:30%;
+    bottom:45px;
+}
+.Footer .list-section  a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+.Footer .list-section a:hover, .Footer .list-section a:focus {
+    color: rgb(46, 44, 44) !important;
+}
+  .Footer  .list-section .our-info{
+      position: relative;
+      color:white;
+      margin-left: 36%;
+      width:50%;
+}
+  .Footer .our-info p{
+      width:250px;
+  }
+  .Footer .list-section div{
+    width:150px;
+  }
+  .Footer #statement{
+      position: relative;
+      left:35px;
+      width:280px;
+      top:100px;
+  }
+  .Footer .margin-space{
+      position:relative;
+      left:35px;
+  }
+  .Footer .social-network .before-hline{
+      width:1200px;
+      display:grid;
+      grid-template-columns: 76% 50%;
+  }
+  .Footer .social-network .after-hline{
+        width:1200px;
+        display:grid;
+        grid-template-columns: 77% 50%;
+  }
+  .Footer .social-network .after-hline .contact-details{
+        display: grid;
+        grid-template-columns: 28% 50%;
+  }
+  .Footer .social-network hr{
+        padding:0px;
+        margin-top:0px;
+        margin-bottom:5px;
+        position:relative;
+  }
