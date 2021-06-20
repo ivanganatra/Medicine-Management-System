@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import LandingPage from './Pages/LandingPage/LandingPage';
 import Header from './components/Header/Header';
 import Profile from './components/profile/Profile';
+import ProfileDisplay from './components/DisplayProfile/Profiledisplay';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import About from './components/Aboutus/about.js';
@@ -55,11 +56,13 @@ const App = () => {
               <Switch>
                 <Route exact path="/profile" component = {Profile} />
                 <Route  path="/about" component = {About} />
+                <Route  path="/profileDisplay" component = {ProfileDisplay} />
+                <Redirect to = "/" />
               </Switch>
             </>
           )
         }
-          <Route  path="/" component={Footer} />
+          {/* <Route  path="/" component={Footer} /> */}
     </div>
   );
 }
