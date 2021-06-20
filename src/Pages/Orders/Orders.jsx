@@ -2,7 +2,34 @@ import React, { Component } from 'react';
 import "./Orders.css";
 import OrderImg from "../../assets/images/Orders/list3.jpeg";
 class Orders extends Component {
-  state = {}
+  state = {
+    orders: [
+      {
+        id : "1001",
+        status: "Collected",
+        time : "12:00",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, nemo!",
+      },
+      {
+        id: "1002",
+        status: "Awaiting Collection",
+        time: "06:00",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, natus autem!",
+      },
+      {
+        id: "1003",
+        status: "Confirmed",
+        time: "08:00",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum.",
+      },
+      {
+        id: "1004",
+        status: "Pending",
+        time: "15:00",
+        desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.Necessitatibus commodi nihil qui officia.",
+      },
+    ]
+  }
   render() {
     return (
       <div className="" style={{ paddingTop: "95px" }}>
@@ -26,24 +53,18 @@ class Orders extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="ps-md-3">1</td>
-                      <td className="ps-md-3">Mark</td>
-                      <td className="ps-md-3">Otto</td>
-                      <td className="ps-md-3">@mdo</td>
-                    </tr>
-                    <tr>
-                      <td className="ps-md-3">2</td>
-                      <td className="ps-md-3">Jacob</td>
-                      <td className="ps-md-3">Thornton</td>
-                      <td className="ps-md-3">@fat</td>
-                    </tr>
-                    <tr>
-                      <td className="ps-md-3">3</td>
-                      <td className="ps-md-3">Larry the Bird</td>
-                      <td className="ps-md-3">Larry the Bird</td>
-                      <td className="ps-md-3">@twitter</td>
-                    </tr>
+                    {
+                      this.state.orders.map((order, index) => {
+                        return (
+                          <tr key={index}>
+                            <td className="ps-md-3">{order.id}</td>
+                            <td className="ps-md-3">{order.status}</td>
+                            <td className="ps-md-3">{order.time}</td>
+                            <td className="ps-md-3">{order.desc}</td>
+                          </tr>
+                        );
+                      })
+                    }
                   </tbody>
                 </table>
               </div>
