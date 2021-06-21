@@ -13,13 +13,12 @@
 .Profile .form1 {
     background-color: rgb(162, 248, 140);
     height: 650px;
-    border-radius: 10%;
     width: 700px;
-    color: white;
+    color: black;
     padding: 2.5rem;
-    border: solid 0.2rem rgb(35, 189, 35);
-    background-color: #18ad4a !important;
-    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
+    background-color: #3f75eb !important;
+    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
 
 fieldset {
@@ -28,6 +27,20 @@ fieldset {
 
 .txt {
     font-size: 1.2rem;
+}
+
+.div1 {
+    font-size: 2rem;
+    height: 70px;
+    padding: 0.5rem;
+    border-bottom: solid 1px black;
+}
+
+.adddiv1 {
+    font-size: 2rem;
+    height: 150px;
+    padding: 0.2rem;
+    border-bottom: solid 1px black;
 }
 
 .input {
@@ -119,14 +132,13 @@ fieldset {
 }
 
 .addform1 {
-    height: 500px;
-    border-radius: 40px;
+    height: 400px;
     width: 700px;
-    color: white;
+    color: black;
     padding: 2.5rem;
-    border: solid 0.2rem rgb(35, 189, 35);
-    background-color: #20bf55 !important;
-    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+    border: solid 0.1rem rgb(35, 189, 35);
+    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
 
 .addinput {
@@ -152,24 +164,32 @@ fieldset {
 .Profile .shopimg {
     width: 500px;
     border-radius: 40px;
-    height: 420px;
-    border: solid 0.5rem rgb(35, 189, 35);
+    height: 400px;
+    border: solid 0.2rem rgb(35, 189, 35);
 }
 
 .Profile .logocont {
     height: 620px;
     width: 480px;
-    border: solid 0.2rem rgb(35, 189, 35);
-    border-radius: 50px;
+    border-radius: 40px;
+    border: solid 0.1rem rgb(35, 189, 35);
     padding: 4.5rem;
-    background-color: #20bf55 !important;
-    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+    background-color: #3f75eb !important;
+    background-color: #18ad4a !important;
+    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
 }
 
-.txt1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.Profile .logocont1 {
+    height: 620px;
+    width: 480px;
+    border: solid 0.1rem rgb(35, 189, 35);
+    padding: 4.5rem;
+    background-color: #3f75eb !important;
+    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
+
+
 
 @media (max-width: 600px) {
     .Profile .logocont {
