@@ -7,6 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { selectUserData, AUTOLOGIN } from './reduxSlices/authSlice';
 import Login from './Pages/Login/Login'; 
 import Orders from './Pages/Orders/Orders'; 
+import CreateOrder from './Pages/CreateOrder/CreateOrder'; 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Header from './components/Header/Header';
@@ -58,6 +59,7 @@ const App = () => {
               <Switch>
                 <Route exact path="/profile" component = {Profile} />
                 <Route exact path="/orders" component = {Orders} />
+                <Route exact path="/new-order" component = {CreateOrder} />
                 <Route  path="/about" component = {About} />
                 <Route  path="/dashboard" component = {Dashboard} />
                 <Route  path="/profileDisplay" component = {ProfileDisplay} />
