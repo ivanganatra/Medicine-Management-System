@@ -74,7 +74,7 @@ const FileUpload = ({
       {/* <h5 className="text-center mb-0">{label}</h5> */}
       <FileUploadContainer className="mx-md-5">
         {/* <InputLabel>{label}</InputLabel> */}
-        <h6 className="text-center">Add an image of your prescription (.jpg,.png,.jpeg)</h6>
+        <h6 className="text-center pb-2">Add an image of your prescription (jpg, png, jpeg)</h6>
         <UploadFileBtn type="button" onClick={handleUploadBtnClick}>
           <i className="fas fa-file-upload" />
           <span> Upload {otherProps.multiple ? "files" : "a file"}</span>

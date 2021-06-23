@@ -19,7 +19,7 @@ function CreateOrder() {
       <div className="container">
         <div className="row p-3 d-flex align-items-center">
           <div className="col-12">
-            <h1 className="main-heading text-center">Create new Order</h1>
+            <h1 className="text-center">Create new Order</h1>
           </div>
           <div className="col-12 d-flex justify-content-center">
             <form onSubmit={handleSubmit} className="w-100 text-center">
