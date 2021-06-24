@@ -6,15 +6,9 @@ class customerPage extends Component{4
     render(){
         return (
             <>
-<<<<<<< HEAD
-            <div className="container Profile"> 
-              <div>
-                <h1 className="head">Hello,Customer</h1>
-=======
-            <div className="container1 Profile"> 
+            <div className="container1 Profile">
               <div className="logocont">
                 <h1 className="head">Hello, Customer</h1>
->>>>>>> jatin
                 <img src={Avatar} alt="Customerimg" className="avatarimg"/>
                 <button className="button1">Order Details</button>
               </div>

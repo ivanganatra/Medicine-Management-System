@@ -16,11 +16,7 @@ const LandingPage = () => {
 
     return (
         <div className="Home">
-<<<<<<< HEAD
-            <div className="Home_Header" id="Home_Header">
-=======
             <div className="Home_Header">
->>>>>>> jatin
                 <div className="Home_Img">
                     <img src={HomeImg} alt="image" />
                 </div>
@@ -32,15 +28,9 @@ const LandingPage = () => {
                             Learn More
                         </Button>
                     </div>
-<<<<<<< HEAD
-                    <div className="Home_Med2">
-                        <p>We link your orders to potential sellers to make your work easy. Control your medical needs like never before.</p>
-
-=======
                     <br></br>
                     <div className="Home_Med2">
                         <p>We link your orders to potential sellers to make your work easy. <br />Control your medical needs like never before.</p>
->>>>>>> jatin
                     </div>
                 </div>
             </div>

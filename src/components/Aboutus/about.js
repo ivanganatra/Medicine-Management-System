@@ -16,13 +16,6 @@ const About = () => {
     console.log("ABOUT O SECTION");
     const abc="about o section";
     return (
-<<<<<<< HEAD
-        <>
-                <section class="About">
-                    <h2>Why choose MedEasy?</h2>
-                    <p>We link your orders to potential sellers to make your work easy. <br></br>
-                    Control your medical needs like never before.</p>
-=======
         <div class="about">
                 <section class="section__features">
                     <div class="first-box">
@@ -30,7 +23,6 @@ const About = () => {
                         <p>We link your orders to potential sellers to make your work easy. <br></br>
                         Control your medical needs like never before.</p>
                     </div>
->>>>>>> jatin
                     <div class="grid__layout">
                         <div class="feature__card">
                             <img src="./images/icon-api.svg" alt="img" />
@@ -118,11 +110,7 @@ const About = () => {
                         <p></p>
                     </div>
                 </section>
-<<<<<<< HEAD
-        </>
-=======
         </div>
->>>>>>> jatin
     )
 }
 

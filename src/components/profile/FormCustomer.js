@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
 
-<<<<<<< HEAD
-class Form extends Component{4
-=======
 class Form extends Component{
->>>>>>> jatin
     constructor(props) {
         super(props)
-    
+
         this.state = {
             name: '',
             email: '',
@@ -44,12 +40,9 @@ class Form extends Component{
         })
     }
     handlePhoneChange = event => {
-<<<<<<< HEAD
-=======
         if(isNaN(event.target.value)) {
             return;
         }
->>>>>>> jatin
         this.setState({
             phone:event.target.value
         })
@@ -58,7 +51,7 @@ class Form extends Component{
         alert(`${this.state.name} ${this.state.email} ${this.state.phone} ${this.state.address} ${this.state.state} ${this.state.city}`);
         event.preventDefault()
     }
-    
+
     render(){
         return (
             <form className="Profile" onSubmit={this.handleSubmit}>
@@ -86,11 +79,7 @@ class Form extends Component{
                     <label className="txt">City</label>
                     <input type="text" className="input" required value={this.state.city} onChange={this.handleCityChange}/>
                 </div>
-<<<<<<< HEAD
-                <button type="submit">Submit</button>
-=======
                 <button className="formbutton" type="submit">Submit</button>
->>>>>>> jatin
             </form>
         )
     };

@@ -4,7 +4,7 @@ import '../../css/formstyle.css'
 class Form1 extends Component{4
     constructor(props) {
         super(props)
-    
+
         this.state = {
             name: '',
             address:'',
@@ -30,7 +30,7 @@ class Form1 extends Component{4
         alert(`${this.state.name} ${this.state.phone} ${this.state.address}`);
         event.preventDefault()
     }
-    
+
     render(){
         return (
             <form className="Profile" onSubmit={this.handleSubmit}>
@@ -46,11 +46,7 @@ class Form1 extends Component{4
                     <label className="txt">Address:</label>
                     <textarea className="addinput1" required value={this.state.address} onChange={this.handleAddressChange}></textarea>
                 </div>
-<<<<<<< HEAD
-                <button type="submit">Submit</button>
-=======
                 <button className="formbutton" type="submit">Submit</button>
->>>>>>> jatin
             </form>
         )
     };

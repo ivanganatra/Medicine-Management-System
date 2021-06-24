@@ -18,11 +18,7 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const userData = useSelector(selectUserData);
     const location = useLocation().pathname;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> jatin
     const closeShowSidedrawer = () => {
         setShowSidedrawer(false);
     }
@@ -34,21 +30,13 @@ const Header = () => {
             setScrolled(false);
         }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> jatin
     return (
         <>
             {
                 showSidedrawer ? <Sidedrawer show={showSidedrawer} closeSidedrawer={closeShowSidedrawer} /> : null
             }
-<<<<<<< HEAD
-            <div className={"Header " + (scrolled ? "Header_BoxShadow" : "")} id="Header">
-=======
-            
+
             <div className={"Header " + (scrolled ? "Header_BoxShadow" : "")}>
->>>>>>> jatin
                 <div className="Header_Container">
                     <div className="Header_Logo">
                         <Link to="/" >
@@ -62,10 +50,6 @@ const Header = () => {
                             <MenuRoundedIcon />
                         </IconButton>
                     </div>
-<<<<<<< HEAD
-=======
-                    
->>>>>>> jatin
                     <div className="Header_LinksContainer">
                         <ul className="Header_Links">
                             <li>
@@ -106,24 +90,13 @@ const Header = () => {
                         </ul>
                         <div className="Header_Buttons">
                             {/* <button className="Header_CreateAcc">Create Account</button> */}
-<<<<<<< HEAD
-
-=======
-                            
->>>>>>> jatin
                                 {
                                     !userData.token ? (
                                         <Link to='/login'>
                                             <button className="Header_Login Green_Button">Login
-<<<<<<< HEAD
                                             </button>
                                         </Link>
                                     ) :
-=======
-                                            </button> 
-                                        </Link>
-                                    ) : 
->>>>>>> jatin
                                     <button onClick={() => dispatch(LOGOUT())} className="Header_Login Green_Button">Logout</button>
                                 }
 
