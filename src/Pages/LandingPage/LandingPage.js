@@ -28,10 +28,10 @@ const LandingPage = () => {
                             Learn More
                         </Button>
                     </div>
+                    <br></br>
                     <div className="Home_Med2">
                         <p>We link your orders to potential sellers to make your work easy. <br />Control your medical needs like never before.</p>
                     </div>
-                    
                 </div>
             </div>
             {/* {
@@ -41,7 +41,7 @@ const LandingPage = () => {
                     </div>
                 ) : null
             } */}
-            
+
         </div>
     )
 }

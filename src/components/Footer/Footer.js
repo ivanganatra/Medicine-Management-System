@@ -11,9 +11,9 @@ import { Link as Link1 } from "react-scroll";
 import { Link as Link2 } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { matchPath } from "react-router";
+import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll';
 let location;
 const Footer=()=> {
-
     location=useLocation().pathname;
     const list_creator=(classname,header,name,id_code,link)=>{
         let loop=0;
@@ -22,12 +22,13 @@ const Footer=()=> {
             let abc="/"+ name.toLowerCase();
             loop+=1;
             let id='item-'+id_code+loop;
+            // '/' will be considered 'home' here
             if(classname=="Resource-list")
             {
-
+                //if the current page is the same page of the button which we are clicking
                 if(abc==location || (location=="/" && abc=="/home"))
                 {
-
+                    //Then scroll the page to the top
                     return(
                         <div key={id} id={id}>
                             <Link1 to="Header"
@@ -40,6 +41,7 @@ const Footer=()=> {
                         </div>
                     );
                 }
+                //Else move to the link
                 else
                 {
                     if(abc=="/home")
@@ -83,33 +85,30 @@ const Footer=()=> {
             </div>
             );
     }
-            let feature=["How it Works","For Teams","Pricing","Templates"];
-            let resources=["Home","About","Orders","Profile","Dashboard"];
-            let company=["Download Apps","Help Center","Productivity Methods","Refer a friend","Integrations","Channel Partners","Developer API"];
-            let list_feature=list_creator("Feature-list","Features",feature,"f","none");
-            let list_resource=list_creator("Resource-list","Our Links",resources,"r","Home_Header");
-            let list_company=list_creator("Company-list","Company",resources,"c","none");
+    const create_Icon=(name_icon)=>{
+        return(
+            <Icon icon={name_icon} width="30px" height="30px" rotate="180deg" flip="horizontal,vertical" />
+        );
+
+    }
+        let resources=["Home","About","Orders","Profile","Dashboard"];
+        let list_resource=list_creator("Resource-list","Links",resources,"r","Home_Header");
         return (
             <div className="Footer">
+                <div className="list-section">
                 <div id="statement">
                     <h1>MedEasy</h1>
                     <h4>Join millions of people who wish to have a safe and secure society.</h4>
                 </div>
-                <div className="list-section">
-                {/* All three sections of the list are created by the list_creator */}
                 {list_resource}
-                {list_feature}
-                {list_company}
                 <div class="our-info">
-                    <h3>Find Us Here</h3>
+                        <h3>Address</h3>
                     <p>
                         <h7>SGSITS INDORE</h7>
-                        <br></br>
-                        23, Sir M. Visvesvaraya Marg, Vallabh Nagar, Indore, Madhya Pradesh 452003
+                        <p>23, Sir M. Visvesvaraya Marg, Vallabh Nagar, Indore, Madhya Pradesh 452003</p>
                     </p>
                 </div>
                 </div>
-
                 <div class="social-network margin-space">
                         <div class="before-hline">
                             <h4>Contact</h4>
@@ -118,14 +117,20 @@ const Footer=()=> {
                         <hr></hr>
                         <div class="after-hline">
                             <div class="contact-details">
-                                <div class="contact-number"><img src="./phone.png"></img> +91 8839848727</div>
-                                <div class="contact-mail"><img src="./white-email (2).png"></img> ivan.ganatra@gmail.com</div>
+                                <div class="contact-number">
+                                    <img src="./phone.png"></img>
+                                    <span id="number">+918839848727</span>
+                                </div>
+                                <div class="contact-mail">
+                                    <img src="./white-email (2).png"></img>
+                                    <span id="mail">ivan.ganatra@gmail.com</span>
+                                </div>
                             </div>
                             <div className="social-links ">
-                            <Icon icon={bxlTwitter} width="30px" height="30px" rotate="180deg" flip="horizontal,vertical" />
-                            <Icon icon={bxlFacebook} width="30px" height="30px" rotate="180deg" flip="horizontal,vertical" />
-                            <Icon icon={bxlInstagram} width="30px" height="30px" rotate="180deg" flip="horizontal,vertical"/>
-                            <Icon icon={bxlLinkedin} width="30px" height="30px" rotate="180deg" flip="horizontal,vertical" />
+                            {create_Icon(bxlTwitter)}
+                            {create_Icon(bxlFacebook)}
+                            {create_Icon(bxlInstagram)}
+                            {create_Icon(bxlLinkedin)}
                             </div>
                         </div>
                 </div>
