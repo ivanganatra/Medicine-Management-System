@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Medicine-Management-System/static/css/main.c816e128.chunk.css",
+    "main.js": "/Medicine-Management-System/static/js/main.aad392a3.chunk.js",
+    "main.js.map": "/Medicine-Management-System/static/js/main.aad392a3.chunk.js.map",
+    "runtime-main.js": "/Medicine-Management-System/static/js/runtime-main.ba7c4c7d.js",
+    "runtime-main.js.map": "/Medicine-Management-System/static/js/runtime-main.ba7c4c7d.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/Medicine-Management-System/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.cb8bc80b.chunk.js": "/Medicine-Management-System/static/js/2.cb8bc80b.chunk.js",
+    "static/js/2.cb8bc80b.chunk.js.map": "/Medicine-Management-System/static/js/2.cb8bc80b.chunk.js.map",
+    "static/js/3.83eb9cac.chunk.js": "/Medicine-Management-System/static/js/3.83eb9cac.chunk.js",
+    "static/js/3.83eb9cac.chunk.js.map": "/Medicine-Management-System/static/js/3.83eb9cac.chunk.js.map",
+    "index.html": "/Medicine-Management-System/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/Medicine-Management-System/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.c816e128.chunk.css.map": "/Medicine-Management-System/static/css/main.c816e128.chunk.css.map",
+    "static/js/2.cb8bc80b.chunk.js.LICENSE.txt": "/Medicine-Management-System/static/js/2.cb8bc80b.chunk.js.LICENSE.txt",
+    "static/media/HomepageImg3.07cf949b.jpeg": "/Medicine-Management-System/static/media/HomepageImg3.07cf949b.jpeg",
+    "static/media/Logo.96358cfe.PNG": "/Medicine-Management-System/static/media/Logo.96358cfe.PNG",
+    "static/media/Shop.015bd6bf.jpeg": "/Medicine-Management-System/static/media/Shop.015bd6bf.jpeg",
+    "static/media/list11.1d1064f6.jpeg": "/Medicine-Management-System/static/media/list11.1d1064f6.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba7c4c7d.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.cb8bc80b.chunk.js",
+    "static/css/main.c816e128.chunk.css",
+    "static/js/main.aad392a3.chunk.js"
+  ]
+}
