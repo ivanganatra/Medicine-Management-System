@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .About html{
     font-size: 62.5%;
 }
@@ -26,10 +27,24 @@
     padding: 4rem 12rem;
 }
 .About nav ul{
+=======
+.about *{
+    padding:0px;
+    margin:0px;
+    display: border-box;
+    font-size: 62.5%;
+    font-family: 'Public Sans', sans-serif;;
+    backface-visibility: visible;
+    overflow-x: hidden;
+    box-sizing: inherit;
+}
+.about nav ul{
+>>>>>>> jatin
     display: flex;
     align-items:center;
     backface-visibility: hidden;
 }
+<<<<<<< HEAD
 .About nav ul li{
     display: block;
     align-self: stretch;
@@ -53,12 +68,16 @@
     color:  hsl(233, 26%, 24%);
 }
 .About h1{
+=======
+.about h1{
+>>>>>>> jatin
     color:  hsl(233, 26%, 24%);
     font-weight: 300;
     letter-spacing: 1px;
     font-size: 5rem;
     margin-bottom: 3rem;
 }
+<<<<<<< HEAD
 .About h2{
     color:  hsl(233, 26%, 24%);
     font-weight: 300;
@@ -67,18 +86,31 @@
     margin-bottom: 2rem;
 }
 .About h3{
+=======
+.about h2{
+    font-size: 40px;
+    color: #2d314d;
+    font-weight: normal;
+}
+.about h3{
+>>>>>>> jatin
     color:  hsl(233, 26%, 24%);
     letter-spacing: 1px;
     font-weight: 400;
     font-size: 2rem;
     margin-bottom: 2rem;
 }
+<<<<<<< HEAD
 .About h4{
+=======
+.about h4{
+>>>>>>> jatin
     font-size: 1.7rem;
     color: hsl(233, 26%, 24%);
     margin: 2rem 0 1rem 0;
     transition: all 0.2s;
 }
+<<<<<<< HEAD
 .About h4:hover{
     color:hsl(136, 65%, 51%);
 }
@@ -122,6 +154,12 @@
     transition: all 0.2s;
 }
 .About  a{
+=======
+.about h4:hover{
+    color:hsl(136, 65%, 51%);
+}
+.about  a{
+>>>>>>> jatin
      background-image: linear-gradient(90deg,hsl(136, 65%, 51%), hsl(192, 70%, 51%)) ;
      font-family: 'Public Sans', sans-serif;;
     color: white;
@@ -133,6 +171,7 @@
     border-radius: 200px;
 
   }
+<<<<<<< HEAD
   .About .header__button:hover{
      filter: opacity(0.8);
   }
@@ -141,10 +180,26 @@
     background-color: hsl(220, 16%, 96%) ;
 }
 .About .grid__layout{
+=======
+.about .section__features{
+    padding:8rem 2.5rem;
+    background-color: hsl(0, 0%, 100%) ;
+}
+.about .section__features .first-box{
+    width:30%;
+
+}
+.about .section__features .first-box p{
+    width:80%;
+
+}
+.about .grid__layout{
+>>>>>>> jatin
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 4rem;
 }
+<<<<<<< HEAD
 .About .section__features p{
     letter-spacing: 1px;
    color: hsl(233, 8%, 62%);
@@ -160,10 +215,26 @@
     margin-bottom: 2rem;
 }
 .About .feature__card p{
+=======
+.about .section__features p{
+    font-size: 18px;
+    color: #9698a6;
+    font-weight: normal;
+    margin: 30px 0;
+    word-spacing: 1.2px;
+}
+
+.about .feature__card img{
+    width: 20%;
+    margin-bottom: 2rem;
+}
+.about .feature__card p{
+>>>>>>> jatin
     letter-spacing: initial;
     margin-bottom: 2rem;
 }
 
+<<<<<<< HEAD
 .About .section__cards{
     background-color:  hsl(0, 0%, 98%);
     padding: 8rem 12rem;
@@ -172,15 +243,30 @@
     margin-bottom: 6rem;
 }
 .About .grid__layouts{
+=======
+.about .section__cards{
+    background-color:  hsl(0, 0%, 98%);
+    padding: 8rem 12rem;
+}
+.about .section__cards h2{
+    margin-bottom: 6rem;
+}
+.about .grid__layouts{
+>>>>>>> jatin
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 4rem;
 }
+<<<<<<< HEAD
 .About figure{
+=======
+.about figure{
+>>>>>>> jatin
     overflow: hidden;
     background-color: white;
 }
 
+<<<<<<< HEAD
 .About figure img{
     width: 100%;
 }
@@ -189,10 +275,21 @@
     color: hsl(233, 8%, 62%);
 }
 .About figcaption p{
+=======
+.about figure img{
+    width: 100%;
+}
+.about figcaption{
+    padding: 2rem 3rem;
+    color: hsl(233, 8%, 62%);
+}
+.about figcaption p{
+>>>>>>> jatin
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 1px;
     line-height: 1.6;
+<<<<<<< HEAD
 }
 .About footer{
     color: white;
@@ -201,4 +298,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+=======
+>>>>>>> jatin
 }

@@ -46,7 +46,11 @@ class Form1 extends Component{4
                     <label className="txt">Address:</label>
                     <textarea className="addinput1" required value={this.state.address} onChange={this.handleAddressChange}></textarea>
                 </div>
+<<<<<<< HEAD
                 <button type="submit">Submit</button>
+=======
+                <button className="formbutton" type="submit">Submit</button>
+>>>>>>> jatin
             </form>
         )
     };

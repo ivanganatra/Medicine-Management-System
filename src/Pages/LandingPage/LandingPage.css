@@ -42,7 +42,11 @@
 }
 
 .Home_Intro p:last-child {
+<<<<<<< HEAD
     margin-top: 100px;
+=======
+    margin-top: 75px;
+>>>>>>> jatin
 }
 
 .Home_Img {

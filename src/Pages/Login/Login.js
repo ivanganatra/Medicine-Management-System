@@ -82,7 +82,11 @@ const SignUp = () => {
     const [categoryError, setCategoryError] = useState(false);
     const [contactError, setContactError] = useState(false);
     const [emailError, setEmailError] = useState(false);
+<<<<<<< HEAD
     const [passwordError, setPasswordError] = useState(false);
+=======
+    const [passwordError, setPasswordError] = useState(false); 
+>>>>>>> jatin
 
     const [values, setValues] = useState({
       email: '',
@@ -107,19 +111,32 @@ const SignUp = () => {
       })
     }, [isSignIn])
 
+<<<<<<< HEAD
 
 
+=======
+    
+    
+>>>>>>> jatin
     const handleChange = (prop) => (event) => {
       if(prop === 'contact' && isNaN(event.target.value)) {
         return;
       }
       setValues({ ...values, [prop]: event.target.value });
     };
+<<<<<<< HEAD
 
     const handleClickShowPassword = () => {
       setValues({ ...values, showPassword: !values.showPassword });
     };
 
+=======
+    
+    const handleClickShowPassword = () => {
+      setValues({ ...values, showPassword: !values.showPassword });
+    };
+    
+>>>>>>> jatin
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };
@@ -191,7 +208,11 @@ const SignUp = () => {
                         {
                           emailError ? <FormHelperText>Enter a valid Email ID</FormHelperText> : null
                         }
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> jatin
                 </FormControl>
                 <FormControl error={passwordError} className={clsx(classes.margin, classes.textField, classes.formControl)}>
                     <InputLabel htmlFor="password">Password</InputLabel>
@@ -201,7 +222,11 @@ const SignUp = () => {
                         id="password"
                         type={values.showPassword ? 'text' : 'password'}
                         value={values.password}
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> jatin
                         onChange={handleChange('password')}
                         startAdornment={
                             <InputAdornment position="start">
@@ -223,7 +248,11 @@ const SignUp = () => {
                     {
                       passwordError ? <FormHelperText>Password must have at least 1 number 1 uppercase and lowercase character, 1 special symbol and between 8 to 20 characters</FormHelperText> : null
                     }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> jatin
                 </FormControl>
                 {
                   !isSignIn ? (
@@ -242,7 +271,11 @@ const SignUp = () => {
                         {
                           categoryError ? <FormHelperText>Please select a category</FormHelperText> : null
                         }
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> jatin
                     </FormControl>
                     <FormControl error={contactError} className={clsx(classes.margin, classes.textField)}>
                         <InputLabel  htmlFor="contact">Contact Number</InputLabel>
@@ -263,7 +296,11 @@ const SignUp = () => {
                             {
                               contactError ? <FormHelperText>Enter a Valid Contact Number (10 digits only)</FormHelperText> : null
                             }
+<<<<<<< HEAD
 
+=======
+                            
+>>>>>>> jatin
                     </FormControl>
                   </>
                   ) : null
@@ -272,10 +309,17 @@ const SignUp = () => {
                 {
                   loading ? <CircularProgress /> : error ? <p className="text-center text-danger mb-0 mt-3">{error}</p> : null
                 }
+<<<<<<< HEAD
 
                 <Button onClick={formSubmitHandler}  variant="contained" color="primary">
                   {
                     isSignIn ? "Sign In": "Sign Up"
+=======
+                
+                <Button onClick={formSubmitHandler}  variant="contained" color="primary">
+                  {
+                    isSignIn ? "Sign In": "Sign Up" 
+>>>>>>> jatin
                   }
                 </Button>
             </form>

@@ -1,0 +1,104 @@
+.Dashboard {
+    margin-top: 90px;
+}
+
+.Dashboard_Container {
+    position: relative;
+}
+
+.Dashboard::before {
+    width: 100%;
+    height: 100vh;
+    content: "";
+    background-color: rgb(246,246,246);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.Dashboard_Orders {
+    width: 800px;
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+.Dashboard_Order {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(216, 214, 214);
+    padding: 15px 20px;
+}
+
+.MuiAvatar-root {
+    border: 1px solid #ccc;
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.MuiAvatar-circle {
+    height: 50px;
+    width: 50px;
+}
+
+.Dashboard_OrderTitle {
+    margin-left: 15px;
+}
+
+.Dashboard_PostTime {
+    color: rgb(126 126 139);
+    font-weight: bold;
+    font-family: monospace;
+    word-spacing: -.15rem;
+}
+
+.Dashboard_Prescription {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.Dashboard_Prescription img {
+    width: 100%;
+    height: 100%;
+}
+
+.Field {
+    color: #353434;
+    font-weight: bold;
+}
+
+.Dashboard_PostTime_SmallScreen {
+    display: none;
+}
+
+.Dashboard_PostTime_SmallScreen span {
+    display: inline-block !important;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+@media (max-width: 786px) {
+    .Dashboard_PostTime_SmallScreen {
+        display: block;
+        color: rgb(126 126 139);
+        font-weight: bold;
+        font-family: monospace;
+        word-spacing: -.15rem;
+    }
+
+    .Dashboard_OrderTitle h3 {
+        margin-bottom: 0px;
+    }
+
+    .Dashboard_PostTime {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .Dashboard_PostTime_SmallScreen {
+        font-size: 15px;
+    }
+}

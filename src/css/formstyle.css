@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .form {
     background-color: rgb(162, 248, 140);
     height: 450px;
@@ -8,6 +9,30 @@
     margin-top: 100px;
     margin-right: 100px;
     border: solid 0.2rem rgb(35, 189, 35);
+=======
+.Profile .form {
+    background-color: rgb(162, 248, 140);
+    height: 620px;
+    border-radius: 10%;
+    width: 500px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #18ad4a !important;
+    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
+}
+
+.Profile .form1 {
+    background-color: rgb(162, 248, 140);
+    height: 650px;
+    border-radius: 10%;
+    width: 700px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #18ad4a !important;
+    background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
+>>>>>>> jatin
 }
 
 fieldset {
@@ -19,8 +44,14 @@ fieldset {
 }
 
 .input {
+<<<<<<< HEAD
     width: 350px;
     height: 2rem;
+=======
+    width: 400px;
+    padding-left: 12px;
+    height: 2.8rem;
+>>>>>>> jatin
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
@@ -28,14 +59,21 @@ fieldset {
 }
 
 .input1 {
+<<<<<<< HEAD
     width: 350px;
     height: 4.5rem;
+=======
+    width: 400px;
+    height: 4.5rem;
+    padding-left: 12px;
+>>>>>>> jatin
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
     outline: none;
 }
 
+<<<<<<< HEAD
 .Profile button {
     background-color: rgb(35, 189, 35);
     color: black;
@@ -63,10 +101,43 @@ fieldset {
     flex-direction: row;
     background-color: #edffe5;
     width: 100%;
+=======
+.Profile .formbutton {
+    background-color: rgb(35, 189, 35);
+    color: white;
+    font-size: 2rem;
+    height: 3.5rem;
+    width: 180px;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 74%, #20bf55 74%) !important;
+    padding: 2px 40px !important;
+    border-radius: 200px !important;
+    border: solid 0.2rem white;
+    margin-top: 20px;
+}
+
+.avatarimg {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: solid 0.5rem rgb(165, 243, 165);
+}
+
+.container1 {
+    margin-top: 100px;
+    display: inline-flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 100px;
+    border: black 10px;
+    justify-content: space-evenly;
+    column-gap: 3rem;
+>>>>>>> jatin
 }
 
 .Profile .head {
     background-color: rgb(162, 248, 140);
+<<<<<<< HEAD
     height: 50px;
     border-radius: 20px;
     width: 300px;
@@ -106,19 +177,80 @@ fieldset {
     height: 2rem;
     font-size: 1.2rem;
     border-radius: 10px;
+=======
+    height: 60px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    color: black;
+    padding: 0.5rem;
+    margin-bottom: 50px;
+}
+
+.Profile .button1 {
+    color: white;
+    font-size: 2rem;
+    height: 4rem;
+    width: 310px;
+    margin-left: 0px;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+    padding: 2px 40px !important;
+    border-radius: 200px !important;
+    border: solid 0.2rem white;
+    margin-top: 20px;
+}
+
+.addform {
+    height: 420px;
+    border-radius: 40px;
+    width: 560px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+}
+
+.addform1 {
+    height: 500px;
+    border-radius: 40px;
+    width: 700px;
+    color: white;
+    padding: 2.5rem;
+    border: solid 0.2rem rgb(35, 189, 35);
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+}
+
+.addinput {
+    width: 450px;
+    height: 2.8rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    padding-left: 12px;
+>>>>>>> jatin
     border: none;
     outline: none;
 }
 
 .addinput1 {
+<<<<<<< HEAD
     width: 410px;
     height: 4rem;
     font-size: 1.2rem;
+=======
+    width: 450px;
+    height: 4rem;
+    font-size: 1.2rem;
+    padding-left: 12px;
+>>>>>>> jatin
     border-radius: 10px;
     border: none;
     outline: none;
 }
 
+<<<<<<< HEAD
 .shopimg {
     margin-bottom: 50px;
     width: 500px;
@@ -127,4 +259,86 @@ fieldset {
     border: solid 0.5rem rgb(35, 189, 35);
     margin-left: 300px;
     margin-right: 100px;
+=======
+.Profile .shopimg {
+    width: 500px;
+    border-radius: 40px;
+    height: 420px;
+    border: solid 0.5rem rgb(35, 189, 35);
+}
+
+.Profile .logocont {
+    height: 620px;
+    width: 480px;
+    border: solid 0.2rem rgb(35, 189, 35);
+    border-radius: 50px;
+    padding: 4.5rem;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+}
+
+.txt1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1068px) {
+    .Profile .logocont {
+        padding: 2rem;
+        height: 560px;
+        width: 400px;
+    }
+
+    .container1 {
+        height: auto;
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: auto;
+    }
+
+    .Profile .form,
+    .form1 {
+        margin-top: 50px;
+        height: 560px;
+        width: 400px;
+    }
+
+    .input {
+        height: 2.5rem;
+        width: 320px;
+    }
+
+    .input1 {
+        width: 320px;
+        height: 3rem;
+    }
+
+    .addinput {
+        height: 2.5rem;
+        width: 320px;
+    }
+
+    .addinput1 {
+        width: 320px;
+        height: 3rem;
+    }
+
+    .addform {
+        margin-bottom: 50px;
+        width: 400px;
+        height: 350px;
+    }
+
+    .Profile .shopimg {
+        height: 300px;
+        width: 400px;
+    }
+}
+
+@media (max-width:1200px) {
+    .container1 {
+        justify-content: space-between;
+    }
+>>>>>>> jatin
 }

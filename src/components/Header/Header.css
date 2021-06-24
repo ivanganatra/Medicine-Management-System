@@ -66,7 +66,11 @@
     font-size: 17px;
 }
 
+<<<<<<< HEAD
 .Header_Links li a:hover, .Header_Links li a:focus, .Header_Links li a:active, .Header_Links .active {
+=======
+.Header_Links li a:hover, .Header_Links li a:active, .Header_Links .active {
+>>>>>>> jatin
     color: rgb(46, 44, 44) !important;
 }
 

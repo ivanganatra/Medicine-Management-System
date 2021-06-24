@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
 
+<<<<<<< HEAD
 class Form extends Component{4
+=======
+class Form extends Component{
+>>>>>>> jatin
     constructor(props) {
         super(props)
     
@@ -40,6 +44,12 @@ class Form extends Component{4
         })
     }
     handlePhoneChange = event => {
+<<<<<<< HEAD
+=======
+        if(isNaN(event.target.value)) {
+            return;
+        }
+>>>>>>> jatin
         this.setState({
             phone:event.target.value
         })
@@ -76,7 +86,11 @@ class Form extends Component{4
                     <label className="txt">City</label>
                     <input type="text" className="input" required value={this.state.city} onChange={this.handleCityChange}/>
                 </div>
+<<<<<<< HEAD
                 <button type="submit">Submit</button>
+=======
+                <button className="formbutton" type="submit">Submit</button>
+>>>>>>> jatin
             </form>
         )
     };
