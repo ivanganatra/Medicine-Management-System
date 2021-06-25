@@ -97,7 +97,7 @@ const Footer=()=> {
             <div className="Footer">
                 <div className="list-section">
                 <div id="statement">
-                    <h1>MedEasy</h1>
+                    <h1 >MedEasy</h1>
                     <h4>Join millions of people who wish to have a safe and secure society.</h4>
                 </div>
                 {list_resource}
