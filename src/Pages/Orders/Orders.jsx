@@ -43,7 +43,7 @@ class Orders extends Component {
       //   img_url: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2Fprescription2.jpg?alt=media&token=e74e5cde-7ef0-40ab-9d79-10ebe21b08dc",
       //   id: "01004",
       //   status: "confirmed",
-      // },
+      // }, 
       // {
       //   accepted_by: "Jjaxv2ISvdeN5lqaqTNqJvWxdcp1",
       //   created_at: "June 24, 2021 11:00:01 PM UTC+5:30",
