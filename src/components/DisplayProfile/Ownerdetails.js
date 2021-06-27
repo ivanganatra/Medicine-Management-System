@@ -1,6 +1,6 @@
 import { Height } from '@material-ui/icons';
 import React,{ Component } from 'react'
-import '../../css/formstyle.css'
+import './display.css'
 
 
 
@@ -22,43 +22,43 @@ class displayOwnerProfile extends Component{
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Name: {this.state.name}</label>)
-                    : <label className="txt1">Name: </label>
+                    (<label ><span className="txt1">Name:</span> {this.state.name}</label>)
+                    : <label ><span className="txt1">Name:</span> -- </label>
                 }
                 </div>
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Email-id: {this.state.email}</label>)
-                    : <label className="txt1">Email-id: -- </label>
+                    (<label><span className="txt1">Email-id:</span> {this.state.email}</label>)
+                    : <label><span className="txt1">Email-id:</span> -- </label>
                 } 
                 </div>
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Phone: {this.state.phone}</label>)
-                    : <label className="txt1">Phone: -- </label>
+                    (<label><span className="txt1">Phone #:</span> {this.state.phone}</label>)
+                    : <label><span className="txt1">Phone #:</span> -- </label>
                 }
                 </div>
                 <div className="adddiv1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Address: {this.state.add}</label>)
-                    : <label className="txt1">Address: --</label>
+                    (<label><span className="txt1">Address:</span> {this.state.add}</label>)
+                    : <label><span className="txt1">Address:</span> --</label>
                 }
                 </div>
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">State: {this.state.state}</label>)
-                    : <label className="txt1">State: --</label>
+                    (<label><span className="txt1">State:</span>{this.state.state}</label>)
+                    : <label><span className="txt1"></span> --</label>
                 }
                 </div>
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">City: {this.state.city}</label>)
-                    : <label className="txt1">City: --</label>
+                    (<label><span className="txt1">City:</span> {this.state.city}</label>)
+                    : <label><span className="txt1">City:</span> --</label>
                 }
                     
                 </div>

@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import '../../css/formstyle.css'
+import './display.css'
 
 class displayShopProfile extends Component{
     constructor(props) {
@@ -16,22 +16,22 @@ class displayShopProfile extends Component{
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Name: {this.state.name}</label>)
-                    : <label className="txt1">Name: </label>
+                    (<label><span className="txt1">Shop Name:</span> {this.state.name}</label>)
+                    : <label><span className="txt1">Shop Name:</span> </label>
                 }
                 </div>
                 <div className="div1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Phone: {this.state.phone}</label>)
-                    : <label className="txt1">Phone: -- </label>
+                    (<label><span className="txt1">Shop Phone #:</span> {this.state.phone}</label>)
+                    : <label><span className="txt1">Shop Phone #:</span> -- </label>
                 }
                 </div>
                 <div className="adddiv1">
                 {
                     this.state.name ? 
-                    (<label className="txt1">Address: {this.state.add}</label>)
-                    : <label className="txt1">Address: --</label>
+                    (<label><span className="txt1">Shop Address:</span> {this.state.add}</label>)
+                    : <label><span className="txt1">Shop Address:</span> --</label>
                 }
                 </div>
             </form>
