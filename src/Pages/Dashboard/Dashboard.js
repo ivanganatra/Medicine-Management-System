@@ -48,8 +48,14 @@ const Dashboard = () => {
     useEffect(() => {
         let fetchOrders = [];
         setLoading(true);
-        db.collection("orders").where("status", "==", "pending").get().then(snapshot => {
-            fetchOrders = snapshot.docs.map(async doc => {
+        db.collection("orders").orderBy('created_at', 'desc').get().then(snapshot => {
+            let pendingOrders = [];
+            snapshot.docs.forEach(doc => {
+                if(doc.data().status === "pending") {
+                    pendingOrders.push(doc);
+                }
+            })
+            fetchOrders = pendingOrders.map(async doc => {
                 let orderDetail = {};
                 await db.collection("profiles").doc(doc.data().created_by).get().then(doc2 => {
                     orderDetail = {
@@ -69,9 +75,10 @@ const Dashboard = () => {
             })
 
             Promise.all(fetchOrders).then(responseOrders => {
-                setLoading(false);
+                
                 setOrders(responseOrders);
             })
+            setLoading(false);
         })
     }, [])
 
@@ -144,10 +151,17 @@ const Dashboard = () => {
                                                 <span className="Field">City</span>: {order.city}<br/>
                                                 <span className="Field">State</span>: {order.state}<br/>
                                             </div>
-                                            <h4 className="mt-3">Description: </h4>
-                                            <p>
-                                                {order.description}
-                                            </p>
+                                            {
+                                                order.description !== "" ? (
+                                                    <>
+                                                        <h4 className="mt-3">Description: </h4>
+                                                        <p>
+                                                            {order.description}
+                                                        </p>
+                                                    </>
+                                                ) : null
+                                            }
+                                            
                                             <h4 className="mt-3">Prescription: </h4>
                                             <div className="Dashboard_Prescription">
                                                 <a href={order.imgUrl} target="_blank">

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter, Link as RouterLink } from 'react-router-dom';
+import db from '../../firebase';
 import "./Orders.css";
 import OrderImg from "../../assets/images/Orders/list11.jpeg";
 class Orders extends Component {
@@ -53,6 +55,20 @@ class Orders extends Component {
       },
     ]
   }
+
+  componentDidMount() {
+    db.collection("orders").orderBy('created_at').get().then(snapshot => {
+      let userOrders = [];
+      snapshot.docs.forEach(doc => {
+        if(doc.data().created_by === this.props.userId) {
+          userOrders.push(doc.data());
+        }
+      })
+      console.log(this.props);
+      console.log(userOrders);
+    })
+  }
+
   render() {
     return (
       <div className="main-container" style={{ paddingTop: "95px" }}>
@@ -132,4 +148,10 @@ class Orders extends Component {
   }
 }
 
-export default withRouter(Orders);
+const mapStateToProps = state => {
+  return {
+    userId: state.auth.userId
+  }
+}
+
+export default connect(mapStateToProps)(withRouter(Orders));

@@ -14,7 +14,7 @@ import {
 } from "./file-upload.styles";
 
 const KILO_BYTES_PER_BYTE = 1000;
-const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 5000000;
+const DEFAULT_MAX_FILE_SIZE_IN_BYTES = 10000000;
 
 const convertNestedObjectToArray = (nestedObj) =>
   Object.keys(nestedObj).map((key) => nestedObj[key]);
@@ -43,7 +43,7 @@ const FileUpload = ({
         files[file.name] = file;
       }
       else {
-        alert("Maximum Size of Image is 5 MB");
+        alert("Maximum Size of Image is 10 MB");
       }
     }
     return { ...files };
