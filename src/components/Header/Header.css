@@ -39,7 +39,7 @@
     align-items: center;
     height: 57px;
     margin-left: 200px;
-    width: 100%;    
+    width: 100%;
 }
 
 .Header_Links {
@@ -66,7 +66,7 @@
     font-size: 17px;
 }
 
-.Header_Links li a:hover, .Header_Links li a:focus, .Header_Links li a:active, .Header_Links .active {
+.Header_Links li a:hover, .Header_Links li a:active, .Header_Links .active {
     color: rgb(46, 44, 44) !important;
 }
 
@@ -111,7 +111,7 @@ a {
         width: 90%;
     }
     .Header_LinksContainer {
-        margin-left: 180px; 
+        margin-left: 180px;
     }
 }
 

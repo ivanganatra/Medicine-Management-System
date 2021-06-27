@@ -14,7 +14,7 @@ class ownerPage extends Component{
             <>
             <Container fluid className="container1 Profile"> 
               <div className="logocont">
-                <h1 className="head">Hello,Seller</h1>
+                <h1 className="head">Hello, Seller</h1>
                 <img src={Avatar} alt="Customerimg" className="avatarimg"/>
                 <button className="button1">Order Details</button>
               </div>
@@ -22,7 +22,7 @@ class ownerPage extends Component{
                 <Form className="form"/>
               </div>
             </Container>
-            <Container fluid className="container1 Profile">
+            <Container style={{marginTop: "0px"}} fluid className="container1 Profile">
               <div className="addform">
                 <Form1/>
               </div>

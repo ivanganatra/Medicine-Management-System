@@ -99,7 +99,7 @@ fieldset {
     background-color: rgb(162, 248, 140);
     height: 60px;
     border-radius: 20px;
-    width: 300px;
+    width: 320px;
     text-align: center;
     color: black;
     padding: 0.5rem;
@@ -191,7 +191,10 @@ fieldset {
 
 
 
-@media (max-width: 600px) {
+
+
+@media (max-width: 1068px) {
+
     .Profile .logocont {
         padding: 2rem;
         height: 560px;
@@ -202,6 +205,7 @@ fieldset {
         height: auto;
         width: auto;
         flex-direction: column;
+        align-items: center;
         padding: auto;
     }
 

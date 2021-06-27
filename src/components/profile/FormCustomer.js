@@ -40,6 +40,9 @@ class Form extends Component{
         })
     }
     handlePhoneChange = event => {
+        if(isNaN(event.target.value)) {
+            return;
+        }
         this.setState({
             phone:event.target.value
         })

@@ -1,0 +1,64 @@
+.main-container {
+  padding-top: 35px;
+  /* background-color: rgb(246, 246, 246); */
+}
+
+h1.main-heading {
+  /* text-align: center; */
+  font-weight: 500;
+  font-size: 2.7rem;
+  /* color: #2d314d; */
+  /* font-weight: normal; */
+}
+
+.table {
+  font-size: 15px !important;
+  border-radius: 7px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 15%);
+  border-top-color: #fff!important;
+  width: 100%;
+  outline-offset: -1px;
+}
+
+/* .tab-container {} */
+
+@media screen and (max-width: 768px) {
+  .table {
+    font-size: 15px;
+  }
+  .main-container {
+    padding-top: 15px;
+  }
+}
+
+thead {
+  vertical-align: middle !important;
+  height: 60px;
+  background-color: rgb(0 0 0/2%);
+  border: 0px !important;
+  /* background-color: #c2f8ab; */
+}
+
+thead tr, thead tr th {
+  /* border: 0px !important; */
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+th, td {
+  height: 70px;
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+/* tbody {
+  background-color: #d9ffc9;
+} */
+
+tr {
+  height: 60px;
+}
+
+.badge {
+  font-size: 0.9em !important;
+}
