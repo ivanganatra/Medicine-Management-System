@@ -13,25 +13,25 @@ class displayShopProfile extends Component{
     render(){
         return (
             <form className="Profile">
-                <div className="div1">
+                <div className="displaydiv1">
                 {
                     this.state.name ? 
-                    (<label><span className="txt1">Shop Name:</span> {this.state.name}</label>)
-                    : <label><span className="txt1">Shop Name:</span> </label>
+                    (<label><span className="displaytxt1">Shop Name:</span> {this.state.name}</label>)
+                    : <label><span className="displaytxt1">Shop Name:</span> </label>
                 }
                 </div>
-                <div className="div1">
+                <div className="displaydiv1">
                 {
                     this.state.name ? 
-                    (<label><span className="txt1">Shop Phone #:</span> {this.state.phone}</label>)
-                    : <label><span className="txt1">Shop Phone #:</span> -- </label>
+                    (<label><span className="displaytxt1">Shop Phone #:</span> {this.state.phone}</label>)
+                    : <label><span className="displaytxt1">Shop Phone #:</span> -- </label>
                 }
                 </div>
-                <div className="adddiv1">
+                <div className="displayadddiv1">
                 {
                     this.state.name ? 
-                    (<label><span className="txt1">Shop Address:</span> {this.state.add}</label>)
-                    : <label><span className="txt1">Shop Address:</span> --</label>
+                    (<label><span className="displaytxt1">Shop Address:</span> {this.state.add}</label>)
+                    : <label><span className="displaytxt1">Shop Address:</span> --</label>
                 }
                 </div>
             </form>

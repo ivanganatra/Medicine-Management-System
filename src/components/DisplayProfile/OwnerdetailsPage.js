@@ -17,18 +17,18 @@ class ownerPage extends Component{
     render(){
         return (
             <>
-            <Container fluid className="container1 Profile">
-              <h1 className="txt">Personal details</h1>
-              <div className="form1">
-                <DisplayOwnerProfile className="form1"/>
+            <Container fluid className="displaycontainer1 Profile">
+              <h1 className="displaytxt">Personal details</h1>
+              <div className="displayform1">
+                <DisplayOwnerProfile className="displayform1"/>
               </div>
-              <h1 className="txt">Shop details</h1>
-              <div className="addform1">
+              <h1 className="displaytxt">Shop details</h1>
+              <div className="displayaddform1">
                 <DisplayShopProfile/>
               </div>
               {
                   this.state.c_id==this.state.o_id?
-                  (<button className="button1">Update Details</button>):<div></div>
+                  (<button className="displaybutton1">Update Details</button>):<div></div>
               }
             </Container>
             </>
