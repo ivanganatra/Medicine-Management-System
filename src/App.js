@@ -69,7 +69,6 @@ const App = () => {
           )
         }
         <Route  path="/"  component = {Footer} />
-          {/* <Route  path="/" component={Footer} /> */}
     </div>
   );
 }

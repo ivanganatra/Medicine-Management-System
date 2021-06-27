@@ -60,7 +60,7 @@ class Orders extends Component {
     db.collection("orders").orderBy('created_at', "desc").get().then(snapshot => {
       let userOrders = [];
       snapshot.docs.forEach(doc => {
-        if(doc.data().created_by === this.props.userId) {
+        if (doc.data().created_by === this.props.userId) {
           userOrders.push({
             ...doc.data(),
             id: doc.id
@@ -68,7 +68,7 @@ class Orders extends Component {
         }
       })
       console.log(userOrders);
-      this.setState({orders: userOrders});
+      this.setState({ orders: userOrders });
     })
   }
 
@@ -103,7 +103,7 @@ class Orders extends Component {
                           statusClass = "bg-success";
                         } else if (order.status === "confirmed") {
                           statusClass = "bg-primary";
-                        }else if (order.status === "pending") {
+                        } else if (order.status === "pending") {
                           statusClass = "bg-warning";
                         } else if (order.status === "cancelled") {
                           statusClass = "bg-danger";
@@ -124,12 +124,12 @@ class Orders extends Component {
                               <th className="ps-md-3">{order.id}</th>
                               <td className="ps-md-3">{new Date(order.created_at.seconds * 1000).toLocaleString([], { year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' })}</td>{/* <td className="ps-md-3">{new Date(order.created_at).toLocaleTimeString()}</td> */}
                               <td className="ps-md-3">
-                                <span className={"badge text-capitalize "+statusClass}>
+                                <span className={"badge text-capitalize " + statusClass}>
                                   {order.status}
                                 </span>
                               </td>
                               <td className="ps-md-3">
-                                <RouterLink to={this.props.location.pathname + "/"+ order.id}>View Order</RouterLink>
+                                <RouterLink to={this.props.location.pathname + "/" + order.id}>View Order</RouterLink>
                               </td>
                             </tr>
                           </>

@@ -17,17 +17,14 @@ class ownerPage extends Component{
         return (
             <>
             <Container fluid className="container1 Profile">
-              <div className="logocont1">
-                <h1 className="head">Hello,Customer</h1>
-                <img src={Avatar} alt="Customerimg" className="avatarimg"/>
-                {
-                  this.state.c_id==this.state.o_id?
-                  (<button className="button1">EDIT</button>):<div></div>
-                }
-              </div>
+              <h1 className="txt">Personal details</h1>
               <div className="form1">
                   <DisplayCustProfile className="form1"/>
               </div>
+              {
+                  this.state.c_id==this.state.o_id?
+                  (<button className="button1">EDIT</button>):<div></div>
+              }
             </Container>
             </>
           );
