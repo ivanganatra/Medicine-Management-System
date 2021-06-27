@@ -57,12 +57,12 @@ const App = () => {
             <>
               <Header />
               <Switch>
-                <Route exact path="/profile" component = {Profile} />
+                <Route exact path="/profile" component = {ProfileDisplay} />
                 <Route exact path="/orders" component = {Orders} />
-                <Route exact path="/new-order" component = {CreateOrder} />
+                <Route exact path="/createOrder" component = {CreateOrder} />
                 <Route  path="/about" component = {About} />
                 <Route  path="/dashboard" component = {Dashboard} />
-                <Route  path="/profileDisplay" component = {ProfileDisplay} />
+                <Route  path="/profileUpdate" component = {Profile} />
                 <Redirect to = "/" />
               </Switch>
             </>

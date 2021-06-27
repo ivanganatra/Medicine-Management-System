@@ -79,6 +79,14 @@
     font-family: monospace;
 }
 
+.Dashboard_Warning {
+    font-size: 14px;
+}
+
+.Dashboard_Warning span {
+    font-weight: bold;
+}
+
 @media (max-width: 786px) {
     .Dashboard_PostTime_SmallScreen {
         display: block;
