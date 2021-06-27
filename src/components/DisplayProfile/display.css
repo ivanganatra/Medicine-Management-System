@@ -1,4 +1,4 @@
-.Profile .form1 {
+.Profile .displayform1 {
     background-color: rgb(162, 248, 140);
     height: 650px;
     width: 900px;
@@ -10,33 +10,33 @@
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
 
-.txt {
+.displaytxt {
     font-size: 3rem;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.txt1 {
+.displaytxt1 {
     font-size: 2.2rem;
     font-weight: 500;
     color: rgb(2, 70, 2);
 }
 
-.div1 {
+.displaydiv1 {
     font-size: 2rem;
     height: 70px;
     padding: 0.5rem;
     border-bottom: solid 1px black;
 }
 
-.adddiv1 {
+.displayadddiv1 {
     font-size: 2rem;
     height: 150px;
     padding: 0.2rem;
     border-bottom: solid 1px black;
 }
 
-.input {
+.displayinput {
     width: 400px;
     padding-left: 12px;
     height: 2.8rem;
@@ -46,16 +46,16 @@
     outline: none;
 }
 
-.container1 {
-    margin-top: 10px;
+.displaycontainer1 {
+    margin-top: 100px;
     flex-direction: column;
     width: 100%;
     border: black 10px;
-    align-items: center;
+    justify-content: center;
 }
 
 
-.Profile .button1 {
+.Profile .displaybutton1 {
     color: white;
     font-size: 2rem;
     height: 4rem;
@@ -67,9 +67,10 @@
     border-radius: 200px !important;
     border: none;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.addform1 {
+.displayaddform1 {
     height: 400px;
     width: 900px;
     color: black;
@@ -79,7 +80,7 @@
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
 
-.addinput1 {
+.displayaddinput1 {
     width: 450px;
     height: 4rem;
     font-size: 1.2rem;
@@ -95,7 +96,7 @@
 
 @media (max-width: 1068px) {
 
-    .container1 {
+    .displaycontainer1 {
         height: auto;
         width: auto;
         flex-direction: column;
@@ -103,41 +104,40 @@
         padding: auto;
     }
 
-    .div1 {
+    .displaydiv1 {
         font-size: 1rem;
         height: 65px;
         padding: 0.5rem;
         border-bottom: solid 1px black;
     }
 
-    .adddiv1 {
+    .displayadddiv1 {
         font-size: 1rem;
         height: 100px;
         padding: 0.2rem;
         border-bottom: solid 1px black;
     }
 
-    .txt {
+    .displaytxt {
         font-size: 2rem;
         margin-bottom: 20px;
         margin-top: 20px;
     }
 
-    .txt1 {
+    .displaytxt1 {
         font-size: 1.2rem;
         font-weight: 500;
         color: rgb(2, 70, 2);
     }
 
 
-    .Profile .form1,
-    .form1 {
+    .Profile .displayform1 {
         margin-top: 50px;
         height: 500px;
         width: 340px;
     }
 
-    .addform1 {
+    .displayaddform1 {
         margin-bottom: 50px;
         width: 340px;
         height: 350px;
