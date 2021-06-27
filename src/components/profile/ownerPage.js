@@ -6,6 +6,7 @@ import Form1 from './Formshop'
 import Shop from '../../assets/images/Shop.jpeg'
 import '../Header/Header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Display from "../DisplayProfile/Profiledisplay";
 
 class ownerPage extends Component{
     render(){
