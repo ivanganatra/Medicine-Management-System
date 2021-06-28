@@ -12,6 +12,8 @@ import { Link as Link2 } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { matchPath } from "react-router";
 import { scrollToTop } from 'react-scroll/modules/mixins/animate-scroll';
+import Number from '../../assets/images/phone.png';
+import Email from '../../assets/images/white-email (2).png';
 let location;
 const Footer=()=> {
     location=useLocation().pathname;
@@ -31,13 +33,13 @@ const Footer=()=> {
                     //Then scroll the page to the top
                     return(
                         <div key={id} id={id}>
-                            <Link1 to="Header"
+                            <Link2 to="Header"
                                 activeClass="active"
                                 spy={true}
                                 smooth={true}
                                 offset={-15000}
                                 duration={100}>{name}
-                            </Link1>
+                            </Link2>
                         </div>
                     );
                 }
@@ -118,11 +120,11 @@ const Footer=()=> {
                         <div class="after-hline">
                             <div class="contact-details">
                                 <div class="contact-number">
-                                    <img src="./phone.png"></img>
+                                    <img src={Number}></img>
                                     <span id="number">+918839848727</span>
                                 </div>
                                 <div class="contact-mail">
-                                    <img src="./white-email (2).png"></img>
+                                    <img src={Email}></img>
                                     <span id="mail">ivan.ganatra@gmail.com</span>
                                 </div>
                             </div>

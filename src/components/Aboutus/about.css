@@ -2,10 +2,7 @@
     padding:0px;
     margin:0px;
     display: border-box;
-    font-size: 62.5%;
-    font-family: 'Public Sans', sans-serif;;
     backface-visibility: visible;
-    overflow-x: hidden;
     box-sizing: inherit;
 }
 .about nav ul{
@@ -15,9 +12,9 @@
 }
 .about h1{
     color:  hsl(233, 26%, 24%);
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 1px;
-    font-size: 5rem;
+    font-size: 2.5rem;
     margin-bottom: 3rem;
 }
 .about h2{
@@ -29,8 +26,7 @@
     color:  hsl(233, 26%, 24%);
     letter-spacing: 1px;
     font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 .about h4{
     font-size: 1.7rem;
@@ -42,33 +38,28 @@
     color:hsl(136, 65%, 51%);
 }
 .about  a{
-     background-image: linear-gradient(90deg,hsl(136, 65%, 51%), hsl(192, 70%, 51%)) ;
-     font-family: 'Public Sans', sans-serif;;
     color: white;
     letter-spacing: 1px;
-    font-weight: 400;
-     font-size: 1.4rem;
-     text-decoration: none;
-    padding: 1.5rem 4rem;
-    border-radius: 200px;
+    text-decoration: none;
 
   }
 .about .section__features{
-    padding:8rem 2.5rem;
+    padding:7rem 2.5rem;
     background-color: hsl(0, 0%, 100%) ;
 }
-.about .section__features .first-box{
-    width:30%;
-
+.about .section-1{
+    width:100%;
+    height:43vw;
+    min-height: 30vh;
+    padding-top: 5vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
-.about .section__features .first-box p{
-    width:80%;
-
-}
-.about .grid__layout{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 4rem;
+.about .Green_Button{
+    box-shadow:2px 2px 2px gray;
+    z-index: 2;
+    font-weight:500;
 }
 .about .section__features p{
     font-size: 18px;
@@ -77,27 +68,40 @@
     margin: 30px 0;
     word-spacing: 1.2px;
 }
-
-.about .feature__card img{
-    width: 20%;
+.about .feature__card{
+    display: flex;
+    flex-direction: column;
+    padding:1.5rem;
+    width:15vw;
+    box-shadow: 0.2rem 0.2rem 2rem rgb(209, 209, 209);
+}
+.about .feature__card h3{
+    height:10vh;
     margin-bottom: 2rem;
+}
+.about .feature__card img {
+    margin-bottom: 2rem;
+    object-fit: cover;
 }
 .about .feature__card p{
     letter-spacing: initial;
     margin-bottom: 2rem;
+    height:25vh;
 }
 
 .about .section__cards{
     background-color:  hsl(0, 0%, 98%);
     padding: 8rem 12rem;
 }
-.about .section__cards h2{
+.about .section__cards h3{
     margin-bottom: 6rem;
 }
-.about .grid__layouts{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 4rem;
+.about .grid__layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 5vw;
+    width:100%;
 }
 .about figure{
     overflow: hidden;
@@ -116,4 +120,29 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     line-height: 1.6;
+}
+@media only screen and (max-width: 1470px){
+    .about .grid__layout{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding-left: 5vw;
+    }
+    .about .feature__card{
+        width:30vw;
+        height:90%;
+    }
+}
+@media only screen and (max-width: 900px){
+    .about .grid__layout{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .feature__card{
+        width:50vw;
+    }
+    .about .section-1{
+        margin-top:10vh;
+        margin-bottom:50vh;
+    }
 }

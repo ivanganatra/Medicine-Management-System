@@ -26,8 +26,7 @@
     margin-right: 100px;
     width: 395px;
 }
-
-.Home_Intro h1 {
+h1 {
     font-size: 40px;
     color: #2d314d;
     font-weight: normal;
@@ -63,6 +62,9 @@
 
 
 .Green_Button {
+    border:none;
+    color:white;
+    font-weight: 700;;
     background-color: #20bf55 !important;
     background-image: linear-gradient(315deg,#01ef15  0%, #20bf55 74%) !important;
 
