@@ -1,113 +1,150 @@
 /* Footer */
-.Footer{
-    background-color:#212121;
-    color:white;
-    position: relative;
-    padding-top: 80px;
-    overflow-x: hidden;
+.Footer {
+  background-color: #20bf55 !important;
+  background-image: linear-gradient(315deg, rgb(54, 54, 54) 0%, black 70%) !important;
+  color: rgb(208, 255, 208);
+  position: relative;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+.Footer .list-section {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 200px;
+  position: relative;
+  top: 0vw;
+  left: 3.5%;
+  bottom: 45px;
+}
+
+.Footer .list-section a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.Footer .list-section a:hover,
+.Footer .list-section a:focus {
+  color: green !important;
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid white;
+  border-top: 0.1rem solid white;
+  transition-duration: 2sec;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: cubic-bezier(1, 0, 0, 1);
+}
+
+.Footer .our-info {
+  word-wrap: normal;
+  color: white;
+  width: 250px;
+}
+
+.Footer #statement {
+  width: 280px;
+  justify-self: flex-start;
+}
+
+.Footer .margin-space {
+  position: relative;
+  left: 20px;
+}
+
+.Footer .social-network {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.Footer .before-hline {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .after-hline {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .contact-details {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: space-around;
+  justify-self: flex-start;
+}
+
+.Footer #number,
+.Footer #mail {
+  visibility: visible;
+  z-index: 1;
+}
+
+.Footer .contact-number img:hover+#number,
+.Footer .contact-mail img:hover+#mail {
+  visibility: visible;
+}
+
+.Footer .social-network hr {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+@media only screen and (max-width: 778px) {
+  .Footer .before-hline {
+    display: none;
   }
-  .Footer .list-section{
-    display: flex;
+
+  .Footer .after-hline {
+    margin-top: 5vw;
+  }
+
+  .Footer hr,
+  .Footer .list-section div:nth-child(2) {
+    display: none;
+  }
+
+  .Footer .list-section {
     justify-content: space-between;
-    width:80%;
-    height:200px;
-    position: relative;
-    top:0vw;
-    left:3.5%;
-    bottom:45px;
-}
-.Footer .list-section  a{
-    text-decoration: none;
-    color:white;
-    cursor: pointer;
-}
-.Footer .list-section a:hover, .Footer .list-section a:focus {
-    color: rgb(46, 44, 44) !important;
-}
-  .Footer .our-info{
-      word-wrap: normal;
-      color:white;
-      width:250px;
-}
-  .Footer #statement{
-      width:280px;
-      justify-self:flex-start;
   }
-  .Footer .margin-space{
-      position:relative;
-      left:20px;
+}
+
+@media only screen and (max-width: 670px) {
+  .Footer {
+    height: 10%;
   }
-  .Footer .social-network{
-    margin-right: 5vw;
-    display:flex;
-    justify-content: space-between;
+
+  .Footer .social-links,
+  .Footer .list-section div:nth-child(2) {
+    display: none;
+  }
+
+  .Footer #number,
+  .Footer #mail {
+    visibility: hidden;
+  }
+
+  .Footer .list-section {
+    left: 10%;
+    justify-content: center;
     flex-direction: column;
+    height: 100%;
+    width: 60%;
   }
-  .Footer .before-hline{
-      margin-right: 5vw;
-      display:flex;
-      justify-content: space-between;
-    }
-    .Footer .after-hline{
-        margin-right: 5vw;
-        display:flex;
-        justify-content: space-between;
+
+  .Footer .after-hline {
+    justify-content: center;
   }
-  .Footer .contact-details{
-        margin-right: 5vw;
-        display: flex;
-        justify-content: space-around;
-        justify-self: flex-start;
+
+  .Footer .contact-details {
+    width: 80%;
+    justify-content: space-between;
   }
-  .Footer #number, .Footer #mail {
-    visibility: visible;
-    z-index: 1;
-  }
-  .Footer .contact-number img:hover + #number,  .Footer .contact-mail img:hover + #mail {
-    visibility: visible;
-  }
-  .Footer .social-network hr{
-        padding:0px;
-        margin-top:0px;
-        margin-bottom:5px;
-        position:relative;
-  }
-  @media only screen and (max-width: 778px) {
-    .Footer  .before-hline{
-        display: none;
-      }
-    .Footer  .after-hline{
-        margin-top:5vw;
-      }
-    .Footer hr,.Footer .list-section div:nth-child(2) {
-        display: none;
-      }
-      .Footer .list-section {
-        justify-content: space-between;
-    }
-  }
-  @media only screen and (max-width: 670px) {
-    .Footer{
-        height:10%;
-    }
-    .Footer  .social-links ,.Footer .list-section div:nth-child(2){
-         display: none;
-      }
-      .Footer  #number,.Footer #mail{
-         visibility: hidden;
-      }
-      .Footer .list-section {
-          left:10%;
-          justify-content: center;
-          flex-direction: column;
-          height:100%;
-          width:60%;
-      }
-    .Footer .after-hline  {
-         justify-content: center;
-      }
-    .Footer  .contact-details  {
-        width:80%;
-         justify-content: space-between;
-      }
-  }
+}

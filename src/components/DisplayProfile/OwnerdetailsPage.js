@@ -17,7 +17,7 @@ class ownerPage extends Component{
     render(){
         return (
             <>
-            <Container fluid className="displaycontainer1 Profile">
+            <Container className="displaycontainer1 Profile"  style={{justifyContent:"center"}}>
               <h1 className="displaytxt">Personal details</h1>
               <div className="displayform1">
                 <DisplayOwnerProfile className="displayform1"/>
