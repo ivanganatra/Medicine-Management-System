@@ -51,7 +51,7 @@
     flex-direction: column;
     width: 100%;
     border: black 10px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
@@ -94,7 +94,7 @@
 
 
 
-@media (max-width: 1068px) {
+@media (max-width: 360px) {
 
     .displaycontainer1 {
         height: auto;
@@ -142,10 +142,10 @@
         width: 340px;
         height: 350px;
     }
-}
 
-@media (max-width:1200px) {
-    .container1 {
-        justify-content: space-between;
+    .Profile .displaybutton1 {
+        height: 3rem;
+        width: 250px;
+        font-size: 1.5rem;
     }
 }

@@ -12,6 +12,7 @@ class ownerPage extends Component{
     render(){
         return (
             <>
+            <h1 className="heading">Personal Details</h1>
             <Container fluid className="container1 Profile"> 
               <div className="logocont">
                 <h1 className="head">Hello, Seller</h1>
@@ -22,6 +23,7 @@ class ownerPage extends Component{
                 <Form className="form"/>
               </div>
             </Container>
+            <h1 className="heading1">Shop Details</h1>
             <Container style={{marginTop: "0px"}} fluid className="container1 Profile">
               <div className="addform">
                 <Form1/>
