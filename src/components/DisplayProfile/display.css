@@ -1,0 +1,151 @@
+.Profile .displayform1 {
+    background-color: rgb(162, 248, 140);
+    height: 650px;
+    width: 900px;
+    color: black;
+    padding: 2.5rem;
+    border: solid 0.1rem rgb(35, 189, 35);
+    background-color: #3f75eb !important;
+    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+}
+
+.displaytxt {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.displaytxt1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: rgb(2, 70, 2);
+}
+
+.displaydiv1 {
+    font-size: 2rem;
+    height: 70px;
+    padding: 0.5rem;
+    border-bottom: solid 1px black;
+}
+
+.displayadddiv1 {
+    font-size: 2rem;
+    height: 150px;
+    padding: 0.2rem;
+    border-bottom: solid 1px black;
+}
+
+.displayinput {
+    width: 400px;
+    padding-left: 12px;
+    height: 2.8rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.displaycontainer1 {
+    margin-top: 100px;
+    flex-direction: column;
+    width: 100%;
+    border: black 10px;
+    justify-content: center;
+}
+
+
+.Profile .displaybutton1 {
+    color: white;
+    font-size: 2rem;
+    height: 4rem;
+    width: 310px;
+    margin-left: 0px;
+    background-color: #20bf55 !important;
+    background-image: linear-gradient(315deg, #01ef15 0%, #20bf55 74%) !important;
+    padding: 2px 40px !important;
+    border-radius: 200px !important;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.displayaddform1 {
+    height: 400px;
+    width: 900px;
+    color: black;
+    padding: 2.5rem;
+    border: solid 0.1rem rgb(35, 189, 35);
+    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+}
+
+.displayaddinput1 {
+    width: 450px;
+    height: 4rem;
+    font-size: 1.2rem;
+    padding-left: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+
+
+
+
+@media (max-width: 1068px) {
+
+    .displaycontainer1 {
+        height: auto;
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: auto;
+    }
+
+    .displaydiv1 {
+        font-size: 1rem;
+        height: 65px;
+        padding: 0.5rem;
+        border-bottom: solid 1px black;
+    }
+
+    .displayadddiv1 {
+        font-size: 1rem;
+        height: 100px;
+        padding: 0.2rem;
+        border-bottom: solid 1px black;
+    }
+
+    .displaytxt {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .displaytxt1 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: rgb(2, 70, 2);
+    }
+
+
+    .Profile .displayform1 {
+        margin-top: 50px;
+        height: 500px;
+        width: 340px;
+    }
+
+    .displayaddform1 {
+        margin-bottom: 50px;
+        width: 340px;
+        height: 350px;
+    }
+}
+
+@media (max-width:1200px) {
+    .container1 {
+        justify-content: space-between;
+    }
+}

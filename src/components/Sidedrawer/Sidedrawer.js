@@ -70,11 +70,22 @@ const Sidedrawer = ({show, closeSidedrawer}) => {
                             Profile
                         </Link>
                     </li>
-                    <li onClick={closeSidedrawerUtil}>
-                        <Link className={location === "/createOrder" ? "active" : ""} to="/createOrder">
-                            Create Order
-                        </Link>
-                    </li>
+                    {
+                        userData.category === "customer" ? (
+                            <li onClick={closeSidedrawerUtil}>
+                                <Link className={location === "/createOrder" ? "active" : ""} to="/createOrder">
+                                    Create Order
+                                </Link>
+                            </li>
+                        ) : (
+                            <li onClick={closeSidedrawerUtil}>
+                                <Link className={location === "/dashboard" ? "active" : ""} to="/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                        )
+                    }
+                    
                     <li>
                         {
                             !userData.token ? (

@@ -1,37 +1,66 @@
 import React,{ Component } from 'react'
-import '../../css/formstyle.css'
-
-const name="Rolit Trivedi";
-const email="rolit454@gmail.com";
-const phone="7354037151";
-const add="Duplex No. 2 Shri Ram Parisar,Shahinaka,Garha";
-const state="Madhya Pradesh";
-const city="Jabalpur";
+import './display.css'
 
 class displayCustProfile extends Component{
-    render(){
-        return (
-            <form className="Profile">
-                <div>
-                    <label className="txt1">Name: {name}</label>
+    constructor(props) {
+        super(props);
+        this.state = {
+            name:"Rolit Trivedi",
+            email:"rolit454@gmail.com",
+            phone:"7354037151",
+            add:"Duplex No. 2 Shri Ram Parisar,Shahinaka,Garha",
+            state:"Madhya Pradesh",
+            city:"Jabalpur",
+        };
+    }
+render(){
+return (
+<form className="Profile">
+                <div className="displaydiv1">
+                {
+                    this.state.name ? 
+                    (<label ><span className="displaytxt1">Name:</span> {this.state.name}</label>)
+                    : <label ><span className="displaytxt1">Name:</span> -- </label>
+                }
                 </div>
-                <div>
-                    <label className="txt1">Email-id: {email}</label>
+                <div className="displaydiv1">
+                {
+                    this.state.name ? 
+                    (<label><span className="displaytxt1">Email-id:</span> {this.state.email}</label>)
+                    : <label><span className="displaytxt1">Email-id:</span> -- </label>
+                } 
                 </div>
-                <div>
-                    <label className="txt1" >Phone: {phone}</label>
+                <div className="displaydiv1">
+                {
+                    this.state.name ? 
+                    (<label><span className="displaytxt1">Phone #:</span> {this.state.phone}</label>)
+                    : <label><span className="displaytxt1">Phone #:</span> -- </label>
+                }
                 </div>
-                <div>
-                    <label className="txt1">Address: {add}</label>
+                <div className="displayadddiv1">
+                {
+                    this.state.name ? 
+                    (<label><span className="displaytxt1">Address:</span> {this.state.add}</label>)
+                    : <label><span className="displaytxt1">Address:</span> --</label>
+                }
                 </div>
-                <div>
-                    <label className="txt1">State: {state}</label>
+                <div className="displaydiv1">
+                {
+                    this.state.name ? 
+                    (<label><span className="displaytxt1">State:</span>{this.state.state}</label>)
+                    : <label><span className="displaytxt1"></span> --</label>
+                }
                 </div>
-                <div>
-                    <label className="txt1">City: {city}</label>
+                <div className="displaydiv1">
+                {
+                    this.state.name ? 
+                    (<label><span className="displaytxt1">City:</span> {this.state.city}</label>)
+                    : <label><span className="displaytxt1">City:</span> --</label>
+                }
+                    
                 </div>
             </form>
-        )
-    };
+)
+};
 }
 export default displayCustProfile

@@ -19,7 +19,7 @@ const Footer=()=> {
     location=useLocation().pathname;
     const list_creator=(classname,header,name,id_code,link)=>{
         let loop=0;
-        console.log(classname,header,name,link);
+
         let list_feature=name.map((name)=>{
             let abc="/"+ name.toLowerCase();
             loop+=1;
