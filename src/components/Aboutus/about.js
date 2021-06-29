@@ -27,7 +27,7 @@ const About = () => {
                 <section class="section__features">
                     <div class="section-1">
                     <div class="first-box">
-                        <h1>Vision and Mission</h1>
+                        <h2>Vision and Mission</h2>
                         <p>
                         Control your medical needs like never before.<br></br>
                         We link your orders with potential sellers to make your work easy.
