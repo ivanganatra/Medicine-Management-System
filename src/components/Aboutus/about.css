@@ -11,7 +11,7 @@
     backface-visibility: hidden;
 }
 .about h1{
-    color:  hsl(233, 26%, 24%);
+    color:  hsl(0, 0%, 100%);
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 2.5rem;
