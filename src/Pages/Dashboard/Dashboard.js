@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { selectUserData } from '../../reduxSlices/authSlice';
 import db from '../../firebase';
 
+import OrderConfirmedModal from './orderConfirmedModal';
+import ConfirmModal from './confirmOrderModal';
+import CompleteProfileModal from './completeProfileModal';
 import Avatar from '@material-ui/core/Avatar';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
-import Modal from 'react-bootstrap/Modal';
-import ClearIcon from '@material-ui/icons/Clear';
-import IconButton from '@material-ui/core/IconButton';
 
 const getRandomAvatar = (seed) => {
     return "https://avatars.dicebear.com/api/identicon/" + seed  + ".svg?background=%23eee";
@@ -36,19 +36,21 @@ const getTime = (sec) => {
     return hours + ":" + minutes + ":" + seconds;
 }
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     const [orders, setOrders] = useState([]);
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
     const userData = useSelector(selectUserData);
+    const [showOrderConfirmModal, setShowOrderConfirmModal] = useState(false);
+    const [showCompleteProfile, setShowCompleteProfile] = useState(false);
 
     const handleClose = () => setShow(false);
 
     useEffect(() => {
         let fetchOrders = [];
         setLoading(true);
-        db.collection("orders").orderBy('created_at', 'desc').get().then(snapshot => {
+        db.collection("orders").orderBy('created_at', 'desc').get().then(async snapshot => {
             let pendingOrders = [];
             snapshot.docs.forEach(doc => {
                 if(doc.data().status === "pending") {
@@ -66,7 +68,7 @@ const Dashboard = () => {
                         imgUrl: doc.data().img_url,
                         description: doc.data().description,
                         contact: doc2.data().phone,
-                        seed: doc.data().seed,
+                        seed: doc2.data().seed,
                         id: doc.id,
                         timestamp: doc.data().created_at
                     } 
@@ -74,8 +76,7 @@ const Dashboard = () => {
                 return orderDetail;
             })
 
-            Promise.all(fetchOrders).then(responseOrders => {
-                
+            await Promise.all(fetchOrders).then(responseOrders => {
                 setOrders(responseOrders);
             })
             setLoading(false);
@@ -83,39 +84,56 @@ const Dashboard = () => {
     }, [])
 
     const confirmOrder = () => {
+        setLoading(true);
         db.collection("orders").doc(selectedOrder).update({
             status: "confirmed",
             accepted_by: userData.userId
+        }).then(res => {
+            console.log(res);
+            setLoading(false);
+            setShowOrderConfirmModal(true);
+        }).catch(err => {
+            console.log(err);
+            setLoading(false);
         })
         handleClose();
     }
 
     const selectOrder = (orderId) => {
-        setSelectedOrder(orderId);
-        setShow(true);
-        console.log(orderId);
+        db.collection('profiles').doc(props.userId).get().then(doc => {
+            if(!doc.exists) {
+                setShowCompleteProfile(true);
+                alert("Please Complete your profile first.")
+                return;
+            } else if(!doc.data().shop_name) {
+                setShowCompleteProfile(true);
+                return;
+            } else {
+                setSelectedOrder(orderId);
+                setShow(true);
+            }
+        })
     }
 
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header>
-                <Modal.Title>Confirm Order</Modal.Title>
-                <IconButton onClick={handleClose}><ClearIcon /></IconButton>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>Before confirming this order make sure that you have the stock available in your shop.<br/> A confirmation mail will be sent to the customer.</p>
-                    <p className="text-danger Dashboard_Warning"><span className="font-weight-bold">Note:</span> Failing to supply the order may lead to suspension of your account.</p>
-                </Modal.Body>
-                <Modal.Footer>
-                <Button onClick={handleClose}>
-                    Close
-                </Button>
-                <Button color="primary" onClick={confirmOrder}>
-                    Confirm
-                </Button>
-                </Modal.Footer>
-            </Modal>
+            <ConfirmModal 
+                show={show}
+                handleClose={handleClose}
+                confirmOrder={confirmOrder}
+            />
+
+            <OrderConfirmedModal 
+                show={showOrderConfirmModal}
+                handleClose={window.location.reload}
+                selectedOrderId={selectedOrder}
+            />
+
+            <CompleteProfileModal 
+                show={showCompleteProfile}
+                handleClose={() => setShowCompleteProfile(false)}
+            />
+    
             <div className="Dashboard_Container">
                 <div className="container Dashboard ">
                     <h1 className="text-center pt-3">Medical Needs</h1>
@@ -125,7 +143,7 @@ const Dashboard = () => {
                                 <div className="text-center mt-5">
                                     <CircularProgress size={40} /> 
                                 </div>
-                            ) : 
+                            ) : orders.length > 0 ? 
                             orders.map(order => {
                                 return (
                                     <div key={order.id} className="Dashboard_Order my-5">
@@ -174,7 +192,7 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                 )
-                            })
+                            }) : <h4 className="text-center">There are no active orders at the moment</h4>
                         }
                     </div>
                 </div>
@@ -183,4 +201,10 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+        userId: state.auth.userId
+    }
+}
+
+export default connect(mapStateToProps)(Dashboard);

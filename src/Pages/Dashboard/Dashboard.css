@@ -1,5 +1,6 @@
 .Dashboard {
     margin-top: 90px;
+    min-height: 50vh;
 }
 
 .Dashboard_Container {

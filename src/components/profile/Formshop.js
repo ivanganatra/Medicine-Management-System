@@ -1,33 +1,62 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
+import db from '../../firebase';
 
-class Form1 extends Component{4
+import { connect } from 'react-redux';
+
+class Form1 extends Component{
     constructor(props) {
         super(props)
-    
         this.state = {
             name: '',
             address:'',
             phone:'',
         }
     }
+
+    componentDidMount() {
+        db.collection('profiles').doc(this.props.userId).get().then(doc => {
+          if(doc.exists) {
+              const userData = doc.data();
+              this.setState({
+                  name: userData.shop_name || "",
+                  address: userData.shop_address || "",
+                  phone: userData.shop_phone || ""
+              })
+          } else {
+              db.collection('profiles').doc(this.props.userId).set({
+                  seed: Math.floor(Math.random() * 1000)
+              });
+          }
+        })
+    }
+
     handleNameChange = (event)=>{
         this.setState({
             name:event.target.value
         })
     }
+
     handleAddressChange = event => {
         this.setState({
             address:event.target.value
         })
     }
+
     handlePhoneChange = event => {
         this.setState({
             phone:event.target.value
         })
     }
+
     handleSubmit = event => {
-        alert(`${this.state.name} ${this.state.phone} ${this.state.address}`);
+        db.collection('profiles').doc(this.props.userId).update({
+            shop_name: this.state.name,
+            shop_phone: this.state.phone,
+            shop_address: this.state.address
+        }).then(res => {
+            alert('Shop Details Updated Successfully');
+        })
         event.preventDefault()
     }
     
@@ -52,4 +81,10 @@ class Form1 extends Component{4
     };
 }
 
-export default Form1
+const mapStateToProps = state => {
+    return {
+      userId: state.auth.userId
+    }
+}
+
+export default connect(mapStateToProps)(Form1);

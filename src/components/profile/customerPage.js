@@ -3,7 +3,8 @@ import Form from './FormCustomer';
 import {Container} from'react-bootstrap'
 import React, { Component } from 'react';
 
-class customerPage extends Component{4
+class customerPage extends Component{
+
     render(){
         return (
             <>
@@ -22,5 +23,7 @@ class customerPage extends Component{4
     };
 }
 
-export default customerPage
+
+
+export default customerPage;
 

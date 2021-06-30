@@ -1,7 +1,7 @@
 .Profile .form {
     background-color: rgb(162, 248, 140);
     height: 620px;
-    border-radius: 10%;
+    border-radius: 25px;
     width: 500px;
     color: white;
     padding: 2.5rem;
@@ -56,6 +56,8 @@ fieldset {
     width: 400px;
     height: 4.5rem;
     padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
@@ -120,7 +122,7 @@ fieldset {
 
 .addform {
     height: 420px;
-    border-radius: 40px;
+    border-radius: 25px;
     width: 560px;
     color: white;
     padding: 2.5rem;
@@ -161,7 +163,7 @@ fieldset {
 
 .Profile .shopimg {
     width: 500px;
-    border-radius: 40px;
+    border-radius: 25px;
     height: 400px;
     border: solid 0.2rem rgb(35, 189, 35);
 }
@@ -169,7 +171,7 @@ fieldset {
 .Profile .logocont {
     height: 620px;
     width: 480px;
-    border-radius: 40px;
+    border-radius: 25px;
     border: solid 0.1rem rgb(35, 189, 35);
     padding: 4.5rem;
     background-color: #3f75eb !important;
@@ -235,7 +237,7 @@ fieldset {
         margin-top: 50px;
         height: 510px;
         width: 320px;
-        border-radius: 40px;
+        border-radius: 25px;
     }
 
     .input {

@@ -28,7 +28,7 @@ class ownerPage extends Component{
               </div>
               {
                   this.state.c_id==this.state.o_id?
-                  (<button className="displaybutton1">Update Details</button>):<div></div>
+                  (<a href="/profileUpdate"><button className="displaybutton1">EDIT</button></a>):<div></div>
               }
             </Container>
             </>

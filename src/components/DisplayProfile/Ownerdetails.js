@@ -2,20 +2,40 @@ import { Height } from '@material-ui/icons';
 import React,{ Component } from 'react'
 import './display.css'
 
-
+import db from '../../firebase';
+import { connect } from 'react-redux';
 
 class displayOwnerProfile extends Component{
     constructor(props) {
                 super(props);
                 this.state = {
-                    name:"Rolit Trivedi",
-                    email:"rolit454@gmail.com",
-                    phone:"7354037151",
-                    add:"Duplex No. 2 Shri Ram Parisar,Shahinaka,Garha",
-                    state:"Madhya Pradesh",
-                    city:"Jabalpur",
+                    name: null,
+                    email: null,
+                    phone: null,
+                    add: null,
+                    state: null,
+                    city: null,
                 };
             }
+    
+    componentDidMount() {
+        db.collection('profiles').doc(this.props.userId).get().then(doc => {
+            if(doc.exists) {
+                const userData = doc.data();
+
+                this.setState({
+                    name: userData.name,
+                    address: userData.address,
+                    city: userData.city,
+                    add: userData.address,
+                    state: userData.state,
+                    email: userData.email,
+                    phone: userData.phone
+                })
+            }
+        })
+    }
+
     render(){
         return (
             <form className="Profile">
@@ -36,8 +56,8 @@ class displayOwnerProfile extends Component{
                 <div className="displaydiv1">
                 {
                     this.state.name ? 
-                    (<label><span className="displaytxt1">Phone #:</span> {this.state.phone}</label>)
-                    : <label><span className="displaytxt1">Phone #:</span> -- </label>
+                    (<label><span className="displaytxt1">Phone:</span> {this.state.phone}</label>)
+                    : <label><span className="displaytxt1">Phone:</span> -- </label>
                 }
                 </div>
                 <div className="displayadddiv1">
@@ -50,8 +70,8 @@ class displayOwnerProfile extends Component{
                 <div className="displaydiv1">
                 {
                     this.state.name ? 
-                    (<label><span className="displaytxt1">State:</span>{this.state.state}</label>)
-                    : <label><span className="displaytxt1"></span> --</label>
+                    (<label><span className="displaytxt1">State: </span>{this.state.state}</label>)
+                    : <label><span className="displaytxt1">State: </span> --</label>
                 }
                 </div>
                 <div className="displaydiv1">
@@ -66,4 +86,11 @@ class displayOwnerProfile extends Component{
         )
     };
 }
-export default displayOwnerProfile
+
+const mapStateToProps = state => {
+    return {
+        userId: state.auth.userId
+    }
+}
+
+export default connect(mapStateToProps)(displayOwnerProfile);
