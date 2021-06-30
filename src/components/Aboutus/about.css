@@ -25,8 +25,8 @@
 .about h3{
     color:  hsl(233, 26%, 24%);
     letter-spacing: 1px;
-    font-weight: 400;
-    font-size: 2.5rem;
+    font-weight: 600;
+    font-size: 2.0rem;
 }
 .about h4{
     font-size: 1.7rem;
@@ -68,27 +68,52 @@
     margin: 30px 0;
     word-spacing: 1.2px;
 }
+/* Flip card starts */
 .about .feature__card{
-    display: flex;
-    flex-direction: column;
-    padding:1.5rem;
-    width:15vw;
+    width: 300px;
+    height: 380px;
     box-shadow: 0.2rem 0.2rem 2rem rgb(209, 209, 209);
+    text-align: center;
 }
-.about .feature__card h3{
-    height:15vh;
-    margin-bottom: 2rem;
-}
-.about .feature__card img {
-    margin-bottom: 2rem;
+.about .flip-card{
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    margin-bottom: 1rem;
     object-fit: cover;
-}
-.about .feature__card p{
-    letter-spacing: initial;
-    margin-bottom: 2rem;
-    height:25vh;
-}
+    }
+    .about .flip-card-inner {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    border:none;
+    backface-visibility: hidden;  }
+    .about .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .about .flip-card:hover .feature__card{
+      flex-direction: column-reverse;
+    }
+  .about .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+  }
+  .about .flip-card-front {
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
 
+  .about .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+/* Flip Card Ends */
 .about .section__cards{
     background-color:  hsl(0, 0%, 98%);
     padding: 8rem 12rem;
@@ -126,11 +151,10 @@
         display: grid;
         grid-template-columns: 50% 50%;
         padding-left: 5vw;
-        row-gap:5vw;
+        row-gap:10vw;
         column-gap: 5vw;
     }
     .about .feature__card{
-        width:30vw;
     }
 }
 @media only screen and (max-width: 900px){
@@ -141,7 +165,6 @@
         justify-content: center;
     }
     .about .feature__card{
-        width:50vw;
     }
     .about .section-1{
         margin-top:10vh;
