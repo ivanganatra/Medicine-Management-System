@@ -53,9 +53,7 @@ const About = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div>
                                      <h3>Easy connect</h3>
-                                </div>
                             </div>
                             <div class="feature__card">
                                 <div class="flip-card">
@@ -98,7 +96,7 @@ const About = () => {
                             </div>
 
                         </div>
-                    </Element>
+                     </Element>
                 </section>
                 {/* <section class="section__cards">
                     <h2>Latest Articles</h2>
