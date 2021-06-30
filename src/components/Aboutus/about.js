@@ -42,30 +42,61 @@ const About = () => {
                     </div>
                     <Element id="About Us" name="About Us">
                     <div class="grid__layout">
-                        <div class="feature__card">
-                            <img id="Easy-Connect-img" src={MedicineStore} alt="img" />
-                            <h3>Easy connect</h3>
-                            <p>Technology connects us to the whole world, we connect you to the medicine store nearby you.
-                            </p>
+                            <div class="feature__card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img id="Easy-Connect-img" src={MedicineStore} alt="img" />
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Technology connects us to the whole world, we connect you to the medicine store nearby you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                     <h3>Easy connect</h3>
+                            </div>
+                            <div class="feature__card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={ClickAndCollect} alt="img" />
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Stop worrying for the shipping charges, book your medicine and collect from the closest store as per your convenience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Click and Collect</h3>
+                            </div>
+                            <div class="feature__card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={Discount} alt="img"/>
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Get upto 40% discounts on your first buy, and 20% off on next three orders. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Buy more  less</h3>
+                            </div>
+                            <div class="feature__card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={ScanOrder} alt="img"/>
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Just upload the clear picture of the doctor's prescription and sumbit your order.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Scan your Order</h3>
+                            </div>
+
                         </div>
-                        <div class="feature__card">
-                            <img src={ClickAndCollect} alt="img" />
-                            <h3>Click and Collect</h3>
-                            <p>Stop worrying for the shipping charges, book your medicine and collect from the closest store as per your convenience.
-                            </p>
-                        </div>
-                        <div class="feature__card">
-                            <img src={ScanOrder} alt="img"/>
-                            <h3>Scan your Order</h3>
-                            <p>Just upload the clear picture of the doctor's prescription and sumbit your order.</p>
-                        </div>
-                        <div class="feature__card">
-                        <img src={Discount} alt="img"/>
-                        <h3>Buy more spend less</h3>
-                        <p>Get upto 40% discounts on your first buy, and 20% off on next three orders. </p>
-                        </div>
-                    </div>
-                    </Element>
+                     </Element>
                 </section>
                 {/* <section class="section__cards">
                     <h2>Latest Articles</h2>

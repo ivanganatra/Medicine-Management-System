@@ -30,7 +30,8 @@ const App = () => {
     })
     dispatch(AUTOLOGIN());
   }, [])
-  if(userData.loading) {
+
+  if(!userData.logging && userData.loading) {
     return (
       <div className="d-flex mt-5 justify-content-center">
         <CircularProgress size={80} />

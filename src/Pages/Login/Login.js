@@ -165,6 +165,7 @@ const SignUp = () => {
         category: values.category,
         isSignIn: isSignIn,
         contact: values.contact,
+        logging: true
       }))
     }
 
