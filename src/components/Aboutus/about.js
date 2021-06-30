@@ -53,7 +53,9 @@ const About = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <h3>Easy connect</h3>
+                                <div>
+                                     <h3>Easy connect</h3>
+                                </div>
                             </div>
                             <div class="feature__card">
                                 <div class="flip-card">
