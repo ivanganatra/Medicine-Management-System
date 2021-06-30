@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
 
+import db from '../../firebase';
+import { connect } from 'react-redux';
+
 class Form extends Component{
     constructor(props) {
         super(props)
@@ -14,6 +17,27 @@ class Form extends Component{
             phone:'',
         }
     }
+
+    componentDidMount() {
+        db.collection('profiles').doc(this.props.userId).get().then(doc => {
+            if(doc.exists) {
+                const userData = doc.data();
+                this.setState({
+                    name: userData.name || "",
+                    email: userData.email || "",
+                    address: userData.address || "",
+                    state: userData.state || "",
+                    city: userData.city || "",
+                    phone: userData.phone || ""
+                })
+            } else {
+                db.collection('profiles').doc(this.props.userId).set({
+                    seed: Math.floor(Math.random() * 1000)
+                });
+            }
+        })
+    }
+
     handleNameChange = (event)=>{
         this.setState({
             name:event.target.value
@@ -48,8 +72,17 @@ class Form extends Component{
         })
     }
     handleSubmit = event => {
-        alert(`${this.state.name} ${this.state.email} ${this.state.phone} ${this.state.address} ${this.state.state} ${this.state.city}`);
-        event.preventDefault()
+        event.preventDefault();
+        db.collection('profiles').doc(this.props.userId).update({
+            name: this.state.name,
+            email: this.state.email,
+            address: this.state.address,
+            state: this.state.state,
+            city: this.state.city,
+            phone: this.state.phone
+        }).then(res => {
+            alert('Personal Details Updated Successfully');
+        })
     }
 
     render(){
@@ -85,4 +118,10 @@ class Form extends Component{
     };
 }
 
-export default Form
+const mapStateToProps = state => {
+    return {
+        userId: state.auth.userId
+    }
+}
+
+export default connect(mapStateToProps)(Form)

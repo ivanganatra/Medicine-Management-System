@@ -1,23 +1,34 @@
 import Customer from './CustomerdetailsPage';
 import Seller from './OwnerdetailsPage';
 
-const isLoggedIn="owner";
-function Profile() {
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-    if(isLoggedIn==="owner"){
+const isLoggedIn="owner";
+function Profile(props) {
+
+    if(props.userCategory==="owner"){
       return (
         <>
         <Seller/>
         </>
       );
     }
-    if(isLoggedIn==="customer"){
+    if(props.userCategory==="customer"){
       return (
         <>
         <Customer/>
         </>
       );
     }
+
+    return <Redirect to="/" />
 }
 
-export default Profile;
+const mapStateToProps = state => {
+  return {
+    userCategory: state.auth.category
+  }
+}
+
+export default connect(mapStateToProps)(Profile);

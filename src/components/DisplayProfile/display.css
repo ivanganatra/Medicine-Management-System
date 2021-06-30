@@ -1,13 +1,17 @@
 .Profile .displayform1 {
     background-color: rgb(162, 248, 140);
-    height: 650px;
     width: 900px;
     color: black;
     padding: 2.5rem;
     border: solid 0.1rem rgb(35, 189, 35);
     background-color: #3f75eb !important;
-    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    background-image: linear-gradient(315deg, #90f8c4 0%, #daf2e6 50%) !important;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+    
+}
+
+.ProfileMarginLeft {
+    margin-left: 150px;
 }
 
 .displaytxt {
@@ -17,22 +21,21 @@
 }
 
 .displaytxt1 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: rgb(2, 70, 2);
 }
 
 .displaydiv1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 70px;
     padding: 0.5rem;
     border-bottom: solid 1px black;
 }
 
 .displayadddiv1 {
-    font-size: 2rem;
-    height: 150px;
-    padding: 0.2rem;
+    font-size: 1.5rem;
+    padding: 1rem 0.2rem;
     border-bottom: solid 1px black;
 }
 
@@ -51,7 +54,7 @@
     flex-direction: column;
     width: 100%;
     border: black 10px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 
@@ -71,12 +74,11 @@
 }
 
 .displayaddform1 {
-    height: 400px;
     width: 900px;
     color: black;
     padding: 2.5rem;
     border: solid 0.1rem rgb(35, 189, 35);
-    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
+    background-image: linear-gradient(315deg, #90f8c4 0%, #daf2e6 50%) !important;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
 }
 
@@ -90,11 +92,7 @@
     outline: none;
 }
 
-
-
-
-
-@media (max-width: 1068px) {
+@media (max-width: 360px) {
 
     .displaycontainer1 {
         height: auto;
@@ -106,8 +104,8 @@
 
     .displaydiv1 {
         font-size: 1rem;
-        height: 65px;
-        padding: 0.5rem;
+        /* height: 65px; */
+        padding: 0.5rem 0;
         border-bottom: solid 1px black;
     }
 
@@ -142,10 +140,10 @@
         width: 340px;
         height: 350px;
     }
-}
 
-@media (max-width:1200px) {
-    .container1 {
-        justify-content: space-between;
+    .Profile .displaybutton1 {
+        height: 3rem;
+        width: 250px;
+        font-size: 1.5rem;
     }
 }

@@ -59,17 +59,48 @@ class Orders extends Component {
   componentDidMount() {
     db.collection("orders").orderBy('created_at', "desc").get().then(snapshot => {
       let userOrders = [];
-      snapshot.docs.forEach(doc => {
-        if (doc.data().created_by === this.props.userId) {
-          userOrders.push({
-            ...doc.data(),
-            id: doc.id
-          });
-        }
-      })
+      if(this.props.category === 'customer') {
+        snapshot.docs.forEach(doc => {
+          if (doc.data().created_by === this.props.userId) {
+            userOrders.push({
+              ...doc.data(),
+              id: doc.id
+            });
+          }
+        })
+      } else {
+        snapshot.docs.forEach(doc => {
+          if (doc.data().accepted_by === this.props.userId) {
+            userOrders.push({
+              ...doc.data(),
+              id: doc.id
+            });
+          }
+        })
+      }
       console.log(userOrders);
       this.setState({ orders: userOrders });
     })
+
+    db.collection('orders').doc('UnCAZ5RGmjgaClNDFWfc') // dummy Order for accepted Orders
+    .get().then(doc => {
+      console.log("accepted Orders", doc.data());
+      console.log(doc.id);
+    })
+
+    db.collection('orders').doc('Zt96Fh75qr1fPxIA4ovG') // dummy Order from pending Orders
+    .get().then(doc => {
+      console.log("pending orders", doc.data());
+      console.log(doc.id);
+    })
+
+    // PENDING ORDER
+//     created_at: t {seconds: 1625050547, nanoseconds: 471000000}
+// created_by: "bepXLCJGvQgFVdxr1JOgFbmGUeD3"
+// description: "I need this to treat Ron. He has covid-19."
+// img_url: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2F2928722.jpg?alt=media&token=2ebd4c37-98d1-4470-94a4-76f8ba81c01a"
+// status: "pending"
+    
   }
 
   render() {
@@ -153,7 +184,8 @@ class Orders extends Component {
 
 const mapStateToProps = state => {
   return {
-    userId: state.auth.userId
+    userId: state.auth.userId,
+    category: state.auth.category
   }
 }
 

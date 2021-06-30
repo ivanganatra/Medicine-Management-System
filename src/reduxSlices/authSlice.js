@@ -9,9 +9,14 @@ const authSlice = createSlice({
         userId: null,
         category: null,
         error: null,
-        loading: true
+        loading: true,
+        logging: false
     },
     reducers: {
+        SET_LOGGING: (state, action) => {
+            state.logging = action.payload;
+        },
+
         SET_LOADING: (state, action) => {
             state.loading = action.payload;
         },
@@ -40,7 +45,7 @@ const authSlice = createSlice({
     }
 })
 
-export const { LOGIN, LOGOUT, SET_ERROR, SET_ERROR_NULL, SET_LOADING } = authSlice.actions;
+export const { LOGIN, LOGOUT, SET_ERROR, SET_ERROR_NULL, SET_LOADING, SET_LOGGING } = authSlice.actions;
 
 export const AUTOLOGIN = () => dispatch => {
     console.log("Hello");
@@ -62,6 +67,10 @@ export const AUTOLOGIN = () => dispatch => {
 }
 
 export const ASYNC_LOGIN = userData => dispatch => {
+    
+    if(userData.logging)
+        dispatch(SET_LOGGING(true));
+        
     dispatch(SET_LOADING(true));
 
     const authData = {
@@ -83,6 +92,7 @@ export const ASYNC_LOGIN = userData => dispatch => {
             localStorage.setItem('Frosthack__userId', userId);
             dispatch(AUTOLOGIN());
             dispatch(SET_LOADING(false));
+            dispatch(SET_LOGGING(false));
             if (!userData.isSignIn) {
                 db.collection("users").doc(userId).set({
                     userId: userId,
@@ -98,6 +108,7 @@ export const ASYNC_LOGIN = userData => dispatch => {
             console.log(err.response.data.error.message);
             dispatch(SET_ERROR(err.response.data.error.message));
             dispatch(SET_LOADING(false));
+            dispatch(SET_LOGGING(false));
         })
 }
 

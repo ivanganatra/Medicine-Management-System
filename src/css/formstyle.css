@@ -1,7 +1,7 @@
 .Profile .form {
     background-color: rgb(162, 248, 140);
     height: 620px;
-    border-radius: 10%;
+    border-radius: 25px;
     width: 500px;
     color: white;
     padding: 2.5rem;
@@ -10,15 +10,14 @@
     background-image: linear-gradient(315deg, #01e014 0%, #20bf55 74%) !important;
 }
 
-.Profile .form1 {
-    background-color: rgb(162, 248, 140);
-    height: 650px;
-    width: 700px;
-    color: black;
-    padding: 2.5rem;
-    background-color: #3f75eb !important;
-    background-image: linear-gradient(315deg, #90f8c4 0%, #ffffff 50%) !important;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.12), 0 1px 10px rgba(0, 0, 0, 0.24);
+.heading {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.heading1 {
+    margin-top: 30px;
+    text-align: center;
 }
 
 fieldset {
@@ -57,6 +56,8 @@ fieldset {
     width: 400px;
     height: 4.5rem;
     padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
@@ -85,11 +86,10 @@ fieldset {
 }
 
 .container1 {
-    margin-top: 100px;
     display: inline-flex;
     flex-direction: row;
     width: 100%;
-    padding: 100px;
+    padding: 20px;
     border: black 10px;
     justify-content: space-evenly;
     column-gap: 3rem;
@@ -122,7 +122,7 @@ fieldset {
 
 .addform {
     height: 420px;
-    border-radius: 40px;
+    border-radius: 25px;
     width: 560px;
     color: white;
     padding: 2.5rem;
@@ -163,7 +163,7 @@ fieldset {
 
 .Profile .shopimg {
     width: 500px;
-    border-radius: 40px;
+    border-radius: 25px;
     height: 400px;
     border: solid 0.2rem rgb(35, 189, 35);
 }
@@ -171,7 +171,7 @@ fieldset {
 .Profile .logocont {
     height: 620px;
     width: 480px;
-    border-radius: 40px;
+    border-radius: 25px;
     border: solid 0.1rem rgb(35, 189, 35);
     padding: 4.5rem;
     background-color: #3f75eb !important;
@@ -197,8 +197,31 @@ fieldset {
 
     .Profile .logocont {
         padding: 2rem;
-        height: 560px;
-        width: 400px;
+        height: 500px;
+        width: 320px;
+    }
+
+    .avatarimg {
+        width: 245px;
+        height: 245px;
+        border-radius: 100%;
+        border: solid 0.5rem rgb(165, 243, 165);
+    }
+
+    .Profile .button1 {
+        color: white;
+        font-size: 1.7rem;
+        height: 3rem;
+        width: 250px;
+        margin-top: 20px;
+    }
+
+    .Profile .head {
+        background-color: rgb(162, 248, 140);
+        height: 50px;
+        border-radius: 20px;
+        width: 255px;
+
     }
 
     .container1 {
@@ -212,39 +235,50 @@ fieldset {
     .Profile .form,
     .form1 {
         margin-top: 50px;
-        height: 560px;
-        width: 400px;
+        height: 510px;
+        width: 320px;
+        border-radius: 25px;
     }
 
     .input {
-        height: 2.5rem;
-        width: 320px;
+        height: 2rem;
+        width: 240px;
     }
 
     .input1 {
-        width: 320px;
-        height: 3rem;
+        width: 240px;
+        height: 2.5rem;
     }
 
     .addinput {
-        height: 2.5rem;
-        width: 320px;
+        height: 2rem;
+        width: 240px;
     }
 
     .addinput1 {
-        width: 320px;
-        height: 3rem;
+        width: 240px;
+        height: 2.5rem;
     }
 
     .addform {
         margin-bottom: 50px;
-        width: 400px;
-        height: 350px;
+        width: 320px;
+        height: 340px;
+    }
+
+    .Profile .formbutton {
+        font-size: 1.5rem;
+        height: 3rem;
+        width: 180px;
+        padding: 2px 40px !important;
+        border-radius: 200px !important;
+        border: solid 0.2rem white;
+        margin-top: 20px;
     }
 
     .Profile .shopimg {
-        height: 300px;
-        width: 400px;
+        height: 270px;
+        width: 320px;
     }
 }
 

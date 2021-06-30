@@ -17,7 +17,7 @@ class ownerPage extends Component{
     render(){
         return (
             <>
-            <Container fluid className="displaycontainer1 Profile">
+            <Container className="displaycontainer1 Profile"  style={{justifyContent:"center"}}>
               <h1 className="displaytxt">Personal details</h1>
               <div className="displayform1">
                 <DisplayOwnerProfile className="displayform1"/>
@@ -28,7 +28,7 @@ class ownerPage extends Component{
               </div>
               {
                   this.state.c_id==this.state.o_id?
-                  (<button className="displaybutton1">Update Details</button>):<div></div>
+                  (<a href="/profileUpdate"><button className="displaybutton1">EDIT</button></a>):<div></div>
               }
             </Container>
             </>
