@@ -8,6 +8,7 @@ class customerPage extends Component{
     render(){
         return (
             <>
+            <h1 className="heading">Personal Details</h1>
             <Container fluid className="container1 Profile">
               <div className="logocont">
                 <h1 className="head">Hello, Customer</h1>

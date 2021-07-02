@@ -1,10 +1,12 @@
 import Customer from './customerPage';
 import Seller from './ownerPage';
+import { useSelector } from 'react-redux';
+import { selectUserData } from '../../reduxSlices/authSlice';
 
-const isLoggedIn="owner";
 function Profile() {
+    const userData = useSelector(selectUserData);
 
-    if(isLoggedIn==="owner"){
+    if(userData.category==="owner"){
       return (
         <>
         <Seller/>
@@ -12,7 +14,7 @@ function Profile() {
       );
     }
     
-    if(isLoggedIn==="customer"){
+    if(userData.category==="customer"){
       return (
         <>
         <Customer/>
