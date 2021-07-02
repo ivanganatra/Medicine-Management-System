@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
-
+import UpdateModal from './profileUpdateModal'
 import db from '../../firebase';
 import { connect } from 'react-redux';
 
 class Form extends Component{
     constructor(props) {
         super(props)
-
+        this.state = {
+            show: false
+        };
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
         this.state = {
             name: '',
             email: '',
@@ -15,8 +19,19 @@ class Form extends Component{
             state:'',
             city:'',
             phone:'',
-        }
+        };
     }
+    showModal = () => {
+        this.setState({ 
+            show: true 
+        });
+    };
+    
+    hideModal = () => {
+        this.setState({ 
+            show: false 
+        });
+    };
 
     componentDidMount() {
         db.collection('profiles').doc(this.props.userId).get().then(doc => {
@@ -71,7 +86,7 @@ class Form extends Component{
             phone:event.target.value
         })
     }
-    handleSubmit = event => {
+    handleSubmit = (event) => {
         event.preventDefault();
         db.collection('profiles').doc(this.props.userId).update({
             name: this.state.name,
@@ -81,12 +96,13 @@ class Form extends Component{
             city: this.state.city,
             phone: this.state.phone
         }).then(res => {
-            alert('Personal Details Updated Successfully');
+            <UpdateModal show={this.state.show} handleClose={this.hideModal} />
         })
     }
 
     render(){
         return (
+            <>
             <form className="Profile" onSubmit={this.handleSubmit}>
                 <div>
                     <label className="txt">Name:</label>
@@ -114,6 +130,7 @@ class Form extends Component{
                 </div>
                 <button className="formbutton" type="submit">Submit</button>
             </form>
+            </>
         )
     };
 }
