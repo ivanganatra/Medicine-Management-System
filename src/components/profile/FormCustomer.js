@@ -1,8 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import '../../css/formstyle.css'
 import UpdateModal from './profileUpdateModal'
 import db from '../../firebase';
 import { connect } from 'react-redux';
+
+function validateEmail(email) {
+    console.log(email);
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
 class Form extends Component{
     constructor(props) {
@@ -52,16 +58,18 @@ class Form extends Component{
             }
         })
     }
+    
 
     handleNameChange = (event)=>{
         this.setState({
             name:event.target.value
         })
     }
-    handleEmailChange = event => {
+    handleEmailChange = (event) => {
         this.setState({
             email:event.target.value
         })
+
     }
     handleAddressChange = event => {
         this.setState({
@@ -110,7 +118,7 @@ class Form extends Component{
                 </div>
                 <div>
                     <label className="txt">Email-id:</label>
-                    <input type="text" className="input" required value={this.state.email} onChange={this.handleEmailChange}/>
+                    <input type="email" className="input" required value={this.state.email} onChange={this.handleEmailChange}/>
                 </div>
                 <div>
                     <label className="txt" >Phone:</label>
