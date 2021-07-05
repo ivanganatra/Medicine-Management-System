@@ -13,9 +13,6 @@ function validateEmail(email) {
 class Form extends Component{
     constructor(props) {
         super(props)
-        this.state = {
-            show: false
-        };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.state = {
@@ -25,6 +22,8 @@ class Form extends Component{
             state:'',
             city:'',
             phone:'',
+            show: false,
+            emailErr: false
         };
     }
     showModal = () => {
@@ -96,6 +95,16 @@ class Form extends Component{
     }
     handleSubmit = (event) => {
         event.preventDefault();
+        if(!validateEmail(this.state.email)) {
+            this.setState({
+                emailErr: true
+            })
+            return;
+        } else {
+            this.setState({
+                emailErr: false
+            })
+        }
         db.collection('profiles').doc(this.props.userId).update({
             name: this.state.name,
             email: this.state.email,
@@ -104,13 +113,14 @@ class Form extends Component{
             city: this.state.city,
             phone: this.state.phone
         }).then(res => {
-            <UpdateModal show={this.state.show} handleClose={this.hideModal} />
+            this.showModal();
         })
     }
 
     render(){
         return (
             <>
+            <UpdateModal show={this.state.show} handleClose={this.hideModal} />
             <form className="Profile" onSubmit={this.handleSubmit}>
                 <div>
                     <label className="txt">Name:</label>
@@ -119,6 +129,10 @@ class Form extends Component{
                 <div>
                     <label className="txt">Email-id:</label>
                     <input type="email" className="input" required value={this.state.email} onChange={this.handleEmailChange}/>
+                    {
+                        this.state.emailErr ? <span className="Danger_Text">Enter a valid Email ID</span> : null
+                    }
+                    
                 </div>
                 <div>
                     <label className="txt" >Phone:</label>
@@ -149,4 +163,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Form)
+export default connect(mapStateToProps)(Form);
