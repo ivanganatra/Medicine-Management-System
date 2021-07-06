@@ -51,6 +51,13 @@ th, td {
   text-align: center !important;
 }
 
+@media screen and (max-width:500px) {
+  th {
+    max-width: 120px !important;
+    overflow-wrap: break-word;
+  }
+}
+
 /* tbody {
   background-color: #d9ffc9;
 } */
