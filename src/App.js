@@ -13,6 +13,7 @@ import Profile from './components/profile/Profile';
 import About from './components/Aboutus/about.js';
 import './App.css';
 import Orders from './Pages/Orders/Orders';
+import ViewOrders from './Pages/Orders/veiwOrders';
 import CreateOrder from './Pages/CreateOrder/CreateOrder';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ProfileDisplay from './components/DisplayProfile/Profiledisplay';
@@ -58,6 +59,7 @@ const App = () => {
               <Header />
               <Switch>
                 <Route exact path="/profile" component = {ProfileDisplay} />
+                <Route exact path="/orders/:orderId" component = {ViewOrders} />
                 <Route exact path="/orders" component = {Orders} />
                 <Route exact path="/createOrder" component = {CreateOrder} />
                 <Route  path="/about" component = {About} />
