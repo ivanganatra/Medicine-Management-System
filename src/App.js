@@ -13,7 +13,7 @@ import Profile from './components/profile/Profile';
 import About from './components/Aboutus/about.js';
 import './App.css';
 import Orders from './Pages/Orders/Orders';
-import ViewOrders from './Pages/Orders/veiwOrders';
+import ViewOrders from './Pages/viewOrders/veiwOrders';
 import CreateOrder from './Pages/CreateOrder/CreateOrder';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ProfileDisplay from './components/DisplayProfile/Profiledisplay';
