@@ -38,9 +38,9 @@ const authSlice = createSlice({
         LOGOUT: (state) => {
             state.token = null;
             state.userId = null;
-            localStorage.removeItem("Frosthack__token");
-            localStorage.removeItem("Frosthack__userId");
-            localStorage.removeItem("Frosthack__category");
+            localStorage.removeItem("MedEasy__token");
+            localStorage.removeItem("MedEasy__userId");
+            localStorage.removeItem("MedEasy__category");
         }
     }
 })
@@ -50,9 +50,9 @@ export const { LOGIN, LOGOUT, SET_ERROR, SET_ERROR_NULL, SET_LOADING, SET_LOGGIN
 export const AUTOLOGIN = () => dispatch => {
     console.log("Hello");
     dispatch(SET_LOADING(true));
-    const token = localStorage.getItem('Frosthack__token');
+    const token = localStorage.getItem('MedEasy__token');
     if(token) {
-        const userId = localStorage.getItem('Frosthack__userId');
+        const userId = localStorage.getItem('MedEasy__userId');
         db.collection("users").doc(userId).get().then(data => {
             console.log(data.data());
             dispatch(LOGIN({
@@ -78,9 +78,9 @@ export const ASYNC_LOGIN = userData => dispatch => {
         password: userData.password,
         returnSecureToken: true
     }
-    let URL = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCqpuOG7xV3ZINsIPpxg_NxcTbve5UbNJc";
+    let URL = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCjKEAPuLRgKI1rxE_poUR9grME_TBVGkQ";
     if (userData.isSignIn) {
-        URL = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCqpuOG7xV3ZINsIPpxg_NxcTbve5UbNJc";
+        URL = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCjKEAPuLRgKI1rxE_poUR9grME_TBVGkQ";
     }
     console.log(authData);
     axios.post(URL, authData)
@@ -88,8 +88,8 @@ export const ASYNC_LOGIN = userData => dispatch => {
             console.log(response);
             const token = response.data.idToken;
             const userId = response.data.localId;
-            localStorage.setItem('Frosthack__token', token);
-            localStorage.setItem('Frosthack__userId', userId);
+            localStorage.setItem('MedEasy__token', token);
+            localStorage.setItem('MedEasy__userId', userId);
             dispatch(AUTOLOGIN());
             dispatch(SET_LOADING(false));
             dispatch(SET_LOGGING(false));
