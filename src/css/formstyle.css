@@ -287,3 +287,11 @@ fieldset {
         justify-content: space-between;
     }
 }
+
+.Danger_Text {
+    color: #ba1616;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 3px;
+    font-size: 0.9rem;
+}

@@ -1,9 +1,11 @@
-.about *{
+/* Overall css start */
+.about {
     padding:0px;
     margin:0px;
     display: border-box;
     backface-visibility: visible;
     box-sizing: inherit;
+    height: auto;
 }
 .about nav ul{
     display: flex;
@@ -12,10 +14,11 @@
 }
 .about h1{
     color:  hsl(0, 0%, 100%);
-    font-weight: 600;
+    font-weight: 900;
     letter-spacing: 1px;
     font-size: 2.5rem;
-    margin-bottom: 3rem;
+
+
 }
 .about h2{
     font-size: 40px;
@@ -29,158 +32,273 @@
     font-size: 2.0rem;
 }
 .about h4{
-    font-size: 1.7rem;
+    font-size: 3vw;
     color: hsl(233, 26%, 24%);
-    margin: 2rem 0 1rem 0;
+    margin: 0rem 0 1rem 0;
     transition: all 0.2s;
 }
 .about h4:hover{
     color:hsl(136, 65%, 51%);
 }
 .about  a{
-    color: white;
+    color: rgb(255, 255, 255);
     letter-spacing: 1px;
     text-decoration: none;
-
-  }
-.about .section__features{
-    padding:7rem 2.5rem;
-    background-color: hsl(0, 0%, 100%) ;
-}
-.about .section-1{
-    width:100%;
-    height:43vw;
-    min-height: 30vh;
-    padding-top: 5vw;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
 .about .Green_Button{
     box-shadow:2px 2px 2px gray;
     z-index: 2;
     font-weight:500;
 }
-.about .section__features p{
+/* Overall css end */
+
+/* Vision Box + Cards start */
+.about .visionbox_cards{
     font-size: 23px;
     color: #9698a6;
     font-weight: normal;
     margin: 30px 0;
     word-spacing: 1.2px;
 }
-.about .grid__layout{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 5vw;
-    width:100%;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-}
-/* Flip card starts */
-.about .feature__card{
-    scroll-snap-align: center;
-    width: 300px;
-    height: 380px;
-    box-shadow: 0.2rem 0.2rem 2rem rgb(209, 209, 209);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    /* Vision Box start */
+        .about .vision_box{
+            width:100%;
+            min-height: 30vh;
+            padding-top: 5vw;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        /* Vision content start */
+        .about .vision_content{
+            padding:7rem 2.5rem;
+            background-color: hsl(0, 0%, 100%) ;
+        }
+        /* Vision content end */
+    /* Vision box end */
+/* Grid Layout Start */
+    .about .grid_layout{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 5vw;
+        width:100%;
+    }
+    /* Feature Card Start */
+    .about .feature_card{
+        scroll-snap-align: center;
+        width: 300px;
+        height: 380px;
+        box-shadow: 0.2rem 0.2rem 2rem rgb(209, 209, 209);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+        /* Flip Card Start */
+        .about .flip-card{
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            object-fit: cover;
+            }
+            /* Flip card inner start */
+            .about .flip-card-inner {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                text-align: center;
+                transition: transform 0.7s;
+                transform-style: preserve-3d;
+                -webkit-backface-visibility: hidden;
+                border:none;
+                backface-visibility: hidden;  }
 
-}
-.about .flip-card{
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-    object-fit: cover;
-    }
-    .about .flip-card-inner {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    text-align: center;
-    transition: transform 0.7s;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    border:none;
-    backface-visibility: hidden;  }
-    .about .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-    .about .flip-card:hover .feature__card{
-      flex-direction: column-reverse;
-    }
-  .about .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    text-align: left;
+                .about .flip-card-front {
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    text-align: left;
+                    background-color: rgb(255, 255, 255);
+                    color: black;
+                  }
+                  .about .flip-card-back {
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    text-align: left;
+                    padding:2vw;
+                    padding-top: 0vw;
+                    background-color: #ffffff;
+                    color: rgba(112, 112, 112, 0.946); transform: rotateY(180deg);
+                 }
+            /* Flip card inner end */
+            .about .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+              }
+            .about .flip-card:hover .feature_card{
+            flex-direction: column-reverse;
+            }
+        /* Flip Card End */
+    /* Feature Card End */
+/* Grid Layout End */
 
-}
-  .about .flip-card-front {
-      background-color: rgb(255, 255, 255);
-      color: black;
-    }
-
-    .about .flip-card-back {
-    padding:2vw;
-    padding-top: 0vw;
-    background-color: #ffffff;
-    color: rgba(112, 112, 112, 0.946);
-    transform: rotateY(180deg);
-  }
-/* Flip Card Ends */
-.about .section__cards{
+/* Name Cards start */
+.about .name_cards{
     background-color:  hsl(0, 0%, 98%);
-    padding: 8rem 12rem;
+    padding: 6vw 4vw 4vw 4vw;
+    height: fit-content;
 }
-.about .section__cards h3{
-    margin-bottom: 6rem;
+.about .name_cards a strong{
+    color: rgb(12, 179, 21);
 }
-.about figure{
-    overflow: hidden;
-    background-color: white;
+.about .name_cards h2{
+    margin-bottom:7vw;
+    text-align: center;
+    height: fit-content;
 }
+    /* Section layout starts */
+    .about .section_layout {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height:34.4vw;
+    }
 
-.about figure img{
-    width: 100%;
-}
-.about figcaption{
-    padding: 2rem 3rem;
-    color: hsl(233, 8%, 62%);
-}
-.about figcaption p{
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    line-height: 1.6;
-}
+        /* Buttons start */
+        .about .Buttons{
+            height:100%;
+
+        }
+        .about button{
+            height:100%;
+            background-color: #54d27d  !important;
+            background-image: linear-gradient(
+315deg
+ ,#9effa6 0%, #48c471 74%) !important;
+        border-radius: 200vw;
+        }
+        .about .Buttons:hover{
+            background-image: white;
+            border-radius: 0px;
+        }
+        /* Button end */
+        /* My content starts */
+        .about .name_cards .my_content{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding: 0rem 2vw 2vw 2vw;
+        }
+        .about .name_cards p{
+            width:90%;
+            height:60%;
+            font-size: 1.5vw;
+            font-weight: 500;
+        }
+        .about .name_cards .dots{
+            display: none;
+            visibility: hidden;
+        }
+        .about .name_cards .review_hidden{
+            display: inline;
+        }
+        .about .name_cards .blog{
+            display: none;
+            visibility: hidden;
+        }
+        .about .name_cards .my_name{
+            color:green;
+            font-size: 2vw;
+            letter-spacing: 1px;
+            text-decoration: none;
+            text-align: left;
+        }
+        /* My content ends */
+        /* My Image start */
+        .about .name_cards  .my_image{
+            height:100%;
+            width: 70vw;
+        }
+        .about .name_cards img{
+            height:100%;
+        }
+        /* My image end */
+    /* Section layout end */
+/* Name cards end */
+/* .about .section_layout .my_image{
+} */
 @media only screen and (max-width: 1470px){
-    .about .grid__layout{
+
+    .about .grid_layout{
         display: grid;
         grid-template-columns: 50% 50%;
         padding-left: 5vw;
         row-gap:10vw;
         column-gap: 5vw;
     }
-    .about .feature__card{
+    .about .feature_card{
         flex-direction: column-reverse;
         justify-content: space-between;
         padding-top: 1.2vw;
     }
+
 }
 @media only screen and (max-width: 900px){
-    .about .grid__layout{
+    .about .grid_layout{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding-left: 0vw;
     }
-    .about .feature__card{
+    .about .feature_card{
     }
-    .about .section-1{
+    .about .vision_box{
         margin-top:10vh;
         margin-bottom:50vh;
     }
+    .about .name_cards .my_content{
+        width:100%;
+        padding: 0rem 1.5vw 1vw 1vw;
+    }
+    .about .name_cards p{
+        font-size:2.1vw;
+        width:100%;
+        height: 53%;
+    }
+    .about .name_cards .review_hidden{
+        display: none;
+    }
+    .about .name_cards .dots{
+        display: inline;
+        visibility: visible;
+    }
+    .about .name_cards .blog{
+        visibility: visible;
+    }
+
+}
+@media only screen and (max-width:600px){
+    .about{
+        height: 800vw;
+    }
+    .about .name_cards .section_layout{
+        height: 70vw;
+    }
+    .about .name_cards .my_image{
+        display: none;
+    }
+    .about .name_cards p{
+        font-size:4vw;
+    }
+    .about .name_cards h2{
+        font-size:8vw;
+    }
+    .about .name_cards h4{
+        font-size:6vw;
+    }
+    .about .name_cards .my_name{
+        font-size: 4vw;
+    }
+
 }
