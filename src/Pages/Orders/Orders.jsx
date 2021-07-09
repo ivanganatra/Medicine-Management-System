@@ -43,7 +43,7 @@ class Orders extends Component {
       //   img_url: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2Fprescription2.jpg?alt=media&token=e74e5cde-7ef0-40ab-9d79-10ebe21b08dc",
       //   id: "01004",
       //   status: "confirmed",
-      // }, 
+      // },
       // {
       //   accepted_by: "Jjaxv2ISvdeN5lqaqTNqJvWxdcp1",
       //   created_at: "June 24, 2021 11:00:01 PM UTC+5:30",
@@ -59,7 +59,7 @@ class Orders extends Component {
   componentDidMount() {
     db.collection("orders").orderBy('created_at', "desc").get().then(snapshot => {
       let userOrders = [];
-      if(this.props.category === 'customer') {
+      if (this.props.category === 'customer') {
         snapshot.docs.forEach(doc => {
           if (doc.data().created_by === this.props.userId) {
             userOrders.push({
@@ -104,6 +104,7 @@ class Orders extends Component {
   }
 
   render() {
+    console.log(this.state.orders);
     return (
       <div className="main-container" style={{ paddingTop: "95px" }}>
         <div className="container">
@@ -139,16 +140,6 @@ class Orders extends Component {
                         } else if (order.status === "cancelled") {
                           statusClass = "bg-danger";
                         }
-                        // let statusClass = "ps-md-3 text-capitalize fw-bold";
-                        // if (order.status === "collected") {
-                        //   statusClass = "ps-md-3 text-capitalize fw-bold text-success";
-                        // } else if (order.status === "confirmed") {
-                        //   statusClass = "ps-md-3 text-capitalize fw-bold text-primary";
-                        // }else if (order.status === "pending") {
-                        //   statusClass = "ps-md-3 text-capitalize fw-bold text-warning";
-                        // } else if (order.status === "cancelled") {
-                        //   statusClass = "ps-md-3 text-capitalize fw-bold text-danger";
-                        // }
                         return (
                           <>
                             <tr key={index}>

@@ -172,7 +172,7 @@ export const RemoveFileIcon = styled.i`
 
 export const PreviewContainer = styled.section`
   padding: 0.25rem;
-  width: 20%;
+  width: 90%;
   border-radius: 6px;
   box-sizing: border-box;
   display: flex;
@@ -189,10 +189,10 @@ export const PreviewContainer = styled.section`
     position: relative;
   }
   @media only screen and (max-width: 750px) {
-    width: 25%;
+    width: 90%;
   }
-  @media only screen and (max-width: 500px) {
-    width: 50%;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
   }
   @media only screen and (max-width: 400px) {
     width: 100%;
