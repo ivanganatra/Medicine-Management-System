@@ -1,6 +1,6 @@
 .Profile .form {
     background-color: rgb(162, 248, 140);
-    height: 620px;
+    height: 650px;
     border-radius: 25px;
     width: 500px;
     color: white;
@@ -235,7 +235,7 @@ fieldset {
     .Profile .form,
     .form1 {
         margin-top: 50px;
-        height: 510px;
+        height: 520px;
         width: 320px;
         border-radius: 25px;
     }
@@ -263,7 +263,7 @@ fieldset {
     .addform {
         margin-bottom: 50px;
         width: 320px;
-        height: 340px;
+        height: 350px;
     }
 
     .Profile .formbutton {
