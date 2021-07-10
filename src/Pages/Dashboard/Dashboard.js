@@ -101,11 +101,7 @@ const Dashboard = (props) => {
 
     const selectOrder = (orderId) => {
         db.collection('profiles').doc(props.userId).get().then(doc => {
-            if(!doc.exists) {
-                setShowCompleteProfile(true);
-                alert("Please Complete your profile first.")
-                return;
-            } else if(!doc.data().shop_name) {
+            if (!doc.exists || !doc.data().shop_name || !doc.data().name) {
                 setShowCompleteProfile(true);
                 return;
             } else {
