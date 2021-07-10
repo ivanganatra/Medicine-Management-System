@@ -125,7 +125,7 @@ const Footer=()=> {
                                 </div>
                                 <div class="contact-mail">
                                     <img src={Email}></img>
-                                    <span id="mail">ivan.ganatra@gmail.com</span>
+                                    <span id="mail">medeasy45@gmail.com</span>
                                 </div>
                             </div>
                             <div className="social-links ">

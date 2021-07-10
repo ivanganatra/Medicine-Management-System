@@ -33,7 +33,8 @@ const ViewOrders = (props) => {
   const [orderDetail, setOrderDetails] = useState({});
   const [shopDetail, setShopDetails] = useState({});
 
-  useEffect(() => {
+  const getOrderDetails = () => {
+    window.scrollTo(0, 0); 
     setLoading(true);
     let Order;
     db.collection('orders').doc(orderId).get().then(doc => {
@@ -51,7 +52,7 @@ const ViewOrders = (props) => {
       }
     })
     .then(result => {
-      if (Order.status === "confirmed" || Order.status === "collected") {
+      if (Order.status === "confirmed" || Order.status === "collected" || Order.status === "cancelled") {
         return db.collection('profiles').doc(Order.accepted_by).get().then(doc2 => {
           setShopDetails(doc2.data());
           setLoading(false);
@@ -59,7 +60,12 @@ const ViewOrders = (props) => {
       } else {
         setLoading(false);
       }
+      
     })
+  }
+
+  useEffect(() => {
+    getOrderDetails();
   }, [])
   // const orderDetail = {
   //   address: "Bhopal",
@@ -97,15 +103,42 @@ const ViewOrders = (props) => {
     statusClass = "text-danger";
   }
 
+  const orderCollectedHandler = () => {
+    db.collection('orders').doc(orderId).update({
+      status: 'collected'
+    }).then(result => {
+      getOrderDetails();
+    })
+  }
+
+  const orderCancelHandler = () => {
+    db.collection('orders').doc(orderId).update({
+      status: 'cancelled'
+    }).then(result => {
+      getOrderDetails();
+    })
+  }
+
+  const postAgainOrderHandler = () => {
+    db.collection('orders').doc(orderId).update({
+      status: "pending",
+      accepted_by: null
+    })
+    getOrderDetails();
+  }
+
   const OrderOptions = () => {
     if (props.category === "customer") {
       return (
         <div className="d-flex justify-content-center align-items-center py-3">
           <span>
-            <button type="button" class="btn btn-lg btn-primary mx-3">Confirm Pickup</button>
+            <button onClick={orderCollectedHandler} type="button" class="btn btn-lg btn-primary mx-3">Confirm Pickup</button>
           </span>
           <span>
-            <button type="button" class="btn btn-lg btn-danger mx-3">Cancel Order</button>
+            <button onClick={orderCancelHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel Order</button>
+          </span>
+          <span>
+            <button onClick={postAgainOrderHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel &amp; Re-Post Order</button>
           </span>
         </div>
       );
@@ -121,7 +154,7 @@ const ViewOrders = (props) => {
 
   if (loading) {
     return (
-      <div className="text-center" style={{marginTop: "120px"}}>
+      <div className="text-center" style={{marginTop: "120px", minHeight: '100vh'}}>
         <CircularProgress size={70} />
       </div>
     )
@@ -146,7 +179,7 @@ const ViewOrders = (props) => {
           <div className="row p-3 mx-2">
             <div className="col-12 col-md-6 field-text px-0 px-md-4">
               <div><span className="fw-bold">Name : </span>{orderDetail.name}</div>
-              <div><span className="fw-bold">Contact No. : </span>{orderDetail.contact}</div>
+              <div><span className="fw-bold">Contact No. : </span>{orderDetail.phone}</div>
               <div><span className="fw-bold">Address : </span>{orderDetail.address}</div>
               <div><span className="fw-bold">City : </span>{orderDetail.city}</div>
               <div><span className="fw-bold">State : </span>{orderDetail.state}</div>
@@ -179,8 +212,8 @@ const ViewOrders = (props) => {
               <div className="order-number fw-bold pb-4">
                 Prescription Preview
               </div>
-              <a href={orderDetail.imgUrl} className="preview-container" download="Prescription.jpg">
-                <img src={orderDetail.imgUrl} alt="Prescription Preview" width="100%" />
+              <a href={orderDetail.img_url} className="preview-container" download="Prescription.jpg">
+                <img src={orderDetail.img_url} alt="Prescription Preview" width="100%" />
               </a>
             </div>
           </div>
