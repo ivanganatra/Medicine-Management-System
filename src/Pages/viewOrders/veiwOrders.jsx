@@ -215,23 +215,30 @@ const ViewOrders = (props) => {
               </div>
               <p>{orderDetail.description}</p>
             </div>
-            <div className="col-12 px-0 px-md-4">
-              <hr />
-            </div>
+            
           </div>
-
-          <div className="row p-3 mx-2 pt-0">
-            <div className="col-12 field-text px-0 px-md-4">
-              <div className="order-number fw-bold pb-3">
-                Accepted By : <span className="fw-normal">{shopDetail.name}</span>
+          {
+            (orderDetail.status === "confirmed") ? (
+              <div className="row p-3 mx-2 pt-0">
+                <div className="col-12 px-0 px-md-4">
+                  <hr />
+                </div>
+                <div className="col-12 field-text px-0 px-md-4">
+                  <div className="order-number fw-bold pb-3">
+                    Accepted By : <span className="fw-normal">{shopDetail.name}</span>
+                  </div>
+                  <div><span className="fw-bold">Shop Name : </span>{shopDetail.shop_name}</div>
+                  <div><span className="fw-bold">Contact No. : </span>{shopDetail.shop_phone}</div>
+                  <div><span className="fw-bold">Address : </span>{shopDetail.shop_address}</div>
+                  <div><span className="fw-bold">City : </span>{shopDetail.city}</div>
+                  <div><span className="fw-bold">State : </span>{shopDetail.state}</div>
+                </div>
               </div>
-              <div><span className="fw-bold">Shop Name : </span>{shopDetail.shop_name}</div>
-              <div><span className="fw-bold">Contact No. : </span>{shopDetail.shop_phone}</div>
-              <div><span className="fw-bold">Address : </span>{shopDetail.shop_address}</div>
-              <div><span className="fw-bold">City : </span>{shopDetail.city}</div>
-              <div><span className="fw-bold">State : </span>{shopDetail.state}</div>
-            </div>
-          </div>
+            ) : (
+                <div className=""></div>
+            )
+          }
+          
           <div className="row p-3 mx-2">
             <div className="col-12 d-flex flex-column justify-content-center align-items-center px-0 px-md-4">
               <div className="order-number fw-bold pb-4">
