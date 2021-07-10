@@ -6,6 +6,7 @@ import firebase from 'firebase';
 import FileUpload from "../../components/FileUpload/FileUpload";
 import OrderAddedModal from './addedmodal';
 import CompleteProfileModal from './profileModal';
+import CircularProgress from '@material-ui/core/CircularProgress';
 function CreateOrder() {
   const userData = useSelector(selectUserData);
   const [orderInfo, setOrderInfo] = useState({
@@ -14,6 +15,7 @@ function CreateOrder() {
 
   const [description, setDescription] = useState("");
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [showCompleteProfile, setShowCompleteProfile] = useState(false);
   const handleClose = () => setShow(false);
   const updateUploadedFiles = (files) =>
@@ -21,6 +23,7 @@ function CreateOrder() {
 
   console.log(orderInfo, description);
   const handleSubmit = (event) => {
+    setLoading(true);
     event.preventDefault();
     // post data to firebase
 
@@ -39,6 +42,7 @@ function CreateOrder() {
                     created_at: firebase.firestore.FieldValue.serverTimestamp(),
                 });
                 // Order Added Confirmation Modal
+                setLoading(false);
                 setShow(true);
                 // alert("Order Added Successfully");
               })
@@ -78,8 +82,18 @@ function CreateOrder() {
                 <textarea onChange={(event) => setDescription(event.target.value)} className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style={{height:"100px",boxShadow:"none"}}></textarea>
                 <label for="floatingTextarea2">Add details about your requirements (optional)</label>
               </div>
+              {
+                (loading) ? (
+                  <div className="">
+                    <CircularProgress size={80} />
+                    <div className="text-primary fw-bold py-3">Uploading File</div>
+                  </div>
+                ) :
+                  (<div className=""></div>)
+              }
               <button type="submit" className="Green_Button Header_Login mx-0">Create Order</button>
             </form>
+            
           </div>
         </div>
       </div>
