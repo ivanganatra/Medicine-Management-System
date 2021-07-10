@@ -41,6 +41,18 @@ const ViewOrders = (props) => {
     timestamp: { nanoseconds: 828000000, seconds: 1625050204 },
     status: "confirmed"
   };
+  const shopDetail = {
+    address: "1084 Vijay Nagar",
+    city: "Jabalpur",
+    email: "jatinbajaj2001@gmail.com",
+    name: "Jatin Bajaj",
+    phone: "9039058083",
+    seed: 295,
+    shop_address: "1084 Vijay Nagar,near agrasen kalyan Mandpam, Ahinsa Chowk, Jabalpur, M.P.",
+    shop_name: "Raj Medicals",
+    shop_phone: "9039058083",
+    state: "Madhya Pradesh"
+  };
   let statusClass = "";
   if (orderDetail.status === "collected") {
     statusClass = "text-success";
@@ -104,6 +116,22 @@ const ViewOrders = (props) => {
               </div>
               <p>{orderDetail.description}</p>
             </div>
+            <div className="col-12 px-0 px-md-4">
+              <hr />
+            </div>
+          </div>
+
+          <div className="row p-3 mx-2 pt-0">
+            <div className="col-12 field-text px-0 px-md-4">
+              <div className="order-number fw-bold pb-3">
+                Accepted By : <span className="fw-normal">{shopDetail.name}</span>
+              </div>
+              <div><span className="fw-bold">Shop Name : </span>{shopDetail.shop_name}</div>
+              <div><span className="fw-bold">Contact No. : </span>{shopDetail.shop_phone}</div>
+              <div><span className="fw-bold">Address : </span>{shopDetail.shop_address}</div>
+              <div><span className="fw-bold">City : </span>{shopDetail.city}</div>
+              <div><span className="fw-bold">State : </span>{shopDetail.state}</div>
+            </div>
           </div>
           <div className="row p-3 mx-2">
             <div className="col-12 d-flex flex-column justify-content-center align-items-center px-0 px-md-4">
@@ -118,11 +146,11 @@ const ViewOrders = (props) => {
           <div className="row p-3 mx-2">
             <div className="col-12 px-0 px-md-4 d-flex flex-column justify-content-center align-items-center">
               <div><span className="order-number fw-bold pb-4">Order Status : </span>
-                <span className={statusClass +" text-capitalize order-number fw-bold" }>{orderDetail.status}</span>
+                <span className={statusClass + " text-capitalize order-number fw-bold"}>{orderDetail.status}</span>
               </div>
             </div>
             <div className="col-12 px-0 px-md-4 order-options">
-              <OrderOptions/>
+              <OrderOptions />
             </div>
           </div>
         </div>
