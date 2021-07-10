@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b381444a.chunk.css",
+    "main.js": "/static/js/main.03792a37.chunk.js",
+    "main.js.map": "/static/js/main.03792a37.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6675cc72.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6675cc72.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.376a0f89.chunk.js": "/static/js/2.376a0f89.chunk.js",
+    "static/js/2.376a0f89.chunk.js.map": "/static/js/2.376a0f89.chunk.js.map",
+    "static/js/3.97411062.chunk.js": "/static/js/3.97411062.chunk.js",
+    "static/js/3.97411062.chunk.js.map": "/static/js/3.97411062.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.b381444a.chunk.css.map": "/static/css/main.b381444a.chunk.css.map",
+    "static/js/2.376a0f89.chunk.js.LICENSE.txt": "/static/js/2.376a0f89.chunk.js.LICENSE.txt",
+    "static/media/ClickAndCollect.b3ff5f1c.png": "/static/media/ClickAndCollect.b3ff5f1c.png",
+    "static/media/Discount.28b68787.png": "/static/media/Discount.28b68787.png",
+    "static/media/HomepageImg3.07cf949b.jpeg": "/static/media/HomepageImg3.07cf949b.jpeg",
+    "static/media/Logo.96358cfe.PNG": "/static/media/Logo.96358cfe.PNG",
+    "static/media/ScanOrder.5b1fb0de.png": "/static/media/ScanOrder.5b1fb0de.png",
+    "static/media/Shop.015bd6bf.jpeg": "/static/media/Shop.015bd6bf.jpeg",
+    "static/media/list11.1d1064f6.jpeg": "/static/media/list11.1d1064f6.jpeg",
+    "static/media/medicine-store.4cd131c6.png": "/static/media/medicine-store.4cd131c6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6675cc72.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.376a0f89.chunk.js",
+    "static/css/main.b381444a.chunk.css",
+    "static/js/main.03792a37.chunk.js"
+  ]
+}
