@@ -169,11 +169,20 @@ const ViewOrders = (props) => {
       }
     }
     else if (props.category === "owner") {
-      return (
-        <div className="d-flex justify-content-center align-items-center py-3 order-number">
-          Keep the order ready to be collected.
-        </div>
-      );
+      if (orderDetail.status === "confirmed") {
+        return (
+          <div className="d-flex justify-content-center align-items-center py-3 order-number">
+            Keep the order ready to be collected !!
+          </div>
+        );
+      }
+      else if (orderDetail.status === "cancelled") {
+        return (
+          <div className="d-flex justify-content-center align-items-center py-3 order-number">
+            Sorry the order was cancelled :(
+          </div>
+        );
+      }
     }
   }
 
