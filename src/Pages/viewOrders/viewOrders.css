@@ -1,0 +1,65 @@
+.order-container {
+  font-size: 15px !important;
+  border-radius: 7px !important;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 15%);
+}
+
+.order-number {
+  font-size: 1.3rem;
+}
+
+.field-text {
+  font-size: 17px;
+  /* font-weight: 500; */
+}
+
+.timeStamp {
+  font-size: 1.1rem;
+  color: rgb(126 126 139);
+  font-weight: 600;
+  font-family: monospace !important;
+  word-spacing: -.15rem;
+}
+
+.timeStamp span {
+  color: rgb(126 126 139);
+  font-weight: 600;
+  font-family: monospace !important;
+  word-spacing: -.15rem;
+}
+
+.preview-container {
+  padding: 0.25rem;
+  width: 90%;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.preview-container img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+/* .preview-container :hover {
+  opacity: 0.55;
+} */
+
+@media only screen and (max-width: 750px) {
+  .preview-container {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .preview-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .preview-container {
+    width: 100%;
+    padding: 0 0 0.4em;
+  }
+}

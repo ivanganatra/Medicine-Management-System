@@ -1,5 +1,5 @@
-# Medicine-Management-System
-Creating a link between the customers and the medical shop owners.
-
-Visit our website link:-
- https://ivanganatra.github.io/Medicine-Management-System/
+# MedEasy
+### Take your medical hassle online. <br>
+Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
+<br>
+Take your medical hassle online. Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
