@@ -4,7 +4,8 @@ import { selectUserData } from "../../reduxSlices/authSlice";
 import db, { storage } from '../../firebase';
 import firebase from 'firebase';
 import FileUpload from "../../components/FileUpload/FileUpload";
-
+import OrderAddedModal from './addedmodal';
+import CompleteProfileModal from './profileModal';
 function CreateOrder() {
   const userData = useSelector(selectUserData);
   const [orderInfo, setOrderInfo] = useState({
@@ -12,7 +13,9 @@ function CreateOrder() {
   });
 
   const [description, setDescription] = useState("");
-
+  const [show, setShow] = useState(false);
+  const [showCompleteProfile, setShowCompleteProfile] = useState(false);
+  const handleClose = () => setShow(false);
   const updateUploadedFiles = (files) =>
     setOrderInfo({ ...orderInfo, prescriptions: files });
 
@@ -36,12 +39,14 @@ function CreateOrder() {
                     created_at: firebase.firestore.FieldValue.serverTimestamp(),
                 });
                 // Order Added Confirmation Modal
-                alert("Order Added Successfully");
+                setShow(true);
+                // alert("Order Added Successfully");
               })
       })
       } else {
         // A modal saying Please Complete your profile before posting any order, and a redirect to profile page button
-        alert("Please complete your profile");
+        setShowCompleteProfile(true);
+        // alert("Please complete your profile");
       }
     })
 
@@ -49,6 +54,14 @@ function CreateOrder() {
 
   return (
     <div className="main-container" style={{ paddingTop: "95px" }}>
+      <OrderAddedModal
+        show={show}
+        handleClose={handleClose}
+      />
+      <CompleteProfileModal
+        show={showCompleteProfile}
+        handleClose={() => setShowCompleteProfile(false)}
+      />
       <div className="container">
         <div className="row p-3 d-flex align-items-center">
           <div className="col-12">
