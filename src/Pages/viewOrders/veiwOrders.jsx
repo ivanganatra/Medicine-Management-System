@@ -129,19 +129,44 @@ const ViewOrders = (props) => {
 
   const OrderOptions = () => {
     if (props.category === "customer") {
-      return (
-        <div className="d-flex justify-content-center align-items-center py-3">
-          <span>
-            <button onClick={orderCollectedHandler} type="button" class="btn btn-lg btn-primary mx-3">Confirm Pickup</button>
-          </span>
-          <span>
-            <button onClick={orderCancelHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel Order</button>
-          </span>
-          <span>
-            <button onClick={postAgainOrderHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel &amp; Re-Post Order</button>
-          </span>
-        </div>
-      );
+      if (orderDetail.status === "confirmed") {
+        return (
+          <div className="d-flex justify-content-center align-items-center py-3">
+            <span>
+              <button onClick={orderCollectedHandler} type="button" class="btn btn-lg btn-primary mx-3">Confirm Pickup</button>
+            </span>
+            <span>
+              <button onClick={orderCancelHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel Order</button>
+            </span>
+            <span>
+              <button onClick={postAgainOrderHandler} type="button" class="btn btn-lg btn-warning mx-3">Cancel &amp; Re-Post Order</button>
+            </span>
+          </div>
+        );
+      }
+      else if (orderDetail.status === "cancelled") {
+        return (
+          <div className="d-flex justify-content-center align-items-center py-3">
+            <span>
+              <button onClick={orderCollectedHandler} type="button" class="btn btn-lg btn-primary mx-3">Repost Order</button>
+            </span>
+          </div>
+        );
+      }
+      else if (orderDetail.status === "pending") {
+        return (
+          <div className="d-flex justify-content-center align-items-center py-3">
+            <span>
+              <button onClick={orderCancelHandler} type="button" class="btn btn-lg btn-danger mx-3">Cancel Order</button>
+            </span>
+          </div>
+        );
+      }
+      else {
+        return (
+          <div></div>
+        );
+      }
     }
     else if (props.category === "owner") {
       return (
