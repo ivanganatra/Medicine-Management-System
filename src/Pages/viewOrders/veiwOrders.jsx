@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link as RouterLink } from 'react-router-dom';
 import db from '../../firebase';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import OrderImg from "../../assets/images/Orders/list11.jpeg";
 import "./viewOrders.css";
+
 const getDate = (sec) => {
   const newDate = new Date(sec * 1000);
   let day = newDate.getDate().toString();
@@ -26,33 +28,64 @@ const getTime = (sec) => {
 }
 
 const ViewOrders = (props) => {
-  console.log(props);
   const orderId = props.match.params.orderId;
-  const orderDetail = {
-    address: "Bhopal",
-    city: "BHOPAL",
-    contact: "9111648864",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eaque quisquam quo ad harum dolores tempora consequatur alias numquam veritatis.",
-    id: "AYgzdeKce9Mo230oPzEv",
-    imgUrl: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2F2_20210601_182137_0001.png?alt=media&token=91d7bedb-fe4c-4135-a11b-3dfb090bb391",
-    name: "Rishab Goyal",
-    seed: 83,
-    state: "Madhya Pradesh",
-    timestamp: { nanoseconds: 828000000, seconds: 1625050204 },
-    status: "confirmed"
-  };
-  const shopDetail = {
-    address: "1084 Vijay Nagar",
-    city: "Jabalpur",
-    email: "jatinbajaj2001@gmail.com",
-    name: "Jatin Bajaj",
-    phone: "9039058083",
-    seed: 295,
-    shop_address: "1084 Vijay Nagar,near agrasen kalyan Mandpam, Ahinsa Chowk, Jabalpur, M.P.",
-    shop_name: "Raj Medicals",
-    shop_phone: "9039058083",
-    state: "Madhya Pradesh"
-  };
+  const [loading, setLoading] = useState(true);
+  const [orderDetail, setOrderDetails] = useState({});
+  const [shopDetail, setShopDetails] = useState({});
+
+  useEffect(() => {
+    setLoading(true);
+    let Order;
+    db.collection('orders').doc(orderId).get().then(doc => {
+      if (doc.exists) {
+        Order = doc.data();
+        console.log(Order);
+        let createrId = Order.created_by;
+        return db.collection('profiles').doc(createrId).get().then(doc2 => {
+          setOrderDetails({
+            ...doc2.data(),
+            ...Order
+          });
+          console.log(doc2.data());
+        })
+      }
+    })
+    .then(result => {
+      if (Order.status === "confirmed" || Order.status === "collected") {
+        return db.collection('profiles').doc(Order.accepted_by).get().then(doc2 => {
+          setShopDetails(doc2.data());
+          setLoading(false);
+        })  
+      } else {
+        setLoading(false);
+      }
+    })
+  }, [])
+  // const orderDetail = {
+  //   address: "Bhopal",
+  //   city: "BHOPAL",
+  //   contact: "9111648864",
+  //   description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eaque quisquam quo ad harum dolores tempora consequatur alias numquam veritatis.",
+  //   id: "AYgzdeKce9Mo230oPzEv",
+  //   imgUrl: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2F2_20210601_182137_0001.png?alt=media&token=91d7bedb-fe4c-4135-a11b-3dfb090bb391",
+  //   name: "Rishab Goyal",
+  //   seed: 83,
+  //   state: "Madhya Pradesh",
+  //   timestamp: { nanoseconds: 828000000, seconds: 1625050204 },
+  //   status: "confirmed"
+  // };
+  // const shopDetail = {
+  //   address: "1084 Vijay Nagar",
+  //   city: "Jabalpur",
+  //   email: "jatinbajaj2001@gmail.com",
+  //   name: "Jatin Bajaj",
+  //   phone: "9039058083",
+  //   seed: 295,
+  //   shop_address: "1084 Vijay Nagar,near agrasen kalyan Mandpam, Ahinsa Chowk, Jabalpur, M.P.",
+  //   shop_name: "Raj Medicals",
+  //   shop_phone: "9039058083",
+  //   state: "Madhya Pradesh"
+  // };
   let statusClass = "";
   if (orderDetail.status === "collected") {
     statusClass = "text-success";
@@ -85,6 +118,14 @@ const ViewOrders = (props) => {
       );
     }
   }
+
+  if (loading) {
+    return (
+      <div className="text-center" style={{marginTop: "120px"}}>
+        <CircularProgress size={70} />
+      </div>
+    )
+  }
   return (
     <div className="main-container" style={{ paddingTop: "95px" }}>
       <div className="container">
@@ -99,7 +140,7 @@ const ViewOrders = (props) => {
               <span className="fw-bold">Order Number : </span>{orderId}
             </div>
             <div className="col-12 col-md-5 timeStamp text-md-end order-first order-md-last px-0 px-md-4">
-              Posted at <span>{getTime(orderDetail.timestamp.seconds)}</span> on <span>{getDate(orderDetail.timestamp.seconds)} </span>
+              Posted at <span>{getTime(orderDetail.created_at.seconds)}</span> on <span>{getDate(orderDetail.created_at.seconds)} </span>
             </div>
           </div>
           <div className="row p-3 mx-2">
