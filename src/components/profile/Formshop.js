@@ -1,19 +1,32 @@
 import React, { Component } from 'react'
 import '../../css/formstyle.css'
 import db from '../../firebase';
-
+import UpdateModal from './shopUpdateModal'
 import { connect } from 'react-redux';
 
 class Form1 extends Component{
     constructor(props) {
         super(props)
+        this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
         this.state = {
             name: '',
             address:'',
             phone:'',
+            show:false
         }
     }
-
+    showModal = () => {
+        this.setState({ 
+            show: true 
+        });
+    };
+    
+    hideModal = () => {
+        this.setState({ 
+            show: false 
+        });
+    };
     componentDidMount() {
         db.collection('profiles').doc(this.props.userId).get().then(doc => {
           if(doc.exists) {
@@ -55,13 +68,15 @@ class Form1 extends Component{
             shop_phone: this.state.phone,
             shop_address: this.state.address
         }).then(res => {
-            alert('Shop Details Updated Successfully');
+            this.showModal();
         })
         event.preventDefault()
     }
 
     render(){
         return (
+            <>
+            <UpdateModal show={this.state.show} handleClose={this.hideModal} />
             <form className="Profile" onSubmit={this.handleSubmit}>
                 <div>
                     <label className="txt">Name:</label>
@@ -77,6 +92,7 @@ class Form1 extends Component{
                 </div>
                 <button className="formbutton" type="submit">Submit</button>
             </form>
+            </>
         )
     };
 }
