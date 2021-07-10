@@ -14,7 +14,7 @@ import Sidedrawer from '../Sidedrawer/Sidedrawer';
 import MedicineStore from '../../assets/images/medicine-store.png';
 import ClickAndCollect from '../../assets/images/ClickAndCollect.png';
 import ScanOrder from '../../assets/images/ScanOrder.png';
-import JatinImage from '../../assets/images/jatin_image.jpg';
+import JatinImage from '../../assets/images/jatin_image_files/64748517_174385556912285_695364649589017995_n.jpg';
 import RolitImage from '../../assets/images/rolit-image.jpg';
 import IvanImage from '../../assets/images/ivan_image.jpeg';
 import Discount from '../../assets/images/Discount.png';
