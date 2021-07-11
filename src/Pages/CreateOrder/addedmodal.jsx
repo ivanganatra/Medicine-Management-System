@@ -8,11 +8,11 @@ const OrderAddedModal = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header>
-        <Modal.Title>Success</Modal.Title>
+        <Modal.Title>Prescription uploaded Successfully!</Modal.Title>
         <IconButton onClick={handleClose}><ClearIcon /></IconButton>
       </Modal.Header>
       <Modal.Body>
-        <p>Order Added Successfully !!</p>
+        <p>We will be sharing your prescription with all the medicine shop owners in our network and will let you know if someone has accepted your Order. </p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleClose}>

@@ -122,7 +122,7 @@ class Orders extends Component {
                     <tr>
                       <th scope="col" className="ps-md-3"><span>OrderId</span> </th>
                       {/* <th scope="col" className="ps-md-3"><span>Date</span></th> */}
-                      <th scope="col" className="ps-md-3"><span>Time of Booking</span></th>
+                      <th scope="col" className="ps-md-3"><span>Posted At</span></th>
                       <th scope="col" className="ps-md-3"><span>Status</span></th>
                       <th scope="col" className="ps-md-3"><span>Action</span></th>
                     </tr>

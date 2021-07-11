@@ -52,7 +52,7 @@ const ViewOrders = (props) => {
       }
     })
     .then(result => {
-      if (Order.status === "confirmed" || Order.status === "collected" || Order.status === "cancelled") {
+      if ((Order.status === "confirmed" || Order.status === "collected" || Order.status === "cancelled") && Order.accepted_by) {
         return db.collection('profiles').doc(Order.accepted_by).get().then(doc2 => {
           setShopDetails(doc2.data());
           setLoading(false);
@@ -148,7 +148,7 @@ const ViewOrders = (props) => {
         return (
           <div className="d-flex justify-content-center align-items-center py-3">
             <span>
-              <button onClick={orderCollectedHandler} type="button" class="btn btn-lg btn-primary mx-3">Repost Order</button>
+              <button onClick={postAgainOrderHandler} type="button" class="btn btn-lg btn-primary mx-3">Repost Order</button>
             </span>
           </div>
         );
@@ -227,7 +227,7 @@ const ViewOrders = (props) => {
             
           </div>
           {
-            (orderDetail.status === "confirmed") ? (
+            (orderDetail.status === "confirmed" || orderDetail.status === "cancelled" || orderDetail.status === "collected") && shopDetail.shop_name ? (
               <div className="row p-3 mx-2 pt-0">
                 <div className="col-12 px-0 px-md-4">
                   <hr />
