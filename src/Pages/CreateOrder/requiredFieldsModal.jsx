@@ -4,15 +4,15 @@ import Modal from 'react-bootstrap/Modal';
 import ClearIcon from '@material-ui/icons/Clear';
 import IconButton from '@material-ui/core/IconButton';
 
-const OrderAddedModal = ({ show, handleClose }) => {
+const RequiredFieldsModal = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header>
-        <Modal.Title>Success</Modal.Title>
+        <Modal.Title>Order Incomplete</Modal.Title>
         <IconButton onClick={handleClose}><ClearIcon /></IconButton>
       </Modal.Header>
       <Modal.Body>
-        <p>Order Added Successfully !!</p>
+        <p>The prescription and the decription fields compulsary, add them and try again later!!</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={handleClose}>
@@ -23,4 +23,4 @@ const OrderAddedModal = ({ show, handleClose }) => {
   )
 }
 
-export default OrderAddedModal;
+export default RequiredFieldsModal;
