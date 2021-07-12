@@ -13,7 +13,8 @@ class Form1 extends Component{
             name: '',
             address:'',
             phone:'',
-            show:false
+            show:false,
+            contactErr:false
         }
     }
     showModal = () => {
@@ -63,6 +64,18 @@ class Form1 extends Component{
     }
 
     handleSubmit = event => {
+        event.preventDefault()
+        if(this.state.phone.length == 10 || this.state.phone.length == 11) {
+            this.setState({
+                contactErr: false
+            })
+        } 
+        else {
+            this.setState({
+                contactErr: true
+            })
+            return;
+        }
         db.collection('profiles').doc(this.props.userId).update({
             shop_name: this.state.name,
             shop_phone: this.state.phone,
@@ -70,7 +83,8 @@ class Form1 extends Component{
         }).then(res => {
             this.showModal();
         })
-        event.preventDefault()
+        
+        
     }
 
     render(){
@@ -85,6 +99,9 @@ class Form1 extends Component{
                 <div>
                     <label className="txt" >Phone:</label>
                     <input type="tel" className="addinput" required value={this.state.phone} onChange={this.handlePhoneChange}></input>
+                    {
+                        this.state.contactErr ? <span className="Danger_Text">Enter a valid 10digit Mobile# or 11Digit Landline#</span> : null
+                    }
                 </div>
                 <div>
                     <label className="txt">Address:</label>

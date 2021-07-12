@@ -30,19 +30,19 @@ class About extends React.Component{
         this.state={
             //message is a reserve keyword
             ivan:
-                {  heading:"At present, saving time of customers,is not an option, its a necassity.",
-                   reviews:"The major concern of every bussiness was to save the precious time of their customers.",
-                   reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
-                   blog:"https://medeasyjatin.blogspot.com/2021/07/saving-time-and-taking-preventions-are.html",
+                { heading:"Saving time and taking preventions are on the same path.",
+                   reviews:"The world is getting smaller and we’re becoming more mobile. So why should you be forced to wait for medicines to arrive at your place.",
+                   reviews_hidden:"When medicines required at cruitial moments, MedEasy pinpoints you the exact nearby store, preventing your risk of customer roaming around in search for medicines in this pandemic situation.",
+                   blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
                    linkedin:"https://www.linkedin.com/in/ivan-ganatra/",
                    writtenBy:"Ivan Ganatra",
                    my_image:IvanImage,
                 },
             jatin:
-                { heading:"Saving time and taking preventions are on the same path.",
-                   reviews:"The world is getting smaller and we’re becoming more mobile. So why should you be forced to wait for medicines to arrive at your place.",
-                   reviews_hidden:"When medicines required at cruitial moments, MedEasy pinpoints you the exact nearby store, preventing your risk of customer roaming around in search for medicines in this pandemic situation.",
-                   blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
+                {  heading:"At present, saving time of customers,is not an option, its a necassity.",
+                   reviews:"The major concern of every bussiness was to save the precious time of their customers.",
+                   reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
+                   blog:"https://medeasyjatin.blogspot.com/2021/07/saving-time-and-taking-preventions-are.html",
                    linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
                    writtenBy:"Jatin Bajaj",
                    my_image:JatinImage,
@@ -68,18 +68,18 @@ class About extends React.Component{
                    my_image:RishabImage,
                 },
             heading:"At present, saving time of customers,is not an option, its a necassity.",
-            writtenBy:"Ivan Ganatra",
+            writtenBy:"Jatin Bajaj",
             reviews:"The major concern of every bussiness was to save the precious time of their customers.",
             reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
             count:1,
-            blog:"https://medeasyjatin.blogspot.com/2021/07/saving-time-and-taking-preventions-are.html",
-            linkedin:"https://www.linkedin.com/in/ivan-ganatra/",
-            my_image:IvanImage,
+            linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
+            writtenBy:"Jatin Bajaj",
+            my_image:JatinImage,
         }
     }
     changemessage(change){
         this.setState((prevState)=>{
-            let name=[this.state.ivan,this.state.jatin,this.state.rolit,this.state.rishab];
+            let name=[this.state.jatin, this.state.ivan,this.state.rolit,this.state.rishab];
             let content=name[this.state.count];
             // let name=["Ivan Ganatra","Jatin Bajaj","Rolit Trivedi"];
             let blog=["https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592","https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592","https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592"];
