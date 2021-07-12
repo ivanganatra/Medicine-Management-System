@@ -162,6 +162,7 @@
         justify-content: space-between;
         flex-direction: row;
         height:34.4vw;
+
     }
 
         /* Buttons start */
@@ -171,11 +172,9 @@
         }
         .about button{
             height:100%;
-            background-color: #54d27d  !important;
-            background-image: linear-gradient(
-315deg
- ,#9effa6 0%, #48c471 74%) !important;
-        border-radius: 200vw;
+            background-color: #20bf55 !important;
+            background-image: linear-gradient(315deg,#01ef15  0%, #20bf55 74%) !important;
+            border-radius: 200vw;
         }
         .about .Buttons:hover{
             background-image: white;
@@ -203,7 +202,6 @@
             display: inline;
         }
         .about .name_cards .blog{
-            display: none;
             visibility: hidden;
         }
         .about .name_cards .my_name{
@@ -217,7 +215,8 @@
         /* My Image start */
         .about .name_cards  .my_image{
             height:100%;
-            width: 70vw;
+            width: 60vw;
+            margin-right:3vw;
         }
         .about .name_cards img{
             height:100%;
@@ -299,6 +298,9 @@
     }
     .about .name_cards .my_name{
         font-size: 4vw;
+    }
+    .about .blog{
+        visibility: visible;
     }
 
 }
