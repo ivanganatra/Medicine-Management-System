@@ -1,12 +1,6 @@
-# Medicine-Management-System
-Creating a link between the customers and the medical shop owners.
+Take your medical hassle online.
+Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
+Take your medical hassle online. Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
 
-Visit our website link:-
- https://ivanganatra.github.io/Medicine-Management-System/
- 
- Signup with this credentials to see it working:
- 
-1)ji@gmail.com
-
-2)1@Iv3ded
+Deployed at https://medeasy2021.herokuapp.com/
 
