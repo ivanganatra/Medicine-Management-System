@@ -3,3 +3,5 @@
 Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
 <br>
 Take your medical hassle online. Your MedEasy account will be a one-stop place for searching right stores for your medicine needs.
+
+## Deployed at https://intense-thicket-96653.herokuapp.com/profile
