@@ -17,7 +17,7 @@ import ScanOrder from '../../assets/images/ScanOrder.png';
 import JatinImage from '../../assets/images/jatin_image_files/64748517_174385556912285_695364649589017995_n.jpg';
 import RolitImage from '../../assets/images/rolit-image.jpg';
 import IvanImage from '../../assets/images/ivan_image.jpeg';
-import RishabImage from '../../assets/images/rishab_image.jpg';
+import RishabImage from '../../assets/images/Rishab.jpeg';
 import Discount from '../../assets/images/Discount.png';
 import { Link as Link1 } from "react-scroll";
 import {Element} from "react-scroll";
