@@ -1,7 +1,7 @@
 /* Footer */
 .Footer {
-  background-color: #20bf55 !important;
-  background-image: linear-gradient(315deg, rgb(54, 54, 54) 0%, black 70%) !important;
+  background-color: black !important;
+  /* background-image: linear-gradient(315deg, rgb(54, 54, 54) 0%, black 70%) !important; */
   color: rgb(208, 255, 208);
   position: relative;
   padding-top: 80px;
@@ -41,6 +41,11 @@
 .Footer .our-info {
   word-wrap: normal;
   color: white;
+  width: 250px;
+}
+.Footer h3 {
+  word-wrap: normal;
+  color: rgb(208, 255, 208);
   width: 250px;
 }
 
