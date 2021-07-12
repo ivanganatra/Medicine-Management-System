@@ -23,7 +23,8 @@ class Form extends Component{
             city:'',
             phone:'',
             show: false,
-            emailErr: false
+            emailErr: false,
+            contactErr:false
         };
     }
     showModal = () => {
@@ -105,6 +106,17 @@ class Form extends Component{
                 emailErr: false
             })
         }
+        if(this.state.phone.length !== 10) {
+            this.setState({
+                contactErr: true
+            })
+            return;
+        } 
+        else {
+            this.setState({
+                contactErr: false
+            })
+        }
         db.collection('profiles').doc(this.props.userId).update({
             name: this.state.name,
             email: this.state.email,
@@ -137,6 +149,9 @@ class Form extends Component{
                 <div>
                     <label className="txt" >Phone:</label>
                     <input type="tel" className="input" required value={this.state.phone} onChange={this.handlePhoneChange}></input>
+                    {
+                        this.state.contactErr ? <span className="Danger_Text">Enter a valid 10digit Number</span> : null
+                    }
                 </div>
                 <div>
                     <label className="txt">Address:</label>
