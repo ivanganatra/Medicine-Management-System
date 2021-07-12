@@ -17,6 +17,7 @@ import ScanOrder from '../../assets/images/ScanOrder.png';
 import JatinImage from '../../assets/images/jatin_image_files/64748517_174385556912285_695364649589017995_n.jpg';
 import RolitImage from '../../assets/images/rolit-image.jpg';
 import IvanImage from '../../assets/images/ivan_image.jpeg';
+import RishabImage from '../../assets/images/rishab_image.jpg';
 import Discount from '../../assets/images/Discount.png';
 import { Link as Link1 } from "react-scroll";
 import {Element} from "react-scroll";
@@ -29,12 +30,13 @@ class About extends React.Component{
         this.state={
             //message is a reserve keyword
             ivan:
-                { heading:"Health precaution is now a top priority.",
-                   reviews:"We wanted to design a convenient way, to not only connect nearby store owners with the customer,",
-                   reviews_hidden:"but also to connect customers with the people who are having unused rare medicines at home.",
-                   blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
-                   linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
+                {  heading:"At present, saving time of customers,is not an option, its a necassity.",
+                   reviews:"The major concern of every bussiness was to save the precious time of their customers.",
+                   reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
+                   blog:"https://medeasyjatin.blogspot.com/2021/07/saving-time-and-taking-preventions-are.html",
+                   linkedin:"https://www.linkedin.com/in/ivan-ganatra/",
                    writtenBy:"Ivan Ganatra",
+                   my_image:IvanImage,
                 },
             jatin:
                 { heading:"Saving time and taking preventions are on the same path.",
@@ -43,32 +45,42 @@ class About extends React.Component{
                    blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
                    linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
                    writtenBy:"Jatin Bajaj",
+                   my_image:JatinImage,
                 },
             rolit:
-                { heading:"At present, saving time of customers,is not an option, its a necassity.",
-                   reviews:"The major concern of every bussiness was to save the precious time of their customers.",
-                   reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
-                   blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
-                   linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
+                {
+                   heading:"Health precaution is now a top priority.",
+                   reviews:"We wanted to design a convenient way, to not only connect nearby store owners with the customer,",
+                   reviews_hidden:"but also to connect customers with the people who are having unused rare medicines at home.",
+                   blog:"https://medeasyjatin.blogspot.com/2021/07/health-precaution-is-top-priority.html",
+                   linkedin:"https://www.linkedin.com/in/rolit-trivedi-8b3700194/",
                    writtenBy:"Rolit Trivedi",
+                   my_image:RolitImage,
                 },
-            heading:"Health precaution is now a top priority.",
+            rishab:
+                {
+                   heading:"Wasting a medicine is a crime, and sharing is a blessing.",
+                   reviews:"We wanted a application which was open for all those, who wish to donate the medicines.",
+                   reviews_hidden:"There are lots of kind people left in this world, and even if people wanna charge for their medicines, it will never be an issue. Getting medicines at right place and right time is the only thing that matters at the end.",
+                   blog:"https://medeasyjatin.blogspot.com/2021/07/we-wanted-application-which-was-open.html",
+                   linkedin:"https://www.linkedin.com/in/rolit-trivedi-8b3700194/",
+                   writtenBy:"Rishab Goyal",
+                   my_image:RishabImage,
+                },
+            heading:"At present, saving time of customers,is not an option, its a necassity.",
             writtenBy:"Ivan Ganatra",
-            reviews:"The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money.",
-            reviews_hidden:"You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient",
-            count:0,
-            blog:"https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592",
-            linkedin:"https://www.linkedin.com/in/jatin-bajaj-0053661a4/",
-
+            reviews:"The major concern of every bussiness was to save the precious time of their customers.",
+            reviews_hidden:"Clicking an application and posting the prescription, hardly take 3-5 minutes.You can even contact to the medicine stores and ask them to confirm your order.MedEasy makes the process quick, reliable and efficient.",
+            count:1,
+            blog:"https://medeasyjatin.blogspot.com/2021/07/saving-time-and-taking-preventions-are.html",
+            linkedin:"https://www.linkedin.com/in/ivan-ganatra/",
+            my_image:IvanImage,
         }
     }
     changemessage(change){
         this.setState((prevState)=>{
-            let name=[this.state.ivan,this.state.jatin,this.state.rolit];
+            let name=[this.state.ivan,this.state.jatin,this.state.rolit,this.state.rishab];
             let content=name[this.state.count];
-            let review=[this.state.Ivan,this.state.Jatin,this.state.Rolit]
-            let review_hidden=[this.state.Ivan_hidden,this.state.Jatin_hidden,this.state.Rolit_hidden]
-            let title=[this.state.heading1,this.state.heading2,this.state.heading3]
             // let name=["Ivan Ganatra","Jatin Bajaj","Rolit Trivedi"];
             let blog=["https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592","https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592","https://www.blogger.com/blog/post/edit/preview/1940794270597791638/3630573492414862592"];
             let linkedin=[this.state.linkedin_ivan,this.state.linkedin_rolit,this.state.linkedin_jatin];
@@ -76,9 +88,9 @@ class About extends React.Component{
             console.log("1  "+this.state.count+" "+prevState.count+" "+change);
             let x;
             if(change==-1 && this.state.count==0)
-                x=2;
+                x=3;
             else
-                x=(prevState.count+change)%3;
+                x=(prevState.count+change)%4;
             return{
                 count:x,
                 writtenBy:content.writtenBy,
@@ -87,6 +99,7 @@ class About extends React.Component{
                 reviews_hidden:content.reviews_hidden,
                 blog:content.blog,
                 linkedin:content.linkedin,
+                my_image:content.my_image,
             }
         }
         )
@@ -176,7 +189,7 @@ class About extends React.Component{
                             <button onClick={()=>this.changemessage(1)}><h1>&lt; </h1></button>
                         </div>
                         <div class="my_content">
-                            <h4>{this.state.heading}</h4>
+                            <a  href={this.state.blog} target="_blank"><h4> {this.state.heading}</h4></a>
                             <p>
                                 <div class="review">
                                     {this.state.reviews}
@@ -195,7 +208,7 @@ class About extends React.Component{
                             <a class="my_name " href={this.state.linkedin} target="_blank"><strong>{this.state.writtenBy}</strong></a>
                         </div>
                         <div class="my_image">
-                            <img  src={JatinImage} alt="img"/>
+                            <img  src={this.state.my_image} alt="img"/>
                         </div>
                         <div className="Buttons">
                             <button onClick={()=>this.changemessage(1)}><h1>&gt; </h1></button>
