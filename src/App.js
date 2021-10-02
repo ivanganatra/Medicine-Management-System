@@ -10,7 +10,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/profile/Profile';
-import About from './components/Aboutus/about.js';
+import About from './components/Aboutus/about';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './App.css';
 import Orders from './Pages/Orders/Orders';

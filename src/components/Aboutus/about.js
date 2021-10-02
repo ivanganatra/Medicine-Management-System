@@ -1,16 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import {
-    selectUserData,
-    LOGOUT
-} from '../../reduxSlices/authSlice';
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/Logo.PNG';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
-import IconButton from '@material-ui/core/IconButton';
+import React from 'react';
 import './about.css';
-import Sidedrawer from '../Sidedrawer/Sidedrawer';
 import MedicineStore from '../../assets/images/medicine-store.png';
 import ClickAndCollect from '../../assets/images/ClickAndCollect.png';
 import ScanOrder from '../../assets/images/ScanOrder.png';
@@ -19,10 +8,22 @@ import RolitImage from '../../assets/images/rolit-image.jpg';
 import IvanImage from '../../assets/images/ivan_image.jpeg';
 import RishabImage from '../../assets/images/Rishab.jpeg';
 import Discount from '../../assets/images/Discount.png';
-import { Link as Link1 } from "react-scroll";
-import {Element} from "react-scroll";
 import { Link as Link2 } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import Carousel from 'react-bootstrap/Carousel'
+// import {Element} from "react-scroll";
+// import { Link as Link1 } from "react-scroll";
+// import { useSelector, useDispatch } from 'react-redux';
+// import { useLocation } from 'react-router-dom';
+// import {
+//     selectUserData,
+//     LOGOUT
+// } from '../../reduxSlices/authSlice';
+// import { Link } from 'react-router-dom';
+// import Logo from '../../assets/images/Logo.PNG';
+// import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+// import IconButton from '@material-ui/core/IconButton';
+// import Sidedrawer from '../Sidedrawer/Sidedrawer';
 class About extends React.Component{
     constructor(){
         super()
@@ -107,84 +108,153 @@ class About extends React.Component{
     render(){
         // return <h1>This is the class,component.</h1>;
         return (
-            <div class="about">
-            <section class="visionbox_cards">
-                <div class="vision_box">
-                <div class="vision_content">
-                    <h2>Vision and Mission</h2>
-                    <p>
-                    Control your medical needs like never before.<br></br>
-                    We link your orders with potential sellers to make your work easy.
-                    <br></br>
-                    <br></br>
-                    <Button class="Green_Button">
-                        <Link2 to="About Us">Know Us
-                        </Link2>
-                        </Button>
-                    </p>
-                </div>
-                </div>
-                <Element id="About Us" name="About Us">
-                <div class="grid_layout">
-                        <div class="feature_card">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                    <img id="Easy-Connect-img" src={MedicineStore} alt="img" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                    <p>Technology connects us to the whole world, we connect you to the medicine store nearby you.</p>
-                                    </div>
-                                </div>
-                            </div>
-                                 <h3>Easy connect</h3>
+            <div >
+                <div className="container">
+                    <div className="row mb-5" style={{paddingTop:"230px"}}>
+                        <div className="col-12 text-center">
+                            <h2 style={{"fontSize" : "40px", "fontWeight" : "500"}}>Vision and Mission</h2>
                         </div>
-                        <div class="feature_card">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                    <img src={ClickAndCollect} alt="img" />
-                                    </div>
-                                    <div class="flip-card-back">
-                                    <p>Stop worrying for the shipping charges, book your medicine and collect from the closest store as per your convenience.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Click and Collect</h3>
+                        <br />
+                        <div className="col-12 text-center">
+                            <p style={{"fontSize" : "20px"}}>
+                                Control your medical needs like never before.<br></br>
+                                We link your orders with potential sellers to make your work easy.
+                                <br></br>
+                                <br></br>
+                                <Button class="MuiButtonBase-root MuiButton-root MuiButton-contained Green_Button MuiButton-containedPrimary">
+                                    <Link2 to="font-weight-bold" style={{textDecoration:"none", color:"#ffffff"}}>More</Link2>
+                                </Button>
+                            </p>
                         </div>
-                        <div class="feature_card">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                    <img src={Discount} alt="img"/>
-                                    </div>
-                                    <div class="flip-card-back">
-                                    <p>Get upto 40% discounts on your first buy, and 20% off on next three orders. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Buy more  less</h3>
-                        </div>
-                        <div class="feature_card">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                    <img src={ScanOrder} alt="img"/>
-                                    </div>
-                                    <div class="flip-card-back">
-                                    <p>Just upload the clear picture of the doctor's prescription and sumbit your order.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Scan your Order</h3>
-                        </div>
-
                     </div>
-                 </Element>
-            </section>
-            <section class="name_cards">
-                <h2>Know our thoughts</h2>
-                <div class="section_layout">
+                    <br />
+                    <div className="row mt-5 pt-5">
+                        <div className="col-12 text-center">
+                            <h2 style={{"fontSize" : "40px", "fontWeight" : "500"}}>Features</h2>
+                            <br />
+                        </div>
+                        {/* Cards */}
+                        <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+                            <div className="card" style={{width: "18rem"}}>
+                                <img className="card-img-top" src={MedicineStore} alt="Card image cap"/>
+                                <div className="card-body text-center">
+                                    <h4 className="card-title">Connect Easily</h4>
+                                    <p className="card-text text-justify">Technology connects us to the whole world, we connect you to the medicine store nearby you.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+                            <div className="card" style={{width: "18rem"}}>
+                                <img className="card-img-top" src={ClickAndCollect} alt="Card image cap"/>
+                                <div className="card-body text-center">
+                                    <h4 className="card-title">Click and Collect</h4>
+                                    <p className="card-text text-justify">Collect your medicine from the store as per your convenience and forget shipping charges.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+                            <div className="card" style={{width: "18rem"}}>
+                                <img className="card-img-top" src={Discount} alt="Card image cap"/>
+                                <div className="card-body text-center">
+                                    <h4 className="card-title">Buy more for less</h4>
+                                    <p className="card-text text-justify">Get upto 40% discounts on your first buy, and 20% off on next three orders. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+                            <div className="card" style={{width: "18rem"}}>
+                                <img className="card-img-top" src={ScanOrder} alt="Card image cap"/>
+                                <div className="card-body text-center">
+                                    <h4 className="card-title">Scan your Order</h4>
+                                    <p className="card-text text-justify">Just upload the clear picture of the doctor's prescription and sumbit your order.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row mt-5 pt-5">
+                        <div className="col-12">
+                                                    
+                        </div>
+                    </div>
+                </div>
+                <div className="about">
+                {/* <section class="visionbox_cards">
+                    <div class="vision_box">
+                    <div class="vision_content">
+                        <h2 style={{"fontSize" : "40px", "fontWeight" : "500"}}>Vision and Mission</h2>
+                        <p style={{"fontSize" : "20px"}}>
+                        Control your medical needs like never before.<br></br>
+                        We link your orders with potential sellers to make your work easy.
+                        <br></br>
+                        <br></br>
+                        <Button class="Green_Button">
+                            <Link2 to="About Us">Know Us
+                            </Link2>
+                            </Button>
+                        </p>
+                    </div>
+                    </div>
+                    <Element id="About Us" name="About Us">
+                        <div class="grid_layout">
+                            <div class="feature_card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img id="Easy-Connect-img" src={MedicineStore} alt="img" />
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Technology connects us to the whole world, we connect you to the medicine store nearby you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <h3>Easy connect</h3>
+                            </div>
+                            <div class="feature_card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={ClickAndCollect} alt="img" />
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Stop worrying for the shipping charges, book your medicine and collect from the closest store as per your convenience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Click and Collect</h3>
+                            </div>
+                            <div class="feature_card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={Discount} alt="img"/>
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Get upto 40% discounts on your first buy, and 20% off on next three orders. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Buy more  less</h3>
+                            </div>
+                            <div class="feature_card">
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                        <img src={ScanOrder} alt="img"/>
+                                        </div>
+                                        <div class="flip-card-back">
+                                        <p>Just upload the clear picture of the doctor's prescription and sumbit your order.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Scan your Order</h3>
+                            </div>
+                        </div>
+                    </Element>
+                </section> */}
+                <section class="name_cards">
+                    <h2>Know our thoughts</h2>
+                    <div class="section_layout">
                         <div className="Buttons">
                             <button onClick={()=>this.changemessage(1)}><h1>&lt; </h1></button>
                         </div>
@@ -203,7 +273,6 @@ class About extends React.Component{
                                 </div>
                                 <a class="my_name blog" href={this.state.blog} target="_blank">more.</a>
                                 </div>
-
                             </p>
                             <a class="my_name " href={this.state.linkedin} target="_blank"><strong>{this.state.writtenBy}</strong></a>
                         </div>
@@ -213,9 +282,10 @@ class About extends React.Component{
                         <div className="Buttons">
                             <button onClick={()=>this.changemessage(1)}><h1>&gt; </h1></button>
                         </div>
+                    </div>
+                </section>
                 </div>
-            </section>
-        </div>
+            </div>
         )
     }
 }
