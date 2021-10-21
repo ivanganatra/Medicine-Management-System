@@ -10,7 +10,8 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Profile from './components/profile/Profile';
-import About from './components/Aboutus/about.js';
+import About from './components/Aboutus/about';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './App.css';
 import Orders from './Pages/Orders/Orders';
 import ViewOrders from './Pages/viewOrders/veiwOrders';
@@ -41,37 +42,40 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-        <Route path="/" exact component={Header} />
-        <Route path="/" exact component={LandingPage} />
-        {
-          !userData.token ? (
-            <>
-            <Switch>
-              <Route path="/" exact component = {Header} />
-              <Route path="/login" component={Login} />
-              <Redirect to="/login" />
-            </Switch>
+      <div className="App">
+        <ScrollToTop>
 
-            </>
-          ) : (
-            <>
-              <Header />
+          <Route path="/" exact component={Header} />
+          <Route path="/" exact component={LandingPage} />
+          {
+            !userData.token ? (
+              <>
               <Switch>
-                <Route exact path="/profile" component = {ProfileDisplay} />
-                <Route exact path="/orders/:orderId" component = {ViewOrders} />
-                <Route exact path="/orders" component = {Orders} />
-                <Route exact path="/createOrder" component = {CreateOrder} />
-                <Route  path="/about" component = {About} />
-                <Route  path="/dashboard" component = {Dashboard} />
-                <Route  path="/profileUpdate" component = {Profile} />
-                <Redirect to = "/" />
+                <Route path="/" exact component = {Header} />
+                <Route path="/login" component={Login} />
+                <Redirect to="/login" />
               </Switch>
-            </>
-          )
-        }
-        <Route  path="/"  component = {Footer} />
-    </div>
+
+              </>
+            ) : (
+              <>
+                <Header />
+                <Switch>
+                  <Route exact path="/profile" component = {ProfileDisplay} />
+                  <Route exact path="/orders/:orderId" component = {ViewOrders} />
+                  <Route exact path="/orders" component = {Orders} />
+                  <Route exact path="/createOrder" component = {CreateOrder} />
+                  <Route  path="/about" component = {About} />
+                  <Route  path="/dashboard" component = {Dashboard} />
+                  <Route  path="/profileUpdate" component = {Profile} />
+                  <Redirect to = "/" />
+                </Switch>
+              </>
+            )
+          }
+          <Route  path="/"  component = {Footer} />
+        </ScrollToTop>
+      </div>
   );
 }
 
