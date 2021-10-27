@@ -211,8 +211,7 @@
             text-decoration: none;
             text-align: left;
         }
-        /* My content ends */
-        /* My Image start */
+        
         .about .name_cards  .my_image{
             height:100%;
             width: 60vw;
@@ -221,11 +220,7 @@
         .about .name_cards img{
             height:100%;
         }
-        /* My image end */
-    /* Section layout end */
-/* Name cards end */
-/* .about .section_layout .my_image{
-} */
+       
 @media only screen and (max-width: 1470px){
 
     .about .grid_layout{
@@ -250,8 +245,7 @@
         justify-content: center;
         padding-left: 0vw;
     }
-    .about .feature_card{
-    }
+    
     .about .vision_box{
         margin-top:10vh;
         margin-bottom:50vh;
