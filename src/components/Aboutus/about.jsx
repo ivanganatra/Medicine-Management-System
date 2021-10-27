@@ -66,7 +66,7 @@ const About = (props) => {
             <br />
           </div>
           {/* Cards */}
-          <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+          <div className="col-12 col-md-4 py-3 d-flex justify-content-center align-items-center">
             <div className="card" style={{ width: "18rem" }}>
               <img
                 className="card-img-top"
@@ -82,7 +82,7 @@ const About = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+          <div className="col-12 col-md-4 py-3 d-flex justify-content-center align-items-center">
             <div className="card" style={{ width: "18rem" }}>
               <img
                 className="card-img-top"
@@ -98,7 +98,7 @@ const About = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+          {/* <div className="col-12 col-md-4 py-3 d-flex justify-content-center align-items-center">
             <div className="card" style={{ width: "18rem" }}>
               <img
                 className="card-img-top"
@@ -113,8 +113,8 @@ const About = (props) => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col-12 col-md-3 py-3 d-flex justify-content-center align-items-center">
+          </div> */}
+          <div className="col-12 col-md-4 py-3 d-flex justify-content-center align-items-center">
             <div className="card" style={{ width: "18rem" }}>
               <img
                 className="card-img-top"
@@ -156,7 +156,7 @@ const About = (props) => {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
-              <div>
+              <div className="d-flex justify-content-center align-items-center">
                 <div className="card" style={{ width: "18rem" }}>
                   <img
                     className="card-img-top"
@@ -171,7 +171,7 @@ const About = (props) => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="d-flex justify-content-center align-items-center">
                 <div className="card" style={{ width: "18rem" }}>
                   <img
                     className="card-img-top"
@@ -186,7 +186,7 @@ const About = (props) => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="d-flex justify-content-center align-items-center">
                 <div className="card" style={{ width: "18rem" }}>
                   <img
                     className="card-img-top"
@@ -201,7 +201,7 @@ const About = (props) => {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="d-flex justify-content-center align-items-center">
                 <div className="card" style={{ width: "18rem" }}>
                   <img
                     className="card-img-top"
