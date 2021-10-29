@@ -1,9 +1,4 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import {
-    selectUserData
-} from '../../reduxSlices/authSlice';
-import db from '../../firebase';
 import './LandingPage.css';
 import Button from '@material-ui/core/Button';
 import HomeImg from '../../assets/images/HomepageImg3.jpeg';
