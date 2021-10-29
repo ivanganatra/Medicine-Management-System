@@ -9,11 +9,6 @@ import Button from '@material-ui/core/Button';
 import HomeImg from '../../assets/images/HomepageImg3.jpeg';
 
 const LandingPage = () => {
-    const userData = useSelector(selectUserData);
-    useEffect(() => {
-        // db.collection()
-    }, [])
-
     return (
         <div className="Home">
             <div className="Home_Header">
@@ -34,14 +29,6 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
-            {/* {
-                !userData.token ? (
-                    <div className="Home_Login">
-                        <h1>Please SignIn / SignUp to continue</h1>
-                    </div>
-                ) : null
-            } */}
-
         </div>
     )
 }

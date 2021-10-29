@@ -47,7 +47,6 @@ function CreateOrder() {
                 // Order Added Confirmation Modal
                 setLoading(false);
                 setShow(true);
-                // alert("Order Added Successfully");
               })
           })
         }
@@ -58,7 +57,6 @@ function CreateOrder() {
       } else {
         // A modal saying Please Complete your profile before posting any order, and a redirect to profile page button
         setShowCompleteProfile(true);
-        // alert("Please complete your profile");
       }
     })
 
