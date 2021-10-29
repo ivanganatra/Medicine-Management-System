@@ -30,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
       '& .MuiInputLabel-formControl ': {
         top: '-6px',
         fontSize: '18px',
-        color: 'gray',
-        // fontWeight: 'bold'
+        color: 'gray'
       },
       '& .MuiInputBase-input::placeholder': {
         fontSize: '14px'

@@ -67,31 +67,7 @@ const ViewOrders = (props) => {
   useEffect(() => {
     getOrderDetails();
   }, [])
-  // const orderDetail = {
-  //   address: "Bhopal",
-  //   city: "BHOPAL",
-  //   contact: "9111648864",
-  //   description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eaque quisquam quo ad harum dolores tempora consequatur alias numquam veritatis.",
-  //   id: "AYgzdeKce9Mo230oPzEv",
-  //   imgUrl: "https://firebasestorage.googleapis.com/v0/b/frosthack-a595f.appspot.com/o/images%2F2_20210601_182137_0001.png?alt=media&token=91d7bedb-fe4c-4135-a11b-3dfb090bb391",
-  //   name: "Rishab Goyal",
-  //   seed: 83,
-  //   state: "Madhya Pradesh",
-  //   timestamp: { nanoseconds: 828000000, seconds: 1625050204 },
-  //   status: "confirmed"
-  // };
-  // const shopDetail = {
-  //   address: "1084 Vijay Nagar",
-  //   city: "Jabalpur",
-  //   email: "jatinbajaj2001@gmail.com",
-  //   name: "Jatin Bajaj",
-  //   phone: "9039058083",
-  //   seed: 295,
-  //   shop_address: "1084 Vijay Nagar,near agrasen kalyan Mandpam, Ahinsa Chowk, Jabalpur, M.P.",
-  //   shop_name: "Raj Medicals",
-  //   shop_phone: "9039058083",
-  //   state: "Madhya Pradesh"
-  // };
+
   let statusClass = "";
   if (orderDetail.status === "collected") {
     statusClass = "text-success";
